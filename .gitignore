@@ -1,0 +1,11 @@
+*.log
+*.tmp
+
+.idea
+node_modules
+dist
+
+.DS_Store
+Thumbs.db
+src/app/core/global.service.ts
+i3ot-project.zip

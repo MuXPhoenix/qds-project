@@ -1,0 +1,118 @@
+<div id="content">
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['人力资源', '部门管理']" icon="pencil-square-o"></sa-big-breadcrumbs>
+  </div>
+  <sa-widget [editbutton]="false" [fullscreenbutton]="false" [custombutton]="false" [sortable]="false">
+    <header>
+      <ul class="nav nav-tabs pull-left in">
+        <li [class.active]="state.tabs.demo4=='AA'" class="active">
+          <a (click)="state.tabs.demo4 = 'AA'">所属部门</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <div class="widget-body">
+        <tabset>
+          <tab [active]="state.tabs.demo4 == 'AA'">
+            <tabset class="pd-10">
+              <tab [active]="state.tabs.demo4 == 'AA'">
+                <div class="row">
+                  <article class="col-sm-12 col-md-12 col-lg-6">
+                    <sa-widget class="jarviswidget well" [colorbutton]="false" [editbutton]="false" [togglebutton]="false"
+                               [deletebutton]="false" [fullscreenbutton]="false" [custombutton]="false" [sortable]="false">
+                      <div>
+                        <div class="widget-body no-padding">
+                          <alert type="info" class="no-margin" *ngIf="category_id1 == 0" >
+                            <i class="fa-fw fa fa-plus"></i>
+                            添加部门
+                          </alert>
+                          <alert type="info" class="no-margin" *ngIf="category_id1 != 0">
+                            <i class="fa-fw fa fa-plus"></i>
+                            修改部门
+                          </alert>
+                          <form  [formGroup]="formModel" (ngSubmit)="onSubmitCategory()" novalidate class="smart-form ">
+                            <fieldset>
+                              <section>
+                                <label class="input">
+                                  <input type="text" required
+                                         placeholder="请输入部门" minlength="1" maxlength="20" formControlName="category_desc" name="category_desc">
+                                  <input type="hidden" value="3" formControlName="category_type" name="category_type">
+                                  <input type="hidden" value="" formControlName="category_id" name="category_id">
+                                </label>
+                              </section>
+                            </fieldset>
+                            <footer>
+                              <button  type="submit" class="btn btn-primary">
+                                保存
+                              </button>
+                            </footer>
+                          </form>
+                        </div>
+                      </div>
+                    </sa-widget>
+                  </article>
+                  <article class="col-sm-12 col-md-12 col-lg-6">
+                    <sa-widget class="jarviswidget well" [colorbutton]="false" [editbutton]="false" [togglebutton]="false"
+                               [deletebutton]="false" [fullscreenbutton]="false" [custombutton]="false" [sortable]="false">
+                      <div>
+                        <div class="widget-body no-padding">
+                          <alert type="info" class="no-margin" >
+                            <i class="fa-fw fa fa-table"></i>
+                            部门
+                          </alert>
+                          <div class="table-responsive">
+                            <table class="table table-hover table-bordered dataTable">
+                              <thead>
+                              <tr>
+                                <th>部门</th>
+                                <th>操作</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr *ngFor="let cl of categoryList?.result?.categoryList?.data">
+                                <td>{{ cl.category_desc }}</td>
+                                <td>
+                                  <div *ngIf="cid == super_admin_id || cl.c_id == cid">
+                                  <a class="btn btn-warning btn-xs" (click)="editCategory(cl.category_id, cl.category_desc)" ><span class="glyphicon glyphicon-pencil"></span>修改</a>
+                                  <a class="btn btn-danger btn-xs" (click)="deleteCategory(cl.category_id,categoryList.result?.categoryList?.current_page)"><span class="glyphicon glyphicon-remove"></span>删除</a>
+                                  </div>
+                                  <div *ngIf="cid != super_admin_id && cl.c_id != cid">无权操作</div>
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+                            <!-- 底部-（分页部分）-->
+                            <div class="dt-toolbar">
+                              <div class="hidden-xs right">
+                                <ul class="pagination pagination-sm">
+                                  <li *ngFor="let p of categoryList?.result?.page" class="{{p.class}}">
+                                    <a (click)="pagination(p.value)" *ngIf="p.method=='method'">{{p.text}}</a>
+                                    <a *ngIf="p.method==''">{{p.text}}</a>
+                                  </li>
+                                </ul>
+                                <!--<ul class="pagination">-->
+                                  <!--<li>-->
+                                    <!--<a (click)="pagination(categoryList.result?.prev_page_url)"><i class="fa fa-arrow-left"></i></a>-->
+                                  <!--</li>-->
+                                  <!--<li>-->
+                                    <!--<a (click)="pagination(categoryList.result?.next_page_url)"><i class="fa fa-arrow-right"></i></a>-->
+                                  <!--</li>-->
+                                <!--</ul>-->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </sa-widget>
+                    <!-- end widget -->
+                  </article>
+                </div>
+              </tab>
+            </tabset>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </sa-widget>
+</div>
+

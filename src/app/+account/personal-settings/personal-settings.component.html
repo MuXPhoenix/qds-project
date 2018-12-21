@@ -1,0 +1,52 @@
+<div id="content">
+  <sa-widgets-grid>
+    <div class="row">
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-cogs"></i> </span>
+            <h2>个人设置 </h2>
+          </header>
+          <!-- widget div-->
+          <div>
+            <!-- widget content -->
+            <div class="widget-body">
+              <div class="tabs-left">
+                <ul class="nav nav-tabs tabs-left personal-lb" id="demo-pill-nav">
+                  <li [class.active]="state.tabs.demo2=='tab-r1'" class="active">
+                    <a (click)="state.tabs.demo2 = 'tab-r1'" class="pd-20-10"><!--<span class="badge bg-color-blue txt-color-white">12</span>-->
+                      个人信息 </a>
+                  </li>
+                  <li [class.active]="state.tabs.demo2=='tab-r2'">
+                    <a (click)="state.tabs.demo2 = 'tab-r2'" class="pd-20-10"><!--<span
+                            class="badge bg-color-blueDark txt-color-white">3</span>--> 修改密码</a>
+                  </li>
+                  <li [class.active]="state.tabs.demo2=='tab-r3'">
+                    <a (click)="state.tabs.demo2 = 'tab-r3'" class="pd-20-10"><!--<span
+                            class="badge bg-color-greenLight txt-color-white">0</span>--> 账号绑定</a>
+                  </li>
+                </ul>
+                <tabset>
+                  <tab [active]="state.tabs.demo2 == 'tab-r1'" class="personal-l">
+                    <app-account-personal [fromFatherValue]="userInfo" [rollback_url]="rollback_url" [menu_id]="menu_id" [permissions]="permissions"></app-account-personal>
+                  </tab>
+                  <tab [active]="state.tabs.demo2 == 'tab-r2'" class="personal-l">
+                    <app-account-password [fromFatherValue]="userInfo" [rollback_url]="rollback_url" [menu_id]="menu_id" [permissions]="permissions"></app-account-password>
+                  </tab>
+                  <tab [active]="state.tabs.demo2 == 'tab-r3'" class="personal-l">
+                    <app-account-binding [fromFatherValue]="userInfo" [rollback_url]="rollback_url" [menu_id]="menu_id" [permissions]="permissions"></app-account-binding>
+                  </tab>
+                </tabset>
+              </div>
+            </div>
+            <!-- end widget content -->
+          </div>
+          <!-- end widget div -->
+        </sa-widget>
+      </article>
+    </div>
+  </sa-widgets-grid>
+</div>
+
+
+

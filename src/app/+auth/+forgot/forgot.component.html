@@ -1,0 +1,100 @@
+<header id="header" class="animated fadeInDown">
+
+  <div id="logo-group">
+    <span id="logo"> <img src="assets/img/logo.png" alt="I3OT"> </span>
+  </div>
+
+  <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">需要一个帐户吗?</span> <a routerLink="/auth/register" class="btn btn-danger">注册账户</a> </span>
+
+</header>
+<div id="main" role="main" class="animated fadeInDown">
+
+  <div id="content" class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm text-align-center">
+        <div class="hero">
+
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+            <h5 class=" txt-color-red login-header-big">演示账号</h5>
+
+            <p>
+              企业登录：（客户ID:demo 用户ID：ux9528 密码：123456）
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+        <div class="well no-padding">
+          <form id="login-form" class="smart-form client-form">
+            <header>
+              忘记了密码
+            </header>
+
+            <fieldset>
+
+              <section>
+                <label class="label">请输入你的手机号码</label>
+                <label class="input"> <i class="icon-append fa fa-user"></i>
+                  <input class="form-control" disabled="disabled" placeholder="请输入你的手机号码" type="text" minlength="1"   name="uNumber">
+                </label>
+              </section>
+
+              <div class=" col-sm-12" style="margin-left: -13px;margin-right: 13px;">
+                <label class="labe2">验证码</label>
+                <section class="col col-sm-6">
+
+                  <label class="input">
+                    <input class="form-control" disabled="disabled" placeholder="请输入验证码" type="text" minlength="1" name="uNumber">
+                  </label>
+                </section>
+                <section class="col col-sm-6">
+                  <button  disabled="disabled" type="button" class="btn txt-color-blueLight btn-sm form-control" >
+                    获取短信验证码
+                  </button>
+                </section>
+              </div>
+              <p class="txt-color-red">暂不开放，如需注册，请联系QQ：2839761055</p>
+              <!--<section>
+										<span class="timeline-seperator text-center text-primary"> <span class="font-sm">OR</span>
+              </span></section>-->
+              <!--<section>
+                <label class="label">Your Username</label>
+                <label class="input"> <i class="icon-append fa fa-user"></i>
+                  <input type="text" name="username">
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Enter your username</b> </label>
+                <div class="note">
+                  <a routerLink="/auth/login">I remembered my password!</a>
+                </div>
+              </section>-->
+
+            </fieldset>
+            <footer>
+              <button (click)="submit($event)" class="btn btn-primary">
+                <i class="fa fa-refresh"></i> 重置密码
+              </button>
+            </footer>
+          </form>
+
+        </div>
+
+        <h5 class="text-center"> -使用第三方账号 -</h5>
+        <ul class="list-inline text-center icon-set">
+          <li>
+            <a (click)="(null)" ><i class="icon-set_wechat"></i></a>
+          </li>
+          <li>
+            <a (click)="(null)" ><i class="icon-set_nailing"></i></a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+

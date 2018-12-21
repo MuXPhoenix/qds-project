@@ -1,0 +1,31 @@
+<sa-widget [editbutton]="false"  color="blueDark">
+
+  <header>
+    <span class="widget-icon"> <i class="fa  fa-skype  txt-color-white"></i> </span>
+
+    <h2> 订单 </h2>
+  </header>
+
+  <div>
+    <div class="col-sm-12">
+      <div class="col-sm-8">
+        <div echarts [options]="chartOption" class="demo-chart-220"  ></div>
+      </div>
+      <div class="col-sm-4">
+        <ul class="list-group ">
+          <li class="list-group-item ">总数：
+            <span class="label label-success">80</span>
+          </li>
+          <li class="list-group-item">已完成：
+            <span class="label label-primary">50</span>
+          </li>
+          <li class="list-group-item">进行中：
+            <span class="label label-info">30</span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</sa-widget>

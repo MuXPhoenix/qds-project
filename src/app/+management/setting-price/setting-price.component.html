@@ -1,0 +1,191 @@
+<div id="content">
+  <sa-widget [editbutton]="false" [fullscreenbutton]="false" [custombutton]="false" [sortable]="false">
+    <header>
+      <ul class="nav nav-tabs pull-left in">
+        <li [class.active]="state.tabs.demo3=='hr1'" class="active">
+          <a (click)="state.tabs.demo3 = 'hr1'">商品价格级别</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <div class="widget-body">
+        <tabset>
+          <tab [active]="state.tabs.demo3 == 'hr1'">
+            <tabset class="pd-10">
+              <tab [active]="state.tabs.demo3 == 'hr1'">
+                <div class="row">
+                  <article class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <sa-widget class="jarviswidget well" [colorbutton]="false" [editbutton]="false" [togglebutton]="false"
+                               [deletebutton]="false" [fullscreenbutton]="false" [custombutton]="false" [sortable]="false">
+                      <div>
+                        <div class="widget-body no-padding">
+                          <alert type="info" class="no-margin"  >
+                            <i class="fa-fw fa fa-plus"></i>
+                            添加商品价格级别
+                          </alert>
+                          <!--<alert type="info" class="no-margin">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                            修改商品价格级别
+                          </alert>-->
+                          <div  class="mt-10">
+                            <form   class="smart-form ">
+                              <fieldset>
+                                <div class="form-group col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <section>
+                                    <label class="label txt-color-blue">价格编号<span class="asterisk-color">*</span></label>
+                                    <label class="input">
+                                      <input type="text"  placeholder="自动编码"  >
+                                    </label>
+                                  </section>
+                                </div>
+                                <div class="form-group col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <section>
+                                    <label class="label txt-color-blue">价格级别<span class="asterisk-color">*</span></label>
+                                    <label class="input">
+                                      <input type="text"  placeholder=""  >
+                                    </label>
+                                  </section>
+                                </div>
+
+                              </fieldset>
+                              <footer>
+                                <button  type="submit" class="btn btn-primary">
+                                  保存
+                                </button>
+                              </footer>
+                            </form>
+                          </div>
+
+                        </div>
+                      </div>
+                    </sa-widget>
+                  </article>
+                  <article class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <sa-widget class="jarviswidget well" [colorbutton]="false" [editbutton]="false" [togglebutton]="false"
+                               [deletebutton]="false" [fullscreenbutton]="false" [custombutton]="false" [sortable]="false">
+                      <div>
+                        <div class="widget-body no-padding">
+                          <alert type="info" class="no-margin" >
+                            <i class="fa-fw fa fa-table"></i>
+                            商品价格级别
+                          </alert>
+
+                          <div  class="row mt-10">
+                            <article  class="col-sm-12">
+                              <div class="navbar navbar-default">
+                                <form  class="navbar-form navbar-left ng-pristine ng-valid ng-touched" novalidate="" role="search" >
+                                    <div class="form-group pdlr-4">
+                                      <a class="btn default-btn btn-sm" >
+                                        <span class="glyphicon glyphicon-pencil mr-5 color-yellow"></span>修改</a>
+                                    </div>
+                                    <div class="form-group pdlr-4">
+                                      <a class="btn default-btn btn-sm" >
+                                        <span class="fa-fw fa  fa-trash-o mr-5 color-red"></span>删除</a>
+                                    </div>
+                                    <div class="form-group btn-group pdlr-4">
+                                      <a class="btn default-btn btn-sm dropdown-toggle"  data-toggle="dropdown">
+                                        <span class="fa-fw fa fa-th-large mr-5 color-red"></span>批处理<i class="fa fa-fw fa-chevron-down"></i></a>
+
+                                      <ul class="dropdown-menu" role="menu">
+                                        <li><a ><span class="fa-fw fa  fa-trash-o color-red mr-5"></span>批量删除</a></li>
+                                      </ul>
+                                    </div>
+                                  </form>
+                              </div>
+                            </article>
+                          </div>
+
+                          <div style="padding:0;" class="height-overflow">
+                            <div style="padding: 0;z-index: 2;" class="table-responsive">
+                              <table class="table table-striped   smart-form">
+                                <thead>
+                                <tr >
+                                  <td><label class="checkbox">
+                                    <input type="checkbox" name="checkbox-inline" >
+                                    <i></i>
+                                  </label>
+                                  </td>
+                                  <th>级别编码</th>
+                                  <th>商品价格级别</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="">
+                                  <td>
+                                    <label class="checkbox">
+                                      <input type="checkbox" >
+                                      <i></i>
+                                    </label>
+                                  </td>
+                                  <td>001</td>
+                                  <td>1242</td>
+                                </tr>
+                                <tr class="">
+                                  <td>
+                                    <label class="checkbox">
+                                      <input type="checkbox" >
+                                      <i></i>
+                                    </label>
+                                  </td>
+                                  <td>001</td>
+                                  <td>1242</td>
+                                </tr>
+                                <tr class="table-color">
+                                  <td>
+                                    <label class="checkbox">
+                                      <input type="checkbox" >
+                                      <i></i>
+                                    </label>
+                                  </td>
+                                  <td>001</td>
+                                  <td>1242</td>
+                                </tr>
+
+
+                                </tbody>
+                              </table>
+
+                            </div>
+                          </div>
+
+
+                          <!-- 底部-（分页部分）-->
+                          <div class="dt-toolbar">
+                            <div class="col-xs-12 col-sm-6">
+                              <button class="btn btn-default">
+                                <i class="fa fa-trash-o fa-lg"></i>
+                                删除所选
+                              </button>
+                            </div>
+                            <div class="hidden-xs right">
+                              <ul class="pagination pagination-sm">
+                                <li *ngFor="let p of categoryList?.page" class="{{p.class}}">
+                                  <a (click)="pagination(p.value)" *ngIf="p.method=='method'">{{p.text}}</a>
+                                  <a *ngIf="p.method==''">{{p.text}}</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </sa-widget>
+                    <!-- end widget -->
+                  </article>
+                </div>
+              </tab>
+            </tabset>
+          </tab>
+
+        </tabset>
+      </div>
+    </div>
+  </sa-widget>
+
+
+
+
+
+</div>
+
+
