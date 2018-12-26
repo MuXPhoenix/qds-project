@@ -1,0 +1,84 @@
+<!--牙轮生产智能指挥模块-报警-->
+<div id="content">
+  <sa-widgets-grid>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="nav nav-tabs mi-nav-tabs">
+          <li><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
+          <li  class="active"><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-dutyshift">交接班</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-fuelling">加油调度</a></li>
+        </ul>
+      </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" >
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bell"></i> </span>
+            <h2>报警</h2>
+          </header>
+
+          <div>
+            <!--小部件内容-->
+            <div class="widget-body no-padding">
+              <div  class="row">
+                <article  class="col-sm-12">
+                  <div class="navbar navbar-default">
+                    <form  class="navbar-form navbar-left ng-pristine ng-valid ng-touched " novalidate="" role="search" >
+                      <div class="form-group pdlr-4">
+                        <strong> 筛选：</strong>
+                      </div>
+                      <div class="form-group pdlr-4">
+                        <strong> 时间选择：</strong>
+                      </div>
+                      <div class="form-group btn-group pdlr-4">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+
+                      </div>
+                      <div class="form-group pdlr-4">
+                        <strong> 至</strong>
+                      </div>
+                      <div class="form-group btn-group pdlr-4 dropdown">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+                      </div>
+                      <div class="form-group btn-group pdlr-4">
+                        <a class="btn default-btn btn-sm dropdown-toggle" data-toggle="dropdown">
+                          全部<i class="fa fa-fw fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li ><a >全部</a></li>
+                          <li ><a>编号</a></li>
+                          <li ><a >故障类型</a></li>
+                        </ul>
+                      </div>
+                      <div class="form-group pdlr-4">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="keyword" placeholder="请输入搜索内容" type="text">
+                      </div>
+                      <div class="form-group pdlr-4">
+                        <button class="btn btn-default" type="button" (click)="getAssetsList(1,0)">
+                          <i  class="glyphicon glyphicon-search"></i>
+                          搜索
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </article>
+              </div>
+
+
+
+
+            </div>
+          </div>
+
+        </sa-widget>
+      </article>
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>

@@ -5,6 +5,95 @@
 
     <!--动态读取--->
     <ul saSmartMenu >
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw  fa-external-link-square"></i>{{'采矿智慧生产指挥单元' | i18n}}</a>
+        <ul>
+          <li >
+            <a href="#">{{'采矿综合质量配矿优化决策模块' | i18n}}</a>
+            <ul>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/blending-index">{{'首页' | i18n}}</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/blending-dailyplan">{{'日计划' | i18n}}</a>
+              </li>
+            </ul>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/ansteel-mining/gis-index">{{'采矿综合信息管理模块（GIS）' | i18n}}</a>
+          </li>
+          <li >
+            <a href="#">{{'牙轮生产智能指挥模块' | i18n}}</a>
+            <ul>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/drilling-index">{{'首页' | i18n}}</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/drilling-setting">{{'设置' | i18n}}</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">{{'铲装品位智能跟踪模块' | i18n}}</a>
+            <ul>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/scraper-index">{{'首页' | i18n}}</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/scraper-setting">{{'设置' | i18n}}</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">{{'采运生产智能指挥模块' | i18n}}</a>
+            <ul>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/tramcar-index">{{'首页' | i18n}}</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/tramcar-setting">{{'设置' | i18n}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw  fa-database"></i>{{'采矿综合管理单元' | i18n}}</a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/mining-mes/mining-mes-index">{{'首页' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw  fa-cube"></i>{{'采矿三维模拟仿真单元' | i18n}}</a>
+        <!--<ul>-->
+        <!--<li routerLinkActive="active">-->
+        <!--<a routerLink="/3d-index">{{'' | i18n}}</a>-->
+        <!--</li>-->
+        <!--</ul>-->
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw  fa-desktop"></i>{{'采矿能源智能管理单元' | i18n}}</a>
+        <!--<ul>-->
+        <!--<li routerLinkActive="active">-->
+        <!--<a routerLink="/energy-index">{{'' | i18n}}</a>-->
+        <!--</li>-->
+        <!--</ul>-->
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw  fa-delicious"></i>{{'安全巡查智能管理单元' | i18n}}</a>
+        <!--<ul>-->
+        <!--<li routerLinkActive="active">-->
+        <!--<a routerLink="/patrol-index">{{'' | i18n}}</a>-->
+        <!--</li>-->
+        <!--</ul>-->
+      </li>
+
+
+
       <li *ngFor="let c of menuDefault?.result?.menuList">
         <a href="#" *ngIf="c.menu_url == '#' || c.menu_url == ''">
           <i class="fa fa-lg fa-fw {{c.menu_icon}}"></i>

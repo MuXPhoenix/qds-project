@@ -1,0 +1,533 @@
+<!--铲装品位智能跟踪模块-首页-->
+
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="nav nav-tabs mi-nav-tabs">
+          <li class="active"><a routerLink="/ansteel-mining/scraper-index">首页</a></li>
+          <li><a routerLink="/ansteel-mining/scraper-status">状态</a></li>
+          <li><a routerLink="/ansteel-mining/scraper-alarm">报警</a></li>
+          <li><a routerLink="/ansteel-mining/scraper-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/scraper-dutyshift">交接班</a></li>
+          <li><a routerLink="/ansteel-mining/scraper-fuelling">加油调度</a></li>
+        </ul>
+      </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>（GIS）图</h2>
+          </header>
+          <div>
+            <div class="widget-body svg-no-margin" >
+              <div class="col-sm-12">
+
+                <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1364 500">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #3faf87;
+                      }
+
+                      .cls-2 {
+                        fill: #fff;
+                      }
+                    </style>
+                  </defs>
+                  <title>mine铲车</title>
+                  <image width="1364" height="500" xlink:href="assets/img/qidashan/mine.jpg"/>
+                  <g id="svg-mine-icon1">
+                    <circle id="svg-mine-bg1" class="cls-1" cx="207.28" cy="227.7" r="9"/>
+                    <g id="svg-clor">
+                      <path class="cls-2" d="M202.2,228.66h1.5a1,1,0,0,0,.34-.06l1.22,1.22a.62.62,0,0,0,.86,0l1.19-1.2v1.61a.2.2,0,0,0,.2.2h.62a1.42,1.42,0,0,0,1.42,1.23,1.43,1.43,0,0,0,1.42-1.23h.37a1.43,1.43,0,0,0,2.84,0h.62a.2.2,0,0,0,.2-.2v-.44a.2.2,0,0,0-.4,0V230h-.42a1.43,1.43,0,0,0-2.84,0H211a1.43,1.43,0,0,0-1.42-1.24,1.44,1.44,0,0,0-1.42,1.24h-.41v-5.17a.21.21,0,0,0-.2-.21.2.2,0,0,0-.2.21v1.67h0l-1.62,1.63-1-1v-.39a1,1,0,0,0-1-1H203a.18.18,0,0,0-.19.14l-.81,2.46A.21.21,0,0,0,202.2,228.66Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M215,228.72v-1a1,1,0,0,0-1-1h-.76v-1.15h.12a.2.2,0,0,0,.2-.21v-.69a.2.2,0,0,0-.2-.2h-1.18a.2.2,0,0,0-.2.2v.69a.21.21,0,0,0,.2.21h.12v1.15h-.94v-3a1,1,0,0,0-1-1h-2.44a.6.6,0,0,0-.6.6v.52a.2.2,0,0,0,.4,0v-.52a.2.2,0,0,1,.2-.2h2.44a.6.6,0,0,1,.6.61v3.23a.2.2,0,0,0,.2.2H214a.6.6,0,0,1,.6.6v1a.2.2,0,1,0,.4,0Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M208,223.47v3.43a.2.2,0,0,0,.2.2h2.36a.2.2,0,0,0,.2-.2v-3a.6.6,0,0,0-.6-.6h-2a.2.2,0,0,0-.2.2Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M208.51,230.23a1,1,0,1,1,1,1A1,1,0,0,1,208.51,230.23Zm3.22,0a1,1,0,1,1,1,1A1,1,0,0,1,211.73,230.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M208.75,230.23a.8.8,0,1,0,.79-.8A.8.8,0,0,0,208.75,230.23Zm3.22,0a.79.79,0,1,0,.79-.8A.8.8,0,0,0,212,230.23ZM206,229.15a.2.2,0,0,0-.21-.2h-.13a.2.2,0,1,0,0,.4h.13A.2.2,0,0,0,206,229.15Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M212.37,230.23a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,212.37,230.23Zm-3.22,0a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,209.15,230.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M210.51,227.69a.2.2,0,1,0,0-.4h-.59a.2.2,0,0,0,0,.4Zm1.72.3h-4a.2.2,0,0,0,0,.4h4a.2.2,0,1,0,0-.4Zm.85,0a.2.2,0,1,0,0,.4h1.13a.2.2,0,0,0,0-.4Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon1-2" data-name="svg-mine-icon1">
+                    <circle id="svg-mine-bg1-2" data-name="svg-mine-bg1" class="cls-1" cx="645.28" cy="172.7" r="9"/>
+                    <g id="svg-clor-2" data-name="svg-clor">
+                      <path class="cls-2" d="M640.2,173.66h1.5a1,1,0,0,0,.34-.06l1.22,1.22a.62.62,0,0,0,.86,0l1.19-1.2v1.61a.2.2,0,0,0,.2.2h.62a1.42,1.42,0,0,0,1.42,1.23,1.43,1.43,0,0,0,1.42-1.23h.37a1.43,1.43,0,0,0,2.84,0h.62a.2.2,0,0,0,.2-.2v-.44a.2.2,0,0,0-.4,0V175h-.42a1.43,1.43,0,0,0-2.84,0H649a1.43,1.43,0,0,0-1.42-1.24,1.44,1.44,0,0,0-1.42,1.24h-.41v-5.17a.21.21,0,0,0-.2-.21.2.2,0,0,0-.2.21v1.67h0l-1.62,1.63-1-1v-.39a1,1,0,0,0-1-1H641a.18.18,0,0,0-.19.14l-.81,2.46A.21.21,0,0,0,640.2,173.66Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M653,173.72v-1a1,1,0,0,0-1-1h-.76v-1.15h.12a.2.2,0,0,0,.2-.21v-.69a.2.2,0,0,0-.2-.2h-1.18a.2.2,0,0,0-.2.2v.69a.21.21,0,0,0,.2.21h.12v1.15h-.94v-3a1,1,0,0,0-1-1h-2.44a.6.6,0,0,0-.6.6v.52a.2.2,0,1,0,.4,0v-.52a.2.2,0,0,1,.2-.2h2.44a.6.6,0,0,1,.6.61v3.23a.2.2,0,0,0,.2.2H652a.6.6,0,0,1,.6.6v1a.2.2,0,0,0,.4,0Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M646,168.47v3.43a.2.2,0,0,0,.2.2h2.36a.2.2,0,0,0,.2-.2v-3a.6.6,0,0,0-.6-.6h-2a.2.2,0,0,0-.2.2Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M646.51,175.23a1,1,0,1,1,1,1A1,1,0,0,1,646.51,175.23Zm3.22,0a1,1,0,1,1,1,1A1,1,0,0,1,649.73,175.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M646.75,175.23a.8.8,0,1,0,.79-.8A.8.8,0,0,0,646.75,175.23Zm3.22,0a.79.79,0,1,0,.79-.8A.8.8,0,0,0,650,175.23Zm-6-1.08a.2.2,0,0,0-.21-.2h-.13a.2.2,0,0,0,0,.4h.13A.2.2,0,0,0,644,174.15Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M650.37,175.23a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,650.37,175.23Zm-3.22,0a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,647.15,175.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M648.51,172.69a.2.2,0,1,0,0-.4h-.59a.2.2,0,0,0,0,.4Zm1.72.3h-4a.2.2,0,0,0,0,.4h4a.2.2,0,1,0,0-.4Zm.85,0a.2.2,0,1,0,0,.4h1.13a.2.2,0,0,0,0-.4Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon1-3" data-name="svg-mine-icon1">
+                    <circle id="svg-mine-bg1-3" data-name="svg-mine-bg1" class="cls-1" cx="586.28" cy="299.7" r="9"/>
+                    <g id="svg-clor-3" data-name="svg-clor">
+                      <path class="cls-2" d="M581.19,300.58h1.5a1,1,0,0,0,.34,0l1.21,1.23a.61.61,0,0,0,.85,0l1.21-1.18,0,1.6a.21.21,0,0,0,.2.21h.61a1.43,1.43,0,0,0,2.84,0h.38a1.43,1.43,0,0,0,2.84,0h.62a.19.19,0,0,0,.2-.2v-.43a.21.21,0,0,0-.41,0v.24h-.42a1.43,1.43,0,0,0-2.84,0h-.37a1.43,1.43,0,0,0-2.84,0h-.42l.06-5.17a.22.22,0,0,0-.2-.21.2.2,0,0,0-.2.2l0,1.68h0l-1.65,1.61-1-1v-.39a1,1,0,0,0-1-1H582a.2.2,0,0,0-.19.14l-.83,2.46A.2.2,0,0,0,581.19,300.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M594,300.78v-1a1,1,0,0,0-1-1h-.77l0-1.15h.12a.19.19,0,0,0,.2-.2v-.69a.22.22,0,0,0-.2-.21h-1.18a.2.2,0,0,0-.2.2v.7a.2.2,0,0,0,.2.2h.12l0,1.15h-.93l0-3a1,1,0,0,0-1-1l-2.44,0a.6.6,0,0,0-.61.59v.52a.2.2,0,1,0,.4,0v-.51a.2.2,0,0,1,.2-.2l2.44,0a.6.6,0,0,1,.6.6l0,3.24a.2.2,0,0,0,.2.2l2.84,0a.6.6,0,0,1,.6.6v1a.19.19,0,0,0,.19.2A.2.2,0,0,0,594,300.78Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M587,295.45l0,3.43a.2.2,0,0,0,.2.21l2.36,0a.19.19,0,0,0,.2-.19l0-3a.59.59,0,0,0-.59-.61l-2,0a.2.2,0,0,0-.2.2Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M587.48,302.22a1,1,0,1,1,1,1A1,1,0,0,1,587.48,302.22Zm3.22,0a1,1,0,0,1,1-1,1.05,1.05,0,0,1,1,1,1,1,0,1,1-2.07,0Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M587.72,302.22a.8.8,0,1,0,.8-.78A.79.79,0,0,0,587.72,302.22Zm3.22,0a.81.81,0,0,0,.78.8.8.8,0,0,0,0-1.59A.81.81,0,0,0,590.94,302.26ZM585,301.11a.21.21,0,0,0-.2-.2h-.13a.21.21,0,0,0-.21.2.2.2,0,0,0,.2.2h.14A.19.19,0,0,0,585,301.11Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M591.34,302.26a.39.39,0,0,1,.78,0,.38.38,0,0,1-.39.38A.38.38,0,0,1,591.34,302.26Zm-3.21,0a.39.39,0,1,1,.38.4A.38.38,0,0,1,588.13,302.22Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M589.51,299.7a.19.19,0,0,0,.2-.19.2.2,0,0,0-.2-.21h-.59a.19.19,0,0,0-.2.19.21.21,0,0,0,.2.21Zm1.71.32-4,0a.21.21,0,0,0,0,.41l4,0a.2.2,0,0,0,0-.4Zm.86,0a.2.2,0,0,0-.2.2.19.19,0,0,0,.2.2h1.12a.19.19,0,0,0,.2-.19.19.19,0,0,0-.19-.21Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon1-4" data-name="svg-mine-icon1">
+                    <circle id="svg-mine-bg1-4" data-name="svg-mine-bg1" class="cls-1" cx="335.28" cy="282.7" r="9"/>
+                    <g id="svg-clor-4" data-name="svg-clor">
+                      <path class="cls-2" d="M330.2,283.66h1.5a1,1,0,0,0,.34-.06l1.22,1.22a.62.62,0,0,0,.86,0l1.19-1.2v1.61a.2.2,0,0,0,.2.2h.62a1.42,1.42,0,0,0,1.42,1.23,1.43,1.43,0,0,0,1.42-1.23h.37a1.43,1.43,0,0,0,2.84,0h.62a.2.2,0,0,0,.2-.2v-.44a.2.2,0,1,0-.4,0V285h-.42a1.43,1.43,0,0,0-2.84,0H339a1.43,1.43,0,0,0-1.42-1.24,1.44,1.44,0,0,0-1.42,1.24h-.41v-5.17a.21.21,0,0,0-.2-.21.2.2,0,0,0-.2.21v1.67h0l-1.62,1.63-1-1v-.39a1,1,0,0,0-1-1H331a.18.18,0,0,0-.19.14l-.81,2.46A.21.21,0,0,0,330.2,283.66Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M343,283.72v-1a1,1,0,0,0-1-1h-.76v-1.15h.12a.2.2,0,0,0,.2-.21v-.69a.2.2,0,0,0-.2-.2h-1.18a.2.2,0,0,0-.2.2v.69a.21.21,0,0,0,.2.21h.12v1.15h-.94v-3a1,1,0,0,0-1-1h-2.44a.6.6,0,0,0-.6.6v.52a.2.2,0,0,0,.4,0v-.52a.2.2,0,0,1,.2-.2h2.44a.6.6,0,0,1,.6.61v3.23a.2.2,0,0,0,.2.2H342a.6.6,0,0,1,.6.6v1a.2.2,0,1,0,.4,0Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M336,278.47v3.43a.2.2,0,0,0,.2.2h2.36a.2.2,0,0,0,.2-.2v-3a.6.6,0,0,0-.6-.6h-2a.2.2,0,0,0-.2.2Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M336.51,285.23a1,1,0,1,1,1,1A1,1,0,0,1,336.51,285.23Zm3.22,0a1,1,0,1,1,1,1A1,1,0,0,1,339.73,285.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M336.75,285.23a.8.8,0,1,0,.79-.8A.8.8,0,0,0,336.75,285.23Zm3.22,0a.79.79,0,1,0,.79-.8A.8.8,0,0,0,340,285.23Zm-6-1.08a.2.2,0,0,0-.21-.2h-.13a.2.2,0,0,0,0,.4h.13A.2.2,0,0,0,334,284.15Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M340.37,285.23a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,340.37,285.23Zm-3.22,0a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,337.15,285.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M338.51,282.69a.2.2,0,0,0,0-.4h-.59a.2.2,0,0,0,0,.4Zm1.72.3h-4a.2.2,0,0,0,0,.4h4a.2.2,0,1,0,0-.4Zm.85,0a.2.2,0,0,0,0,.4h1.13a.2.2,0,1,0,0-.4Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon1-5" data-name="svg-mine-icon1">
+                    <circle id="svg-mine-bg1-5" data-name="svg-mine-bg1" class="cls-1" cx="678.28" cy="299.7" r="9"/>
+                    <g id="svg-clor-5" data-name="svg-clor">
+                      <path class="cls-2" d="M673.2,300.66h1.5a1,1,0,0,0,.34-.06l1.22,1.22a.62.62,0,0,0,.86,0l1.19-1.2v1.61a.2.2,0,0,0,.2.2h.62a1.42,1.42,0,0,0,1.42,1.23,1.43,1.43,0,0,0,1.42-1.23h.37a1.43,1.43,0,0,0,2.84,0h.62a.2.2,0,0,0,.2-.2v-.44a.2.2,0,1,0-.4,0V302h-.42a1.43,1.43,0,0,0-2.84,0H682a1.43,1.43,0,0,0-1.42-1.24,1.44,1.44,0,0,0-1.42,1.24h-.41v-5.17a.21.21,0,0,0-.2-.21.2.2,0,0,0-.2.21v1.67h0l-1.62,1.63-1-1v-.39a1,1,0,0,0-1-1H674a.18.18,0,0,0-.19.14l-.81,2.46A.21.21,0,0,0,673.2,300.66Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M686,300.72v-1a1,1,0,0,0-1-1h-.76v-1.15h.12a.2.2,0,0,0,.2-.21v-.69a.2.2,0,0,0-.2-.2h-1.18a.2.2,0,0,0-.2.2v.69a.21.21,0,0,0,.2.21h.12v1.15h-.94v-3a1,1,0,0,0-1-1h-2.44a.6.6,0,0,0-.6.6v.52a.2.2,0,0,0,.4,0v-.52a.2.2,0,0,1,.2-.2h2.44a.6.6,0,0,1,.6.61v3.23a.2.2,0,0,0,.2.2H685a.6.6,0,0,1,.6.6v1a.2.2,0,1,0,.4,0Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M679,295.47v3.43a.2.2,0,0,0,.2.2h2.36a.2.2,0,0,0,.2-.2v-3a.6.6,0,0,0-.6-.6h-2a.2.2,0,0,0-.2.2Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M679.51,302.23a1,1,0,1,1,1,1A1,1,0,0,1,679.51,302.23Zm3.22,0a1,1,0,1,1,1,1A1,1,0,0,1,682.73,302.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M679.75,302.23a.8.8,0,1,0,.79-.8A.8.8,0,0,0,679.75,302.23Zm3.22,0a.79.79,0,1,0,.79-.8A.8.8,0,0,0,683,302.23Zm-6-1.08a.2.2,0,0,0-.21-.2h-.13a.2.2,0,0,0,0,.4h.13A.2.2,0,0,0,677,301.15Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M683.37,302.23a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,683.37,302.23Zm-3.22,0a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,680.15,302.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M681.51,299.69a.2.2,0,1,0,0-.4h-.59a.2.2,0,0,0,0,.4Zm1.72.3h-4a.2.2,0,1,0,0,.4h4a.2.2,0,1,0,0-.4Zm.85,0a.2.2,0,0,0,0,.4h1.13a.2.2,0,0,0,0-.4Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon1-6" data-name="svg-mine-icon1">
+                    <circle id="svg-mine-bg1-6" data-name="svg-mine-bg1" class="cls-1" cx="751.28" cy="128.7" r="9"/>
+                    <g id="svg-clor-6" data-name="svg-clor">
+                      <path class="cls-2" d="M746.2,129.66h1.5a1,1,0,0,0,.34-.06l1.22,1.22a.62.62,0,0,0,.86,0l1.19-1.2v1.61a.2.2,0,0,0,.2.2h.62a1.42,1.42,0,0,0,1.42,1.23,1.43,1.43,0,0,0,1.42-1.23h.37a1.43,1.43,0,0,0,2.84,0h.62a.2.2,0,0,0,.2-.2v-.44a.2.2,0,0,0-.4,0V131h-.42a1.43,1.43,0,0,0-2.84,0H755a1.43,1.43,0,0,0-1.42-1.24,1.44,1.44,0,0,0-1.42,1.24h-.41v-5.17a.21.21,0,0,0-.2-.21.2.2,0,0,0-.2.21v1.67h0l-1.62,1.63-1-1v-.39a1,1,0,0,0-1-1H747a.18.18,0,0,0-.19.14l-.81,2.46A.21.21,0,0,0,746.2,129.66Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M759,129.72v-1a1,1,0,0,0-1-1h-.76v-1.15h.12a.2.2,0,0,0,.2-.21v-.69a.2.2,0,0,0-.2-.2h-1.18a.2.2,0,0,0-.2.2v.69a.21.21,0,0,0,.2.21h.12v1.15h-.94v-3a1,1,0,0,0-1-1h-2.44a.6.6,0,0,0-.6.6v.52a.2.2,0,1,0,.4,0v-.52a.2.2,0,0,1,.2-.2h2.44a.6.6,0,0,1,.6.61v3.23a.2.2,0,0,0,.2.2H758a.6.6,0,0,1,.6.6v1a.2.2,0,0,0,.4,0Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M752,124.47v3.43a.2.2,0,0,0,.2.2h2.36a.2.2,0,0,0,.2-.2v-3a.6.6,0,0,0-.6-.6h-2a.2.2,0,0,0-.2.2Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M752.51,131.23a1,1,0,1,1,1,1A1,1,0,0,1,752.51,131.23Zm3.22,0a1,1,0,1,1,1,1A1,1,0,0,1,755.73,131.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M752.75,131.23a.8.8,0,1,0,.79-.8A.8.8,0,0,0,752.75,131.23Zm3.22,0a.79.79,0,1,0,.79-.8A.8.8,0,0,0,756,131.23Zm-6-1.08a.2.2,0,0,0-.21-.2h-.13a.2.2,0,1,0,0,.4h.13A.2.2,0,0,0,750,130.15Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M756.37,131.23a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,756.37,131.23Zm-3.22,0a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,753.15,131.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M754.51,128.69a.2.2,0,0,0,0-.4h-.59a.2.2,0,1,0,0,.4Zm1.72.3h-4a.2.2,0,0,0,0,.4h4a.2.2,0,0,0,0-.4Zm.85,0a.2.2,0,1,0,0,.4h1.13a.2.2,0,0,0,0-.4Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon1-7" data-name="svg-mine-icon1">
+                    <circle id="svg-mine-bg1-7" data-name="svg-mine-bg1" class="cls-1" cx="548.28" cy="408.7" r="9"/>
+                    <g id="svg-clor-7" data-name="svg-clor">
+                      <path class="cls-2" d="M543.2,409.66h1.5a1,1,0,0,0,.34-.06l1.22,1.22a.62.62,0,0,0,.86,0l1.19-1.2v1.61a.2.2,0,0,0,.2.2h.62a1.42,1.42,0,0,0,1.42,1.23,1.43,1.43,0,0,0,1.42-1.23h.37a1.43,1.43,0,0,0,2.84,0h.62a.2.2,0,0,0,.2-.2v-.44a.2.2,0,1,0-.4,0V411h-.42a1.43,1.43,0,0,0-2.84,0H552a1.43,1.43,0,0,0-1.42-1.24,1.44,1.44,0,0,0-1.42,1.24h-.41v-5.17a.21.21,0,0,0-.2-.21.2.2,0,0,0-.2.21v1.67h0l-1.62,1.63-1-1v-.39a1,1,0,0,0-1-1H544a.18.18,0,0,0-.19.14l-.81,2.46A.21.21,0,0,0,543.2,409.66Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M556,409.72v-1a1,1,0,0,0-1-1h-.76v-1.15h.12a.2.2,0,0,0,.2-.21v-.69a.2.2,0,0,0-.2-.2h-1.18a.2.2,0,0,0-.2.2v.69a.21.21,0,0,0,.2.21h.12v1.15h-.94v-3a1,1,0,0,0-1-1h-2.44a.6.6,0,0,0-.6.6v.52a.2.2,0,0,0,.4,0v-.52a.2.2,0,0,1,.2-.2h2.44a.6.6,0,0,1,.6.61v3.23a.2.2,0,0,0,.2.2H555a.6.6,0,0,1,.6.6v1a.2.2,0,0,0,.4,0Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M549,404.47v3.43a.2.2,0,0,0,.2.2h2.36a.2.2,0,0,0,.2-.2v-3a.6.6,0,0,0-.6-.6h-2a.2.2,0,0,0-.2.2Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M549.51,411.23a1,1,0,1,1,1,1A1,1,0,0,1,549.51,411.23Zm3.22,0a1,1,0,1,1,1,1A1,1,0,0,1,552.73,411.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M549.75,411.23a.8.8,0,1,0,.79-.8A.8.8,0,0,0,549.75,411.23Zm3.22,0a.79.79,0,1,0,.79-.8A.8.8,0,0,0,553,411.23Zm-6-1.08a.2.2,0,0,0-.21-.2h-.13a.2.2,0,0,0,0,.4h.13A.2.2,0,0,0,547,410.15Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M553.37,411.23a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,553.37,411.23Zm-3.22,0a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,550.15,411.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M551.51,408.69a.2.2,0,0,0,0-.4h-.59a.2.2,0,1,0,0,.4Zm1.72.3h-4a.2.2,0,0,0,0,.4h4a.2.2,0,0,0,0-.4Zm.85,0a.2.2,0,1,0,0,.4h1.13a.2.2,0,1,0,0-.4Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon1-8" data-name="svg-mine-icon1">
+                    <circle id="svg-mine-bg1-8" data-name="svg-mine-bg1" class="cls-1" cx="428.28" cy="367.7" r="9"/>
+                    <g id="svg-clor-8" data-name="svg-clor">
+                      <path class="cls-2" d="M423.2,368.66h1.5a1,1,0,0,0,.34-.06l1.22,1.22a.62.62,0,0,0,.86,0l1.19-1.2v1.61a.2.2,0,0,0,.2.2h.62a1.42,1.42,0,0,0,1.42,1.23,1.43,1.43,0,0,0,1.42-1.23h.37a1.43,1.43,0,0,0,2.84,0h.62a.2.2,0,0,0,.2-.2v-.44a.2.2,0,0,0-.4,0V370h-.42a1.43,1.43,0,0,0-2.84,0H432a1.43,1.43,0,0,0-1.42-1.24,1.44,1.44,0,0,0-1.42,1.24h-.41v-5.17a.21.21,0,0,0-.2-.21.2.2,0,0,0-.2.21v1.67h0l-1.62,1.63-1-1v-.39a1,1,0,0,0-1-1H424a.18.18,0,0,0-.19.14l-.81,2.46A.21.21,0,0,0,423.2,368.66Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M436,368.72v-1a1,1,0,0,0-1-1h-.76v-1.15h.12a.2.2,0,0,0,.2-.21v-.69a.2.2,0,0,0-.2-.2h-1.18a.2.2,0,0,0-.2.2v.69a.21.21,0,0,0,.2.21h.12v1.15h-.94v-3a1,1,0,0,0-1-1h-2.44a.6.6,0,0,0-.6.6v.52a.2.2,0,1,0,.4,0v-.52a.2.2,0,0,1,.2-.2h2.44a.6.6,0,0,1,.6.61v3.23a.2.2,0,0,0,.2.2H435a.6.6,0,0,1,.6.6v1a.2.2,0,1,0,.4,0Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M429,363.47v3.43a.2.2,0,0,0,.2.2h2.36a.2.2,0,0,0,.2-.2v-3a.6.6,0,0,0-.6-.6h-2a.2.2,0,0,0-.2.2Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M429.51,370.23a1,1,0,1,1,1,1A1,1,0,0,1,429.51,370.23Zm3.22,0a1,1,0,1,1,1,1A1,1,0,0,1,432.73,370.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M429.75,370.23a.8.8,0,1,0,.79-.8A.8.8,0,0,0,429.75,370.23Zm3.22,0a.79.79,0,1,0,.79-.8A.8.8,0,0,0,433,370.23Zm-6-1.08a.2.2,0,0,0-.21-.2h-.13a.2.2,0,1,0,0,.4h.13A.2.2,0,0,0,427,369.15Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M433.37,370.23a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,433.37,370.23Zm-3.22,0a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,430.15,370.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M431.51,367.69a.2.2,0,0,0,0-.4h-.59a.2.2,0,0,0,0,.4Zm1.72.3h-4a.2.2,0,0,0,0,.4h4a.2.2,0,1,0,0-.4Zm.85,0a.2.2,0,0,0,0,.4h1.13a.2.2,0,1,0,0-.4Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon1-9" data-name="svg-mine-icon1">
+                    <circle id="svg-mine-bg1-9" data-name="svg-mine-bg1" class="cls-1" cx="765.28" cy="285.7" r="9"/>
+                    <g id="svg-clor-9" data-name="svg-clor">
+                      <path class="cls-2" d="M760.2,286.66h1.5a1,1,0,0,0,.34-.06l1.22,1.22a.62.62,0,0,0,.86,0l1.19-1.2v1.61a.2.2,0,0,0,.2.2h.62a1.42,1.42,0,0,0,1.42,1.23,1.43,1.43,0,0,0,1.42-1.23h.37a1.43,1.43,0,0,0,2.84,0h.62a.2.2,0,0,0,.2-.2v-.44a.2.2,0,0,0-.4,0V288h-.42a1.43,1.43,0,0,0-2.84,0H769a1.43,1.43,0,0,0-1.42-1.24,1.44,1.44,0,0,0-1.42,1.24h-.41v-5.17a.21.21,0,0,0-.2-.21.2.2,0,0,0-.2.21v1.67h0l-1.62,1.63-1-1v-.39a1,1,0,0,0-1-1H761a.18.18,0,0,0-.19.14l-.81,2.46A.21.21,0,0,0,760.2,286.66Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M773,286.72v-1a1,1,0,0,0-1-1h-.76v-1.15h.12a.2.2,0,0,0,.2-.21v-.69a.2.2,0,0,0-.2-.2h-1.18a.2.2,0,0,0-.2.2v.69a.21.21,0,0,0,.2.21h.12v1.15h-.94v-3a1,1,0,0,0-1-1h-2.44a.6.6,0,0,0-.6.6v.52a.2.2,0,0,0,.4,0v-.52a.2.2,0,0,1,.2-.2h2.44a.6.6,0,0,1,.6.61v3.23a.2.2,0,0,0,.2.2H772a.6.6,0,0,1,.6.6v1a.2.2,0,0,0,.4,0Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M766,281.47v3.43a.2.2,0,0,0,.2.2h2.36a.2.2,0,0,0,.2-.2v-3a.6.6,0,0,0-.6-.6h-2a.2.2,0,0,0-.2.2Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M766.51,288.23a1,1,0,1,1,1,1A1,1,0,0,1,766.51,288.23Zm3.22,0a1,1,0,1,1,1,1A1,1,0,0,1,769.73,288.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M766.75,288.23a.8.8,0,1,0,.79-.8A.8.8,0,0,0,766.75,288.23Zm3.22,0a.79.79,0,1,0,.79-.8A.8.8,0,0,0,770,288.23Zm-6-1.08a.2.2,0,0,0-.21-.2h-.13a.2.2,0,0,0,0,.4h.13A.2.2,0,0,0,764,287.15Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M770.37,288.23a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,770.37,288.23Zm-3.22,0a.39.39,0,0,1,.39-.39.39.39,0,1,1,0,.77A.39.39,0,0,1,767.15,288.23Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M768.51,285.69a.2.2,0,1,0,0-.4h-.59a.2.2,0,1,0,0,.4Zm1.72.3h-4a.2.2,0,0,0,0,.4h4a.2.2,0,0,0,0-.4Zm.85,0a.2.2,0,0,0,0,.4h1.13a.2.2,0,0,0,0-.4Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                </svg>
+
+                <div class="svg-right-top" >
+                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+
+                </div>
+
+                <div class="svg-right-bottom" >
+                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
+                  <div  class="alert alert-danger alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>报警提示需要加油
+                  </div>
+                  <div  class="alert alert-danger alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>报警提示需要加油
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-8 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>最新任务</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="">
+                <table  class="table table-striped smart-form table-height-20">
+                  <thead>
+                  <tr >
+                    <th  >序号</th>
+                    <th >作业时间</th>
+                    <th>电铲编号</th>
+                    <th>作业区域</th>
+                    <th>区块编号</th>
+                    <th >作业区域矿石品味</th>
+                    <th>人工修改</th>
+                    <th>任务下发</th>
+                  </tr>
+                  </thead>
+                  <tbody  >
+                  <tr  >
+                    <td>1</td>
+                    <td>2018-12-13</td>
+                    <td>A001</td>
+                    <td>作业区域</td>
+                    <td>A1001</td>
+                    <td  >作业区域矿石品味</td>
+                    <td>人工修改</td>
+                    <td>任务下发</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>2018-12-13</td>
+                    <td>A002</td>
+                    <td>作业区域</td>
+                    <td>A1001</td>
+                    <td  >作业区域矿石品味</td>
+                    <td>人工修改</td>
+                    <td>任务下发</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-4 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>报警</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>设备编号</th>
+                    <th>内容 </th>
+                    <th>时间</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>电铲状态</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="">
+                <table  class="table table-striped smart-form table-border-th table-height-20">
+                  <thead>
+                  <tr >
+                    <th rowspan="2">牙轮钻机编号</th>
+                    <th colspan="4">参数显示</th>
+                    <th rowspan="2">运行状态</th>
+                    <th rowspan="2">故障原因</th>
+                    <th rowspan="2">通话</th>
+                    <th rowspan="2">当前位置</th>
+                    <th  rowspan="2">累计铲数</th>
+                    <th  rowspan="2">参数上下限报警日志</th>
+                    <th  rowspan="2">作业区域警告日志</th>
+                    <th rowspan="2">运行轨迹查询</th>
+                  </tr>
+                  <tr>
+                    <th >电流</th>
+                    <th >电压</th>
+                    <th >转速</th>
+                    <th style="border-right: 1px solid #ddd">油量</th>
+                  </tr>
+                  </thead>
+                  <tbody  >
+                  <tr  >
+                    <td >A001</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                      <span>
+                      <span class="label-normal" >正常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >15</td>
+                    <td>参数上下限报警日志</td>
+                    <td>作业区域警告日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  class="odd shown">
+                    <td >A002</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                    <span>
+                      <span class="label-blue" >维修</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">机械故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >15</td>
+                    <td>参数上下限报警日志</td>
+                    <td>作业区域警告日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  >
+                    <td >A003</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">钻头故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >15</td>
+                    <td>参数上下限报警日志</td>
+                    <td>作业区域警告日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  >
+                    <td >A004</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">履带故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >15</td>
+                    <td>参数上下限报警日志</td>
+                    <td>作业区域警告日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  </tbody>
+
+                </table>
+
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>

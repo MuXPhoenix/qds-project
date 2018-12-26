@@ -115,6 +115,16 @@ export const routes: Routes = [
             path: 'nfc',
             loadChildren: 'app/+nfc/nfc.module#NfcModule',
             data: {pageTitle: 'Nfc'}
+        },
+        {
+            path: 'ansteel-mining',
+            loadChildren: 'app/ansteel-mining/ansteel-mining.module#AnsteelMiningModule',
+            data: {pageTitle: 'AnsteelMining'}
+        },
+        {
+            path: 'mining-mes',
+            loadChildren: 'app/mining-mes/mining-mes.module#MiningMesModule',
+            data: {pageTitle: 'MiningMes'}
         }
     ]
   },

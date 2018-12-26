@@ -1,0 +1,231 @@
+<!--铲装品位智能跟踪模块-状态-->
+<div id="content">
+  <sa-widgets-grid>
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="nav nav-tabs mi-nav-tabs">
+          <li><a routerLink="/ansteel-mining/scraper-index">首页</a></li>
+          <li  class="active"><a routerLink="/ansteel-mining/scraper-status">状态</a></li>
+          <li><a routerLink="/ansteel-mining/scraper-alarm">报警</a></li>
+          <li><a routerLink="/ansteel-mining/scraper-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/scraper-dutyshift">交接班</a></li>
+          <li><a routerLink="/ansteel-mining/scraper-fuelling">加油调度</a></li>
+        </ul>
+      </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>电铲状态</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="">
+                <table  class="table table-striped smart-form table-border-th table-height-20">
+                  <thead>
+                  <tr >
+                    <th rowspan="2">牙轮钻机编号</th>
+                    <th colspan="4">参数显示</th>
+                    <th rowspan="2">运行状态</th>
+                    <th rowspan="2">故障原因</th>
+                    <th rowspan="2">通话</th>
+                    <th rowspan="2">当前位置</th>
+                    <th  rowspan="2">累计铲数</th>
+                    <th  rowspan="2">参数上下限报警日志</th>
+                    <th  rowspan="2">作业区域警告日志</th>
+                    <th rowspan="2">运行轨迹查询</th>
+                  </tr>
+                  <tr>
+                    <th >电流</th>
+                    <th >电压</th>
+                    <th >转速</th>
+                    <th style="border-right: 1px solid #ddd">油量</th>
+                  </tr>
+                  </thead>
+                  <tbody  >
+                  <tr  >
+                    <td >A001</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                      <span>
+                      <span class="label-normal" >正常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >15</td>
+                    <td>参数上下限报警日志</td>
+                    <td>作业区域警告日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  class="odd shown">
+                    <td >A002</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                    <span>
+                      <span class="label-blue" >维修</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">机械故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >15</td>
+                    <td>参数上下限报警日志</td>
+                    <td>作业区域警告日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  >
+                    <td >A003</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">钻头故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >15</td>
+                    <td>参数上下限报警日志</td>
+                    <td>作业区域警告日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  >
+                    <td >A004</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">履带故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >15</td>
+                    <td>参数上下限报警日志</td>
+                    <td>作业区域警告日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  </tbody>
+
+                </table>
+
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>
+
+<div class="slide-content"  style="position: fixed; display: block; z-index: 9991;">
+  <div class="entity-well entity-well--tasks">
+    <div class="entity-well-header">
+      <span class="approval-head">A0001
+        <span ><span>电铲状态</span>
+        </span>
+      </span>
+      <ul class="entity-well-header-nav nav s pull-right">
+        <li class="divider-v"></li>
+        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+      <div class="approve-top approve-intro">
+        <div class="approve-formschema">
+          <P class="alert alert-info">基本信息</P>
+          <table class="table table-striped table-forum">
+            <tbody>
+            <tr>
+              <td class="width-120">钻孔编号:</td>
+              <td class="">A0003</td>
+              <td class="width-120">设计钻孔坐标:</td>
+              <td class="">116.307629,40.058359</td>
+            </tr>
+            <tr>
+              <td class="width-120">钻机编号:</td>
+              <td >A0001</td>
+              <td class="width-120">钻机钻孔定位坐标:</td>
+              <td class="">116.307629,40.058359</td>
+            </tr>
+            <tr>
+              <td class="width-120">PDA编号：</td>
+              <td >A0001</td>
+              <td class="width-120">操作人员:</td>
+              <td class="">张三</td>
+            </tr>
+            <tr>
+              <td class="width-120">PDA钻孔定位坐标:</td>
+              <td >116.307629,40.058359</td>
+              <td class="width-120">分析元素:</td>
+              <td class="">铁</td>
+            </tr>
+            <tr>
+              <td class="width-120">化验分析结果:</td>
+              <td class="" colspan="3">28%</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="approve-foot show ">
+        <div class="tFlexbox tAlignCenter tJustifyCenter"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,460 @@
+<!--牙轮生产智能指挥模块-->
+
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="nav nav-tabs mi-nav-tabs">
+          <li class="active"><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-dutyshift">交接班</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-fuelling">加油调度</a></li>
+        </ul>
+      </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>（GIS）图</h2>
+          </header>
+          <div>
+            <div class="widget-body svg-no-margin" >
+              <div class="col-sm-12">
+
+                <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1364 500">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #357180;
+                      }
+
+                      .cls-2 {
+                        fill: #fff;
+                      }
+                    </style>
+                  </defs>
+                  <title>mine1</title>
+                  <image width="1364" height="500" xlink:href="assets/img/qidashan/mine.jpg"/>
+                  <g id="svg-mine-icon3">
+                    <circle id="svg-mine-bg3" class="cls-1" cx="608.34" cy="325.7" r="9"/>
+                    <g id="svg-clor">
+                      <path class="cls-2" d="M615,322.67h-1.28v1.48h0l-1.46,2.22,0,.74a.74.74,0,0,1-.74.74h-.37V329a.36.36,0,0,1-.37.37.37.37,0,0,1-.37-.37v-1.11H610a.74.74,0,0,1-.74-.74v-.74l-1.47-2.22h0v-1.48h-1.31a.38.38,0,0,1-.37-.37.37.37,0,0,1,.37-.37h1.31v-.74a.75.75,0,0,1,.74-.75H613a.75.75,0,0,1,.74.75v.74H615a.36.36,0,0,1,.37.37A.37.37,0,0,1,615,322.67Zm-3.52-.74H610a.37.37,0,0,0-.37.37.38.38,0,0,0,.37.37h1.48a.37.37,0,0,0,.37-.37A.36.36,0,0,0,611.45,321.93Zm-5.11,5.28c0-.06.27,0,.49.19l2.15,1.43c.06,0,.09.09.08.11l-.12.2s-.07,0-.13,0L606.49,328c-.23-.12-.44-.27-.4-.33l.25-.44Zm.72,2.91,1.52-.24a.06.06,0,0,1,.08,0l.06.22a.09.09,0,0,1-.05.07l-1.44.56c-.15.06-.3.06-.32,0l-.13-.49c0-.07.12-.14.28-.16Zm3.67-.78c.57,0,1.15.23,1.27.61s-.45.86-1.29.86-1.41-.42-1.26-.86S610.16,329.34,610.73,329.34Zm-.55.87h.29l0,.14.22-.1.21.06,0-.14.26-.05-.14-.1.16-.14H611l0-.16-.23.11-.24-.09,0,.17-.3,0,.19.11-.17.14Zm2.26-1.38,2.16-1.43c.21-.15.45-.25.49-.19l.25.44c0,.06-.17.21-.41.33l-2.32,1.15a.12.12,0,0,1-.13,0l-.11-.2s0-.07.07-.11Zm.33,1.09s0-.05.08,0l1.52.24c.15,0,.29.09.27.16l-.13.49c0,.06-.17.06-.31,0l-1.44-.56s-.06,0,0-.07l.06-.22Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon3-2" data-name="svg-mine-icon3">
+                    <circle id="svg-mine-bg3-2" data-name="svg-mine-bg3" class="cls-1" cx="522.34" cy="315.7" r="9"/>
+                    <g id="svg-clor-2" data-name="svg-clor">
+                      <path class="cls-2" d="M529,312.71h-1.29v1.48h0l-1.49,2.21,0,.74a.73.73,0,0,1-.75.73h-.37V319a.37.37,0,0,1-.37.37.38.38,0,0,1-.37-.38v-1.11H524a.74.74,0,0,1-.73-.75v-.74l-1.45-2.23h0v-1.49h-1.31a.37.37,0,1,1,0-.74h1.31v-.74a.74.74,0,0,1,.75-.73l4.44,0a.75.75,0,0,1,.74.75V312H529a.36.36,0,0,1,.36.37A.37.37,0,0,1,529,312.71Zm-3.51-.77-1.48,0a.37.37,0,1,0,0,.74l1.48,0a.37.37,0,0,0,.37-.37A.36.36,0,0,0,525.49,311.94Zm-5.16,5.23c0-.05.27.05.48.19l2.15,1.46s.08.08.07.11l-.12.19s-.07,0-.13,0L520.47,318c-.23-.12-.44-.28-.4-.34l.26-.44Zm.69,2.92,1.52-.23s.08,0,.08,0l.06.22s0,.06,0,.08l-1.45.54c-.14.06-.3.06-.31,0l-.13-.49c0-.07.12-.14.28-.16Zm3.67-.74c.58,0,1.15.23,1.27.61s-.46.87-1.29.86-1.41-.44-1.26-.88S524.12,319.34,524.69,319.35Zm-.55.86h.29l.05.14.22-.1.2.07.05-.15.26,0-.14-.11.16-.13H525l0-.16-.24.11-.24-.09,0,.17-.3,0,.19.12-.17.14Zm2.27-1.36,2.17-1.42c.22-.14.46-.24.49-.18l.25.44c0,.06-.17.22-.41.33l-2.33,1.13c-.06,0-.11,0-.13,0l-.11-.19s0-.07.07-.11Zm.32,1.09s0,0,.08,0l1.52.25c.15,0,.29.1.27.17l-.13.49c0,.06-.17.05-.32,0l-1.43-.57s-.06-.05-.05-.07l.06-.22Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon3-3" data-name="svg-mine-icon3">
+                    <circle id="svg-mine-bg3-3" data-name="svg-mine-bg3" class="cls-1" cx="673.34" cy="310.7" r="9"/>
+                    <g id="svg-clor-3" data-name="svg-clor">
+                      <path class="cls-2" d="M680,307.67h-1.28v1.48h0l-1.46,2.22,0,.74a.74.74,0,0,1-.74.74h-.37V314a.36.36,0,0,1-.37.37.37.37,0,0,1-.37-.37v-1.11H675a.74.74,0,0,1-.74-.74v-.74l-1.47-2.22h0v-1.48h-1.31a.38.38,0,0,1-.37-.37.37.37,0,0,1,.37-.37h1.31v-.74a.75.75,0,0,1,.74-.75H678a.75.75,0,0,1,.74.75v.74H680a.36.36,0,0,1,.37.37A.37.37,0,0,1,680,307.67Zm-3.52-.74H675a.37.37,0,0,0-.37.37.38.38,0,0,0,.37.37h1.48a.37.37,0,0,0,.37-.37A.36.36,0,0,0,676.45,306.93Zm-5.11,5.28c0-.06.27,0,.49.19l2.15,1.43c.06,0,.09.09.08.11l-.12.2s-.07,0-.13,0L671.49,313c-.23-.12-.44-.27-.4-.33l.25-.44Zm.72,2.91,1.52-.24a.06.06,0,0,1,.08,0l.06.22a.09.09,0,0,1-.05.07l-1.44.56c-.15.06-.3.06-.32,0l-.13-.49c0-.07.12-.14.28-.16Zm3.67-.78c.57,0,1.15.23,1.27.61s-.45.86-1.29.86-1.41-.42-1.26-.86S675.16,314.34,675.73,314.34Zm-.55.87h.29l0,.14.22-.1.21.06,0-.14.26-.05-.14-.1.16-.14H676l0-.16-.23.11-.24-.09,0,.17-.3,0,.19.11-.17.14Zm2.26-1.38,2.16-1.43c.21-.15.45-.25.49-.19l.25.44c0,.06-.17.21-.41.33l-2.32,1.15a.12.12,0,0,1-.13,0l-.11-.2s0-.07.07-.11Zm.33,1.09s0-.05.08,0l1.52.24c.15,0,.29.09.27.16l-.13.49c0,.06-.17.06-.31,0l-1.44-.56s-.06,0,0-.07l.06-.22Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon3-4" data-name="svg-mine-icon3">
+                    <circle id="svg-mine-bg3-4" data-name="svg-mine-bg3" class="cls-1" cx="791.34" cy="272.7" r="9"/>
+                    <g id="svg-clor-4" data-name="svg-clor">
+                      <path class="cls-2" d="M798,269.67h-1.28v1.48h0l-1.46,2.22,0,.74a.74.74,0,0,1-.74.74h-.37V276a.36.36,0,0,1-.37.37.37.37,0,0,1-.37-.37v-1.11H793a.74.74,0,0,1-.74-.74v-.74l-1.47-2.22h0v-1.48h-1.31a.38.38,0,0,1-.37-.37.37.37,0,0,1,.37-.37h1.31v-.74a.75.75,0,0,1,.74-.75H796a.75.75,0,0,1,.74.75v.74H798a.36.36,0,0,1,.37.37A.37.37,0,0,1,798,269.67Zm-3.52-.74H793a.37.37,0,0,0-.37.37.38.38,0,0,0,.37.37h1.48a.37.37,0,0,0,.37-.37A.36.36,0,0,0,794.45,268.93Zm-5.11,5.28c0-.06.27,0,.49.19l2.15,1.43c.06,0,.09.09.08.11l-.12.2s-.07,0-.13,0L789.49,275c-.23-.12-.44-.27-.4-.33l.25-.44Zm.72,2.91,1.52-.24a.06.06,0,0,1,.08,0l.06.22a.09.09,0,0,1-.05.07l-1.44.56c-.15.06-.3.06-.32,0l-.13-.49c0-.07.12-.14.28-.16Zm3.67-.78c.57,0,1.15.23,1.27.61s-.45.86-1.29.86-1.41-.42-1.26-.86S793.16,276.34,793.73,276.34Zm-.55.87h.29l0,.14.22-.1.21.06,0-.14.26-.05-.14-.1.16-.14H794l0-.16-.23.11-.24-.09,0,.17-.3,0,.19.11-.17.14Zm2.26-1.38,2.16-1.43c.21-.15.45-.25.49-.19l.25.44c0,.06-.17.21-.41.33l-2.32,1.15a.12.12,0,0,1-.13,0l-.11-.2s0-.07.07-.11Zm.33,1.09s0-.05.08,0l1.52.24c.15,0,.29.09.27.16l-.13.49c0,.06-.17.06-.31,0l-1.44-.56s-.06,0,0-.07l.06-.22Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon3-5" data-name="svg-mine-icon3">
+                    <circle id="svg-mine-bg3-5" data-name="svg-mine-bg3" class="cls-1" cx="335.34" cy="291.7" r="9"/>
+                    <g id="svg-clor-5" data-name="svg-clor">
+                      <path class="cls-2" d="M342,288.67h-1.28v1.48h0l-1.46,2.22,0,.74a.74.74,0,0,1-.74.74h-.37V295a.36.36,0,0,1-.37.37.37.37,0,0,1-.37-.37v-1.11H337a.74.74,0,0,1-.74-.74v-.74l-1.47-2.22h0v-1.48h-1.31a.38.38,0,0,1-.37-.37.37.37,0,0,1,.37-.37h1.31v-.74a.75.75,0,0,1,.74-.75H340a.75.75,0,0,1,.74.75v.74H342a.36.36,0,0,1,.37.37A.37.37,0,0,1,342,288.67Zm-3.52-.74H337a.37.37,0,0,0-.37.37.38.38,0,0,0,.37.37h1.48a.37.37,0,0,0,.37-.37A.36.36,0,0,0,338.45,287.93Zm-5.11,5.28c0-.06.27,0,.49.19l2.15,1.43c.06,0,.09.09.08.11l-.12.2s-.07,0-.13,0L333.49,294c-.23-.12-.44-.27-.4-.33l.25-.44Zm.72,2.91,1.52-.24a.06.06,0,0,1,.08,0l.06.22a.09.09,0,0,1-.05.07l-1.44.56c-.15.06-.3.06-.32,0l-.13-.49c0-.07.12-.14.28-.16Zm3.67-.78c.57,0,1.15.23,1.27.61s-.45.86-1.29.86-1.41-.42-1.26-.86S337.16,295.34,337.73,295.34Zm-.55.87h.29l0,.14.22-.1.21.06,0-.14.26-.05-.14-.1.16-.14H338l0-.16-.23.11-.24-.09,0,.17-.3,0,.19.11-.17.14Zm2.26-1.38,2.16-1.43c.21-.15.45-.25.49-.19l.25.44c0,.06-.17.21-.41.33l-2.32,1.15a.12.12,0,0,1-.13,0l-.11-.2s0-.07.07-.11Zm.33,1.09s0-.05.08,0l1.52.24c.15,0,.29.09.27.16l-.13.49c0,.06-.17.06-.31,0l-1.44-.56s-.06,0-.05-.07l.06-.22Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon3-6" data-name="svg-mine-icon3">
+                    <circle id="svg-mine-bg3-6" data-name="svg-mine-bg3" class="cls-1" cx="243.34" cy="197.7" r="9"/>
+                    <g id="svg-clor-6" data-name="svg-clor">
+                      <path class="cls-2" d="M250,194.67h-1.28v1.48h0l-1.46,2.22,0,.74a.74.74,0,0,1-.74.74h-.37V201a.36.36,0,0,1-.37.37.37.37,0,0,1-.37-.37v-1.11H245a.74.74,0,0,1-.74-.74v-.74l-1.47-2.22h0v-1.48h-1.31a.38.38,0,0,1-.37-.37.37.37,0,0,1,.37-.37h1.31v-.74a.75.75,0,0,1,.74-.75H248a.75.75,0,0,1,.74.75v.74H250a.36.36,0,0,1,.37.37A.37.37,0,0,1,250,194.67Zm-3.52-.74H245a.37.37,0,0,0-.37.37.38.38,0,0,0,.37.37h1.48a.37.37,0,0,0,.37-.37A.36.36,0,0,0,246.45,193.93Zm-5.11,5.28c0-.06.27,0,.49.19l2.15,1.43c.06,0,.09.09.08.11l-.12.2s-.07,0-.13,0L241.49,200c-.23-.12-.44-.27-.4-.33l.25-.44Zm.72,2.91,1.52-.24a.06.06,0,0,1,.08,0l.06.22a.09.09,0,0,1-.05.07l-1.44.56c-.15.06-.3.06-.32,0l-.13-.49c0-.07.12-.14.28-.16Zm3.67-.78c.57,0,1.15.23,1.27.61s-.45.86-1.29.86-1.41-.42-1.26-.86S245.16,201.34,245.73,201.34Zm-.55.87h.29l.05.14.22-.1.21.06,0-.14.26,0-.14-.1.16-.14H246l0-.16-.23.11-.24-.09,0,.17-.3.05.19.11-.17.14Zm2.26-1.38,2.16-1.43c.21-.15.45-.25.49-.19l.25.44c0,.06-.17.21-.41.33l-2.32,1.15a.12.12,0,0,1-.13,0l-.11-.2s0-.07.07-.11Zm.33,1.09s0,0,.08,0l1.52.24c.15,0,.29.09.27.16l-.13.49c0,.06-.17.06-.31,0l-1.44-.56s-.06-.05,0-.07l.06-.22Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                </svg>
+
+
+                <div class="svg-right-top" >
+                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+
+                </div>
+
+                <div class="svg-right-bottom" >
+                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
+                  <div  class="alert alert-danger alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>报警提示需要加油
+                  </div>
+                  <div  class="alert alert-danger alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>报警提示需要加油
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-8 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>最新任务</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="">
+                <table  class="table table-striped smart-form table-height-20">
+                  <thead>
+                  <tr >
+                    <th  >序号</th>
+                    <th >日期</th>
+                    <th >时间</th>
+                    <th >牙轮钻机编号</th>
+                    <th >钻孔组位置</th>
+                    <th  >钻孔深度</th>
+                    <th  >完成进度</th>
+                    <th  >人工修改</th>
+                    <th >任务下发</th>
+                  </tr>
+                  </thead>
+                  <tbody  >
+                  <tr  >
+                    <td  >1</td>
+                    <td  >2018-12-13</td>
+                    <td  >11：20</td>
+                    <td  >A001</td>
+                    <td  >钻孔组位置</td>
+                    <td  >钻孔深度</td>
+                    <td  >完成进度</td>
+                    <td  >人工修改</td>
+                    <td  >任务下发</td>
+                  </tr>
+                  <tr>
+                    <td  >1</td>
+                    <td  >2018-12-13</td>
+                    <td  >11：20</td>
+                    <td  >A001</td>
+                    <td  >钻孔组位置</td>
+                    <td  >钻孔深度</td>
+                    <td  >完成进度</td>
+                    <td  >人工修改</td>
+                    <td>任务下发</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-4 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>报警</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>设备编号</th>
+                    <th>内容 </th>
+                    <th>时间</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              </div>
+
+              
+            </div>
+
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>牙轮钻机状态</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="">
+                <table  class="table table-striped smart-form table-border-th table-height-20">
+                  <thead>
+                  <tr >
+                    <th rowspan="2">牙轮钻机编号</th>
+                    <th colspan="4">参数显示</th>
+                    <th rowspan="2">运行状态</th>
+                    <th rowspan="2">故障原因</th>
+                    <th rowspan="2">通话</th>
+                    <th rowspan="2">当前位置</th>
+                    <th rowspan="2">累计钻孔深度</th>
+                    <th rowspan="2">参数上下限报警日志</th>
+                    <th rowspan="2">运行轨迹查询</th>
+                  </tr>
+                  <tr>
+                    <th >电流</th>
+                    <th >电压</th>
+                    <th >转速</th>
+                    <th style="border-right: 1px solid #ddd">油量</th>
+                  </tr>
+                  </thead>
+                  <tbody  >
+                  <tr  >
+                    <td >A001</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                      <span>
+                      <span class="label-normal" >正常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >参数上下限报警日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  class="odd shown">
+                    <td >A002</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                    <span>
+                      <span class="label-blue" >维修</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">机械故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >参数上下限报警日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  >
+                    <td >A003</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">钻头故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >参数上下限报警日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  >
+                    <td >A004</td>
+                    <td >4.8 <sub>A</sub></td>
+                    <td >26.5 <sub>V</sub></td>
+                    <td >200000 <sub>rpm</sub></td>
+                    <td >100 <sub> L</sub></td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">履带故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >参数上下限报警日志</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  </tbody>
+
+                </table>
+
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>

@@ -1,0 +1,57 @@
+<!--交接班-状态-->
+<div id="content">
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <div class="col-sm-12">
+        <ul class="nav nav-tabs mi-nav-tabs">
+          <li class="dropdown">
+            <a  class="dropdown-toggle" data-toggle="dropdown">油槽车<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/ansteel-mining/tramcar-index">电动轮</a></li>
+              <li class="divider"></li>
+              <li><a routerLink="/ansteel-mining/tanktruck-index">油槽车</a></li>
+              <li class="divider"></li>
+              <li><a routerLink="/ansteel-mining/otherautomobile-index">外勤车</a></li>
+              <li class="divider"></li>
+              <li><a routerLink="/ansteel-mining/projectautomobile-index">工程车</a></li>
+            </ul>
+          </li>
+          <li ><a routerLink="/ansteel-mining/tanktruck-index">首页</a></li>
+          <li class="active"><a routerLink="/ansteel-mining/tanktruck-status">状态</a></li>
+          <li ><a routerLink="/ansteel-mining/tanktruck-alarm" >报警</a></li>
+          <li><a routerLink="/ansteel-mining/tanktruck-task">任务列表</a></li>
+          <li ><a routerLink="/ansteel-mining/tanktruck-dutyshift">交接班</a></li>
+          <li ><a routerLink="/ansteel-mining/tanktruck-fuelling">加油调度</a></li>
+        </ul>
+
+
+      </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" >
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>状态</h2>
+          </header>
+
+          <div>
+            <!--小部件内容-->
+            <div class="widget-body no-padding">
+
+
+            </div>
+          </div>
+
+        </sa-widget>
+      </article>
+
+
+    </div>
+
+
+
+
+  </sa-widgets-grid>
+</div>

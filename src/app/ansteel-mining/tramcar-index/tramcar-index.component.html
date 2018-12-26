@@ -1,0 +1,499 @@
+<!--电动轮-首页-->
+
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <ul class="nav nav-tabs mi-nav-tabs">
+          <li  class="dropdown">
+            <a  class="dropdown-toggle" data-toggle="dropdown" >电动轮<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/ansteel-mining/tramcar-index">电动轮</a></li>
+              <li class="divider"></li>
+              <li><a routerLink="/ansteel-mining/tanktruck-index">油槽车</a></li>
+              <li class="divider"></li>
+              <li><a routerLink="/ansteel-mining/otherautomobile-index">外勤车</a></li>
+              <li class="divider"></li>
+              <li><a routerLink="/ansteel-mining/projectautomobile-index">工程车</a></li>
+            </ul>
+          </li>
+          <li class="active"><a routerLink="/ansteel-mining/tramcar-index">首页</a></li>
+          <li><a routerLink="/ansteel-mining/tramcar-status">状态</a></li>
+          <li><a routerLink="/ansteel-mining/tramcar-alarm" >报警</a></li>
+          <li><a routerLink="/ansteel-mining/tramcar-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/tramcar-dutyshift">交接班</a></li>
+          <li><a routerLink="/ansteel-mining/tramcar-fuelling">加油调度</a></li>
+        </ul>
+
+      </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>车辆调度</h2>
+          </header>
+          <div>
+            <div class="widget-body svg-no-margin" >
+              <div class="col-sm-12">
+
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1364 500">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #f37c2a;
+                      }
+
+                      .cls-2 {
+                        fill: #fff;
+                      }
+                    </style>
+                  </defs>
+                  <image width="1364" height="500" xlink:href="assets/img/qidashan/mine.jpg"/>
+                  <g id="svg-mine-icon2">
+                    <circle id="svg-mine-bg2" class="cls-1" cx="273.81" cy="183.7" r="9"/>
+                    <path id="svg-clor" class="cls-2" d="M280.81,179.76v6a.78.78,0,0,1,0,.16.2.2,0,0,1-.08.1l-.1.07a.28.28,0,0,1-.13,0h-.41a1.46,1.46,0,0,1-.44,1.06,1.47,1.47,0,0,1-1.06.44,1.5,1.5,0,0,1-1.5-1.5h-2.25a1.42,1.42,0,0,1-.44,1.06,1.5,1.5,0,0,1-2.55-1.06H271a.39.39,0,0,1-.14,0l-.09-.07a.15.15,0,0,1-.08-.11.34.34,0,0,1,0-.15.38.38,0,0,1,.37-.37v-2.3a1.72,1.72,0,0,1,0-.2,1,1,0,0,1,0-.22,1.26,1.26,0,0,1,.08-.18,1.09,1.09,0,0,1,.13-.17l1.16-1.16a1,1,0,0,1,.64-.26h.94v-1.13a.33.33,0,0,1,.11-.26.36.36,0,0,1,.26-.11h6a.36.36,0,0,1,.26.11A.33.33,0,0,1,280.81,179.76Zm-9,3.37h2.25v-1.5h-.93a.18.18,0,0,0-.13.06l-1.14,1.14a.17.17,0,0,0-.05.13Zm2,3.52a.74.74,0,1,0-.52.22A.69.69,0,0,0,273.85,186.65Zm5.24,0a.74.74,0,1,0-.52.22A.71.71,0,0,0,279.09,186.65Z" transform="translate(-2)"/>
+                  </g>
+                  <g id="svg-mine-icon2-2" data-name="svg-mine-icon2">
+                    <circle id="svg-mine-bg2-2" data-name="svg-mine-bg2" class="cls-1" cx="692.81" cy="183.7" r="9"/>
+                    <path id="svg-clor-2" data-name="svg-clor" class="cls-2" d="M699.81,179.76v6a.78.78,0,0,1,0,.16.2.2,0,0,1-.08.1l-.1.07a.28.28,0,0,1-.13,0h-.41a1.46,1.46,0,0,1-.44,1.06,1.47,1.47,0,0,1-1.06.44,1.5,1.5,0,0,1-1.5-1.5h-2.25a1.42,1.42,0,0,1-.44,1.06,1.5,1.5,0,0,1-2.55-1.06H690a.39.39,0,0,1-.14,0l-.09-.07a.15.15,0,0,1-.08-.11.34.34,0,0,1,0-.15.38.38,0,0,1,.37-.37v-2.3a1.72,1.72,0,0,1,0-.2,1,1,0,0,1,0-.22,1.26,1.26,0,0,1,.08-.18,1.09,1.09,0,0,1,.13-.17l1.16-1.16a1,1,0,0,1,.64-.26h.94v-1.13a.33.33,0,0,1,.11-.26.36.36,0,0,1,.26-.11h6a.36.36,0,0,1,.26.11A.33.33,0,0,1,699.81,179.76Zm-9,3.37h2.25v-1.5h-.93a.18.18,0,0,0-.13.06l-1.14,1.14a.17.17,0,0,0,0,.13Zm2,3.52a.74.74,0,1,0-.52.22A.69.69,0,0,0,692.85,186.65Zm5.24,0a.74.74,0,1,0-.52.22A.71.71,0,0,0,698.09,186.65Z" transform="translate(-2)"/>
+                  </g>
+                  <g id="svg-mine-icon2-3" data-name="svg-mine-icon2">
+                    <circle id="svg-mine-bg2-3" data-name="svg-mine-bg2" class="cls-1" cx="844.81" cy="373.7" r="9"/>
+                    <path id="svg-clor-3" data-name="svg-clor" class="cls-2" d="M851.81,369.76v6a.78.78,0,0,1,0,.16.2.2,0,0,1-.08.1l-.1.07a.28.28,0,0,1-.13,0h-.41a1.46,1.46,0,0,1-.44,1.06,1.47,1.47,0,0,1-1.06.44,1.5,1.5,0,0,1-1.5-1.5h-2.25a1.42,1.42,0,0,1-.44,1.06,1.5,1.5,0,0,1-2.55-1.06H842a.39.39,0,0,1-.14,0l-.09-.07a.15.15,0,0,1-.08-.11.34.34,0,0,1,0-.15.38.38,0,0,1,.37-.37v-2.3a1.72,1.72,0,0,1,0-.2,1,1,0,0,1,0-.22,1.26,1.26,0,0,1,.08-.18,1.09,1.09,0,0,1,.13-.17l1.16-1.16a1,1,0,0,1,.64-.26h.94v-1.13a.33.33,0,0,1,.11-.26.36.36,0,0,1,.26-.11h6a.36.36,0,0,1,.26.11A.33.33,0,0,1,851.81,369.76Zm-9,3.37h2.25v-1.5h-.93a.18.18,0,0,0-.13.06l-1.14,1.14a.17.17,0,0,0,0,.13Zm2,3.52a.74.74,0,1,0-.52.22A.69.69,0,0,0,844.85,376.65Zm5.24,0a.74.74,0,1,0-.52.22A.71.71,0,0,0,850.09,376.65Z" transform="translate(-2)"/>
+                  </g>
+                  <g id="svg-mine-icon2-4" data-name="svg-mine-icon2">
+                    <circle id="svg-mine-bg2-4" data-name="svg-mine-bg2" class="cls-1" cx="766.81" cy="158.7" r="9"/>
+                    <path id="svg-clor-4" data-name="svg-clor" class="cls-2" d="M773.81,154.76v6a.78.78,0,0,1,0,.16.2.2,0,0,1-.08.1l-.1.07a.28.28,0,0,1-.13,0h-.41a1.46,1.46,0,0,1-.44,1.06,1.47,1.47,0,0,1-1.06.44,1.5,1.5,0,0,1-1.5-1.5h-2.25a1.42,1.42,0,0,1-.44,1.06,1.5,1.5,0,0,1-2.55-1.06H764a.39.39,0,0,1-.14,0l-.09-.07a.15.15,0,0,1-.08-.11.34.34,0,0,1,0-.15.38.38,0,0,1,.37-.37v-2.3a1.72,1.72,0,0,1,0-.2,1,1,0,0,1,0-.22,1.26,1.26,0,0,1,.08-.18,1.09,1.09,0,0,1,.13-.17l1.16-1.16a1,1,0,0,1,.64-.26h.94v-1.13a.33.33,0,0,1,.11-.26.36.36,0,0,1,.26-.11h6a.36.36,0,0,1,.26.11A.33.33,0,0,1,773.81,154.76Zm-9,3.37h2.25v-1.5h-.93a.18.18,0,0,0-.13.06l-1.14,1.14a.17.17,0,0,0,0,.13Zm2,3.52a.74.74,0,1,0-.52.22A.69.69,0,0,0,766.85,161.65Zm5.24,0a.74.74,0,1,0-.52.22A.71.71,0,0,0,772.09,161.65Z" transform="translate(-2)"/>
+                  </g>
+                  <g id="svg-mine-icon2-5" data-name="svg-mine-icon2">
+                    <circle id="svg-mine-bg2-5" data-name="svg-mine-bg2" class="cls-1" cx="447.81" cy="316.7" r="9"/>
+                    <path id="svg-clor-5" data-name="svg-clor" class="cls-2" d="M454.81,312.76v6a.78.78,0,0,1,0,.16.2.2,0,0,1-.08.1l-.1.07a.28.28,0,0,1-.13,0h-.41a1.46,1.46,0,0,1-.44,1.06,1.47,1.47,0,0,1-1.06.44,1.5,1.5,0,0,1-1.5-1.5h-2.25a1.42,1.42,0,0,1-.44,1.06,1.5,1.5,0,0,1-2.55-1.06H445a.39.39,0,0,1-.14,0l-.09-.07a.15.15,0,0,1-.08-.11.34.34,0,0,1,0-.15.38.38,0,0,1,.37-.37v-2.3a1.72,1.72,0,0,1,0-.2,1,1,0,0,1,0-.22,1.26,1.26,0,0,1,.08-.18,1.09,1.09,0,0,1,.13-.17l1.16-1.16a1,1,0,0,1,.64-.26h.94v-1.13a.33.33,0,0,1,.11-.26.36.36,0,0,1,.26-.11h6a.36.36,0,0,1,.26.11A.33.33,0,0,1,454.81,312.76Zm-9,3.37h2.25v-1.5h-.93a.18.18,0,0,0-.13.06l-1.14,1.14a.17.17,0,0,0-.05.13Zm2,3.52a.74.74,0,1,0-.52.22A.69.69,0,0,0,447.85,319.65Zm5.24,0a.74.74,0,1,0-.52.22A.71.71,0,0,0,453.09,319.65Z" transform="translate(-2)"/>
+                  </g>
+                  <g id="svg-mine-icon2-6" data-name="svg-mine-icon2">
+                    <circle id="svg-mine-bg2-6" data-name="svg-mine-bg2" class="cls-1" cx="289.81" cy="318.7" r="9"/>
+                    <path id="svg-clor-6" data-name="svg-clor" class="cls-2" d="M296.81,314.76v6a.78.78,0,0,1,0,.16.2.2,0,0,1-.08.1l-.1.07a.28.28,0,0,1-.13,0h-.41a1.46,1.46,0,0,1-.44,1.06,1.47,1.47,0,0,1-1.06.44,1.5,1.5,0,0,1-1.5-1.5h-2.25a1.42,1.42,0,0,1-.44,1.06,1.5,1.5,0,0,1-2.55-1.06H287a.39.39,0,0,1-.14,0l-.09-.07a.15.15,0,0,1-.08-.11.34.34,0,0,1,0-.15.38.38,0,0,1,.37-.37v-2.3a1.72,1.72,0,0,1,0-.2,1,1,0,0,1,0-.22,1.26,1.26,0,0,1,.08-.18,1.09,1.09,0,0,1,.13-.17l1.16-1.16a1,1,0,0,1,.64-.26h.94v-1.13a.33.33,0,0,1,.11-.26.36.36,0,0,1,.26-.11h6a.36.36,0,0,1,.26.11A.33.33,0,0,1,296.81,314.76Zm-9,3.37h2.25v-1.5h-.93a.18.18,0,0,0-.13.06l-1.14,1.14a.17.17,0,0,0-.05.13Zm2,3.52a.74.74,0,1,0-.52.22A.69.69,0,0,0,289.85,321.65Zm5.24,0a.74.74,0,1,0-.52.22A.71.71,0,0,0,295.09,321.65Z" transform="translate(-2)"/>
+                  </g>
+                  <g id="svg-mine-icon2-7" data-name="svg-mine-icon2">
+                    <circle id="svg-mine-bg2-7" data-name="svg-mine-bg2" class="cls-1" cx="214.81" cy="291.7" r="9"/>
+                    <path id="svg-clor-7" data-name="svg-clor" class="cls-2" d="M221.81,287.76v6a.78.78,0,0,1,0,.16.2.2,0,0,1-.08.1l-.1.07a.28.28,0,0,1-.13,0h-.41a1.46,1.46,0,0,1-.44,1.06,1.47,1.47,0,0,1-1.06.44,1.5,1.5,0,0,1-1.5-1.5h-2.25a1.42,1.42,0,0,1-.44,1.06,1.5,1.5,0,0,1-2.55-1.06H212a.39.39,0,0,1-.14,0l-.09-.07a.15.15,0,0,1-.08-.11.34.34,0,0,1,0-.15.38.38,0,0,1,.37-.37v-2.3a1.72,1.72,0,0,1,0-.2,1,1,0,0,1,0-.22,1.26,1.26,0,0,1,.08-.18,1.09,1.09,0,0,1,.13-.17l1.16-1.16a1,1,0,0,1,.64-.26h.94v-1.13a.33.33,0,0,1,.11-.26.36.36,0,0,1,.26-.11h6a.36.36,0,0,1,.26.11A.33.33,0,0,1,221.81,287.76Zm-9,3.37h2.25v-1.5h-.93a.18.18,0,0,0-.13.06l-1.14,1.14a.17.17,0,0,0,0,.13Zm2,3.52a.74.74,0,1,0-.52.22A.69.69,0,0,0,214.85,294.65Zm5.24,0a.74.74,0,1,0-.52.22A.71.71,0,0,0,220.09,294.65Z" transform="translate(-2)"/>
+                  </g>
+                </svg>
+
+                <div class="svg-right-top" >
+                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+
+                </div>
+
+                <div class="svg-right-bottom" >
+                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
+                  <div  class="alert alert-danger alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>报警提示需要加油
+                  </div>
+                  <div  class="alert alert-danger alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>报警提示需要加油
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-8 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>最新任务</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>电动轮编号</th>
+                    <th>拉矿位置 </th>
+                    <th>卸点</th>
+                    <th>时间 </th>
+                    <th>日期 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class="">1</span></td>
+                    <td><span class="">A001</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">2</span></td>
+                    <td><span class="">A002</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">3</span></td>
+                    <td><span class="">A003</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">4</span></td>
+                    <td><span class="">A004</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">5</span></td>
+                    <td><span class="">A005</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">6</span></td>
+                    <td><span class="">A006</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-4 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>报警</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>设备编号</th>
+                    <th>内容 </th>
+                    <th>时间</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-6 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>分区调度</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>电动轮编号</th>
+                    <th>运载能力 </th>
+                    <th>所在位置</th>
+                    <th>停车位置 </th>
+                    <th>分组 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-6 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>加油调度</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>序号</th>
+                    <th>电动轮编号</th>
+                    <th>所在位置 </th>
+                    <th>当前油量</th>
+                    <th>申请时间 </th>
+                    <th>批复 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>

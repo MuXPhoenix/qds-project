@@ -1,0 +1,552 @@
+<!--外勤车-首页-->
+
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <div class="col-sm-12">
+        <ul class="nav nav-tabs mi-nav-tabs">
+          <li class="dropdown">
+            <a  class="dropdown-toggle" data-toggle="dropdown">外勤车<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/ansteel-mining/tramcar-index">电动轮</a></li>
+              <li class="divider"></li>
+              <li><a routerLink="/ansteel-mining/tanktruck-index">油槽车</a></li>
+              <li class="divider"></li>
+              <li><a routerLink="/ansteel-mining/otherautomobile-index">外勤车</a></li>
+              <li class="divider"></li>
+              <li><a routerLink="/ansteel-mining/projectautomobile-index">工程车</a></li>
+            </ul>
+          </li>
+          <li class="active"><a routerLink="/ansteel-mining/otherautomobile-index">首页</a></li>
+          <li><a routerLink="/ansteel-mining/otherautomobile-status">状态</a></li>
+          <li><a routerLink="/ansteel-mining/otherautomobile-alarm" >报警</a></li>
+          <li><a routerLink="/ansteel-mining/otherautomobile-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/otherautomobile-dutyshift">交接班</a></li>
+          <li><a routerLink="/ansteel-mining/otherautomobile-fuelling">加油调度</a></li>
+        </ul>
+
+      </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>车辆调度</h2>
+          </header>
+          <div>
+            <div class="widget-body svg-no-margin" >
+              <div class="col-sm-12">
+
+                <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1364 500">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #65a844;
+                      }
+
+                      .cls-2 {
+                        fill: #fff;
+                      }
+                    </style>
+                  </defs>
+                  <title>mine外勤车</title>
+                  <image width="1364" height="500" xlink:href="assets/img/qidashan/mine.jpg"/>
+                  <g id="svg-mine-icon7">
+                    <circle id="svg-mine-bg7" class="cls-1" cx="758.47" cy="157.7" r="9"/>
+                    <g id="svg-clor">
+                      <path class="cls-2" d="M762.22,160.22a.8.8,0,0,0,.24.58.83.83,0,0,0,.58.24.82.82,0,0,0,.82-.82.83.83,0,0,0-.24-.58.84.84,0,0,0-.58-.24.83.83,0,0,0-.58.24.78.78,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M756.49,160.22a.83.83,0,0,0,.24.58.84.84,0,0,0,.58.24.82.82,0,0,0,.82-.82.84.84,0,0,0-.24-.58.82.82,0,0,0-1.16,0,.84.84,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M764.22,160.16v.06h1v-1.09h-1.59a1.21,1.21,0,0,1,.57,1Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M765.56,158v-.4h1v-.87h-1v-.41h1.69v-.61h-1.69v-1.22a.26.26,0,0,0-.26-.26h-5.81a.27.27,0,0,0-.27.26v3.9a.26.26,0,0,0,.27.26h5.81a.27.27,0,0,0,.26-.2h1.91V158Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M762.35,159.13H759v-3.84H757a2.24,2.24,0,0,0-.93.89,3.18,3.18,0,0,0-.53,1.45,1.43,1.43,0,0,0,0,.21v1.24h0v1.15h.5v-.06a1.19,1.19,0,0,1,.27-.76,1,1,0,0,1,.3-.27h0l.08-.05a1.28,1.28,0,0,1,1.08,0l.08.05h0a1,1,0,0,1,.3.27,1.19,1.19,0,0,1,.27.76v.06h3.26v-.06a1.2,1.2,0,0,1,.59-1Zm-3.83-2.34v.64h-2.1v-.85l.21-.21.21-.21.21-.21.22-.22h1.25v1.06Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon7-2" data-name="svg-mine-icon7">
+                    <circle id="svg-mine-bg7-2" data-name="svg-mine-bg7" class="cls-1" cx="828.47" cy="266.7" r="9"/>
+                    <g id="svg-clor-2" data-name="svg-clor">
+                      <path class="cls-2" d="M832.22,269.22a.8.8,0,0,0,.24.58.83.83,0,0,0,.58.24.82.82,0,0,0,.82-.82.83.83,0,0,0-.24-.58.84.84,0,0,0-.58-.24.83.83,0,0,0-.58.24.78.78,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M826.49,269.22a.83.83,0,0,0,.24.58.84.84,0,0,0,.58.24.82.82,0,0,0,.82-.82.84.84,0,0,0-.24-.58.82.82,0,0,0-1.16,0,.84.84,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M834.22,269.16v.06h1v-1.09h-1.59a1.21,1.21,0,0,1,.57,1Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M835.56,267v-.4h1v-.87h-1v-.41h1.69v-.61h-1.69v-1.22a.26.26,0,0,0-.26-.26h-5.81a.27.27,0,0,0-.27.26v3.9a.26.26,0,0,0,.27.26h5.81a.27.27,0,0,0,.26-.2h1.91V267Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M832.35,268.13H829v-3.84H827a2.24,2.24,0,0,0-.93.89,3.18,3.18,0,0,0-.53,1.45,1.43,1.43,0,0,0,0,.21v1.24h0v1.15h.5v-.06a1.19,1.19,0,0,1,.27-.76,1,1,0,0,1,.3-.27h0l.08-.05a1.28,1.28,0,0,1,1.08,0l.08.05h0a1,1,0,0,1,.3.27,1.19,1.19,0,0,1,.27.76v.06h3.26v-.06a1.2,1.2,0,0,1,.59-1Zm-3.83-2.34v.64h-2.1v-.85l.21-.21.21-.21.21-.21.22-.22h1.25v1.06Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon7-3" data-name="svg-mine-icon7">
+                    <circle id="svg-mine-bg7-3" data-name="svg-mine-bg7" class="cls-1" cx="640.47" cy="307.7" r="9"/>
+                    <g id="svg-clor-3" data-name="svg-clor">
+                      <path class="cls-2" d="M644.22,310.22a.8.8,0,0,0,.24.58.83.83,0,0,0,.58.24.82.82,0,0,0,.82-.82.83.83,0,0,0-.24-.58.84.84,0,0,0-.58-.24.83.83,0,0,0-.58.24.78.78,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M638.49,310.22a.83.83,0,0,0,.24.58.84.84,0,0,0,.58.24.82.82,0,0,0,.82-.82.84.84,0,0,0-.24-.58.82.82,0,0,0-1.16,0,.84.84,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M646.22,310.16v.06h1v-1.09h-1.59a1.21,1.21,0,0,1,.57,1Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M647.56,308v-.4h1v-.87h-1v-.41h1.69v-.61h-1.69v-1.22a.26.26,0,0,0-.26-.26h-5.81a.27.27,0,0,0-.27.26v3.9a.26.26,0,0,0,.27.26h5.81a.27.27,0,0,0,.26-.2h1.91V308Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M644.35,309.13H641v-3.84H639a2.24,2.24,0,0,0-.93.89,3.18,3.18,0,0,0-.53,1.45,1.43,1.43,0,0,0,0,.21v1.24h0v1.15h.5v-.06a1.19,1.19,0,0,1,.27-.76,1,1,0,0,1,.3-.27h0l.08-.05a1.28,1.28,0,0,1,1.08,0l.08.05h0a1,1,0,0,1,.3.27,1.19,1.19,0,0,1,.27.76v.06h3.26v-.06a1.2,1.2,0,0,1,.59-1Zm-3.83-2.34v.64h-2.1v-.85l.21-.21.21-.21.21-.21.22-.22h1.25v1.06Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon7-4" data-name="svg-mine-icon7">
+                    <circle id="svg-mine-bg7-4" data-name="svg-mine-bg7" class="cls-1" cx="475.47" cy="385.7" r="9"/>
+                    <g id="svg-clor-4" data-name="svg-clor">
+                      <path class="cls-2" d="M479.22,388.22a.8.8,0,0,0,.24.58.83.83,0,0,0,.58.24.82.82,0,0,0,.82-.82.83.83,0,0,0-.24-.58.84.84,0,0,0-.58-.24.83.83,0,0,0-.58.24.78.78,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M473.49,388.22a.83.83,0,0,0,.24.58.84.84,0,0,0,.58.24.82.82,0,0,0,.82-.82.84.84,0,0,0-.24-.58.82.82,0,0,0-1.16,0,.84.84,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M481.22,388.16v.06h1v-1.09h-1.59a1.21,1.21,0,0,1,.57,1Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M482.56,386v-.4h1v-.87h-1v-.41h1.69v-.61h-1.69v-1.22a.26.26,0,0,0-.26-.26h-5.81a.27.27,0,0,0-.27.26v3.9a.26.26,0,0,0,.27.26h5.81a.27.27,0,0,0,.26-.2h1.91V386Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M479.35,387.13H476v-3.84H474a2.24,2.24,0,0,0-.93.89,3.18,3.18,0,0,0-.53,1.45,1.43,1.43,0,0,0,0,.21v1.24h0v1.15h.5v-.06a1.19,1.19,0,0,1,.27-.76,1,1,0,0,1,.3-.27h0l.08-.05a1.27,1.27,0,0,1,1.08,0l.08.05h0a1,1,0,0,1,.3.27,1.19,1.19,0,0,1,.27.76v.06h3.26v-.06a1.2,1.2,0,0,1,.59-1Zm-3.83-2.34v.64h-2.1v-.85l.21-.21.21-.21.21-.21.22-.22h1.25v1.06Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon7-5" data-name="svg-mine-icon7">
+                    <circle id="svg-mine-bg7-5" data-name="svg-mine-bg7" class="cls-1" cx="896.47" cy="154.7" r="9"/>
+                    <g id="svg-clor-5" data-name="svg-clor">
+                      <path class="cls-2" d="M900.22,157.22a.8.8,0,0,0,.24.58.83.83,0,0,0,.58.24.82.82,0,0,0,.82-.82.83.83,0,0,0-.24-.58.84.84,0,0,0-.58-.24.83.83,0,0,0-.58.24.78.78,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M894.49,157.22a.83.83,0,0,0,.24.58.84.84,0,0,0,.58.24.82.82,0,0,0,.82-.82.84.84,0,0,0-.24-.58.82.82,0,0,0-1.16,0,.84.84,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M902.22,157.16v.06h1v-1.09h-1.59a1.21,1.21,0,0,1,.57,1Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M903.56,155v-.4h1v-.87h-1v-.41h1.69v-.61h-1.69v-1.22a.26.26,0,0,0-.26-.26h-5.81a.27.27,0,0,0-.27.26v3.9a.26.26,0,0,0,.27.26h5.81a.27.27,0,0,0,.26-.2h1.91V155Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M900.35,156.13H897v-3.84H895a2.24,2.24,0,0,0-.93.89,3.18,3.18,0,0,0-.53,1.45,1.43,1.43,0,0,0,0,.21v1.24h0v1.15h.5v-.06a1.19,1.19,0,0,1,.27-.76,1,1,0,0,1,.3-.27h0l.08-.05a1.27,1.27,0,0,1,1.08,0l.08.05h0a1,1,0,0,1,.3.27,1.19,1.19,0,0,1,.27.76v.06h3.26v-.06a1.2,1.2,0,0,1,.59-1Zm-3.83-2.34v.64h-2.1v-.85l.21-.21.21-.21.21-.21.22-.22h1.25v1.06Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon7-6" data-name="svg-mine-icon7">
+                    <circle id="svg-mine-bg7-6" data-name="svg-mine-bg7" class="cls-1" cx="326.47" cy="330.7" r="9"/>
+                    <g id="svg-clor-6" data-name="svg-clor">
+                      <path class="cls-2" d="M330.22,333.22a.8.8,0,0,0,.24.58.83.83,0,0,0,.58.24.82.82,0,0,0,.82-.82.83.83,0,0,0-.24-.58.84.84,0,0,0-.58-.24.83.83,0,0,0-.58.24.78.78,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M324.49,333.22a.83.83,0,0,0,.24.58.84.84,0,0,0,.58.24.82.82,0,0,0,.82-.82.84.84,0,0,0-.24-.58.82.82,0,0,0-1.16,0,.84.84,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M332.22,333.16v.06h1v-1.09h-1.59a1.21,1.21,0,0,1,.57,1Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M333.56,331v-.4h1v-.87h-1v-.41h1.69v-.61h-1.69v-1.22a.26.26,0,0,0-.26-.26h-5.81a.27.27,0,0,0-.27.26v3.9a.26.26,0,0,0,.27.26h5.81a.27.27,0,0,0,.26-.2h1.91V331Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M330.35,332.13H327v-3.84H325a2.24,2.24,0,0,0-.93.89,3.18,3.18,0,0,0-.53,1.45,1.43,1.43,0,0,0,0,.21v1.24h0v1.15h.5v-.06a1.19,1.19,0,0,1,.27-.76,1,1,0,0,1,.3-.27h0l.08-.05a1.27,1.27,0,0,1,1.08,0l.08.05h0a1,1,0,0,1,.3.27,1.19,1.19,0,0,1,.27.76v.06h3.26v-.06a1.2,1.2,0,0,1,.59-1Zm-3.83-2.34v.64h-2.1v-.85l.21-.21.21-.21.21-.21.22-.22h1.25v1.06Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon7-7" data-name="svg-mine-icon7">
+                    <circle id="svg-mine-bg7-7" data-name="svg-mine-bg7" class="cls-1" cx="461.47" cy="321.7" r="9"/>
+                    <g id="svg-clor-7" data-name="svg-clor">
+                      <path class="cls-2" d="M465.22,324.22a.8.8,0,0,0,.24.58.83.83,0,0,0,.58.24.82.82,0,0,0,.82-.82.83.83,0,0,0-.24-.58.84.84,0,0,0-.58-.24.83.83,0,0,0-.58.24.78.78,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M459.49,324.22a.83.83,0,0,0,.24.58.84.84,0,0,0,.58.24.82.82,0,0,0,.82-.82.84.84,0,0,0-.24-.58.82.82,0,0,0-1.16,0,.84.84,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M467.22,324.16v.06h1v-1.09h-1.59a1.21,1.21,0,0,1,.57,1Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M468.56,322v-.4h1v-.87h-1v-.41h1.69v-.61h-1.69v-1.22a.26.26,0,0,0-.26-.26h-5.81a.27.27,0,0,0-.27.26v3.9a.26.26,0,0,0,.27.26h5.81a.27.27,0,0,0,.26-.2h1.91V322Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M465.35,323.13H462v-3.84H460a2.24,2.24,0,0,0-.93.89,3.18,3.18,0,0,0-.53,1.45,1.43,1.43,0,0,0,0,.21v1.24h0v1.15h.5v-.06a1.19,1.19,0,0,1,.27-.76,1,1,0,0,1,.3-.27h0l.08-.05a1.27,1.27,0,0,1,1.08,0l.08.05h0a1,1,0,0,1,.3.27,1.19,1.19,0,0,1,.27.76v.06h3.26v-.06a1.2,1.2,0,0,1,.59-1Zm-3.83-2.34v.64h-2.1v-.85l.21-.21.21-.21.21-.21.22-.22h1.25v1.06Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                  <g id="svg-mine-icon7-8" data-name="svg-mine-icon7">
+                    <circle id="svg-mine-bg7-8" data-name="svg-mine-bg7" class="cls-1" cx="298.47" cy="224.7" r="9"/>
+                    <g id="svg-clor-8" data-name="svg-clor">
+                      <path class="cls-2" d="M302.22,227.22a.8.8,0,0,0,.24.58.83.83,0,0,0,.58.24.82.82,0,0,0,.82-.82.83.83,0,0,0-.24-.58.84.84,0,0,0-.58-.24.83.83,0,0,0-.58.24.78.78,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M296.49,227.22a.83.83,0,0,0,.24.58.84.84,0,0,0,.58.24.82.82,0,0,0,.82-.82.84.84,0,0,0-.24-.58.82.82,0,0,0-1.16,0,.84.84,0,0,0-.24.58Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M304.22,227.16v.06h1v-1.09h-1.59a1.21,1.21,0,0,1,.57,1Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M305.56,225v-.4h1v-.87h-1v-.41h1.69v-.61h-1.69v-1.22a.26.26,0,0,0-.26-.26h-5.81a.27.27,0,0,0-.27.26v3.9a.26.26,0,0,0,.27.26h5.81a.27.27,0,0,0,.26-.2h1.91V225Z" transform="translate(-2)"/>
+                      <path class="cls-2" d="M302.35,226.13H299v-3.84H297a2.24,2.24,0,0,0-.93.89,3.18,3.18,0,0,0-.53,1.45,1.43,1.43,0,0,0,0,.21v1.24h0v1.15h.5v-.06a1.19,1.19,0,0,1,.27-.76,1,1,0,0,1,.3-.27h0l.08-.05a1.27,1.27,0,0,1,1.08,0l.08.05h0a1,1,0,0,1,.3.27,1.19,1.19,0,0,1,.27.76v.06h3.26v-.06a1.2,1.2,0,0,1,.59-1Zm-3.83-2.34v.64h-2.1v-.85l.21-.21.21-.21.21-.21.22-.22h1.25v1.06Z" transform="translate(-2)"/>
+                    </g>
+                  </g>
+                </svg>
+
+
+                <div class="svg-right-top" >
+                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+                  <div  class="alert alert-info alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>完成了任务
+                  </div>
+
+                </div>
+
+                <div class="svg-right-bottom" >
+                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
+                  <div  class="alert alert-danger alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>报警提示需要加油
+                  </div>
+                  <div  class="alert alert-danger alert-dismissible" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                    </span>
+                    <span class="svg-glyphicon">
+                      <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                    <strong>电动车023</strong>报警提示需要加油
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-8 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>最新任务</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>电动轮编号</th>
+                    <th>拉矿位置 </th>
+                    <th>卸点</th>
+                    <th>时间 </th>
+                    <th>日期 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class="">1</span></td>
+                    <td><span class="">A001</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">2</span></td>
+                    <td><span class="">A002</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">3</span></td>
+                    <td><span class="">A003</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">4</span></td>
+                    <td><span class="">A004</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">5</span></td>
+                    <td><span class="">A005</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">6</span></td>
+                    <td><span class="">A006</span></td>
+                    <td><span class="">拉矿位置</span></td>
+                    <td><span class="">卸点</span></td>
+                    <td><span >15:00</span></td>
+                    <td><span >12月6日</span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-4 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>报警</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>设备编号</th>
+                    <th>内容 </th>
+                    <th>时间</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  <tr >
+                    <td><span class="">A1001</span></td>
+                    <td><span class="">某某设备出现故障</span></td>
+                    <td><span class="">2018-12-21 14:00</span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-6 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>分区调度</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>电动轮编号</th>
+                    <th>运载能力 </th>
+                    <th>所在位置</th>
+                    <th>停车位置 </th>
+                    <th>分组 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-6 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>加油调度</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>序号</th>
+                    <th>电动轮编号</th>
+                    <th>所在位置 </th>
+                    <th>当前油量</th>
+                    <th>申请时间 </th>
+                    <th>批复 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ><!-- class="table-color"-->
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                    <td><span class=""></span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>

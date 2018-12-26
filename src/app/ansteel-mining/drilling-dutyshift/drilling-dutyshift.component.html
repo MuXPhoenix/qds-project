@@ -1,0 +1,92 @@
+<!--牙轮生产智能指挥模块-交接班-->
+<div id="content">
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <div class="col-sm-12">
+        <ul class="nav nav-tabs mi-nav-tabs">
+          <li ><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-task">任务列表</a></li>
+          <li class="active"><a routerLink="/ansteel-mining/drilling-dutyshift">交接班</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-fuelling">加油调度</a></li>
+        </ul>
+      </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>交接班管理</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+              <div style="padding:0;" class="">
+                <div  class="">
+                  <table class="table table-bordered table-border smart-form table-height-20 ">
+                    <thead class="text-align-center">
+                    <tr>
+                      <th>序号</th>
+                      <th>电动轮编号</th>
+                      <th>交接位置 </th>
+                      <th>交接位置定位</th>
+                      <th>交接人员 </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ><!-- class="table-color"-->
+                      <td><span class=""></span></td>
+                      <td><span class=""></span></td>
+                      <td><span class=""></span></td>
+                      <td><span class=""></span></td>
+                      <td><span class=""></span></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+    </div>
+
+
+
+
+  </sa-widgets-grid>
+</div>
