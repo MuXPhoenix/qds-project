@@ -27,8 +27,8 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/echarts/dist/echarts.min.js",
               "node_modules/echarts/map/js/china.js",
-              "node_modules/echarts/dist/extension/bmap.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js"
+              "node_modules/echarts/dist/extension/bmap.js"
+//              "node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {
@@ -79,8 +79,8 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/echarts/dist/echarts.min.js",
               "node_modules/echarts/map/js/china.js",
-              "node_modules/echarts/dist/extension/bmap.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js"
+              "node_modules/echarts/dist/extension/bmap.js"
+//              "node_modules/bootstrap/dist/js/bootstrap.js"
             ],
             "styles": [
               "src/styles.css"
