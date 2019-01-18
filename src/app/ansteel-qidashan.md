@@ -77,7 +77,9 @@ projectautomobile-setting 工程车-设置
 mining-mes-index 采矿综合管理单元-首页
 mining-mes-status 采矿综合管理单元-当前生产状态
 mining-mes-production 采矿综合管理单元-生产报表
-mining-mes-progress 采矿综合管理单元-当前进度表
+mining-mes-progress 采矿综合管理单元-生产进度表
+mining-mes-explode 采矿综合管理单元-爆破进度表
+mining-mes-drill 采矿综合管理单元-钻孔进度表
 ```
 ## 采矿三维模拟仿真单元 three-dimensional
 ```
@@ -88,6 +90,9 @@ three-dimensional-index  采矿三维模拟仿真单元-首页
 ```
 energy-index  采矿能源智能管理单元-首页
 energy-driver-data 采矿能源智能管理单元-司机行驶数据
+energy-oil-consumption 采矿能源智能管理单元-总耗油量
+energy-consume-electricity 采矿能源智能管理单元-总耗电量
+energy-electricity 采矿能源智能管理单元-油量情况
 ```
 ## 巡查智能管理单元 patrol
 ```
@@ -104,6 +109,6 @@ security-index  安全智能管理单元-首页
 ```
 monitoring-index  监控管理单元-首页
 monitoring-task  监控管理单元-列表
-monitoring-history 监控管理单元-历史视频
+monitoring-history 监控管理单元-历史监控
 ```
 

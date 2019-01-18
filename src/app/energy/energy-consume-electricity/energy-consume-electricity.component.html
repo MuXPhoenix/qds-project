@@ -1,4 +1,5 @@
-<!--采矿综合管理单元-生产进度表-->
+<!--采矿能源智能管理单元-总耗电量-->
+
 
 <div id="content">
     <sa-widgets-grid>
@@ -9,7 +10,7 @@
                 <sa-widget [editbutton]="false" [deletebutton]="false" >
                     <header>
                         <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                        <h2>生产进度表</h2>
+                        <h2>总耗电量</h2>
                     </header>
 
                     <div>
@@ -19,25 +20,28 @@
                                 <table class="table table-striped smart-form table-height-20">
                                     <thead class="">
                                     <tr>
-                                        <th>项目名称</th>
-                                        <th>类型 </th>
-                                        <th>完成量</th>
-                                        <th>截止时间</th>
+                                        <th>设备编码</th>
+                                        <th>设备名称 </th>
+                                        <th>时间段</th>
+                                        <th>总耗油量</th>
+                                        <th>耗油详情</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <!-- class="table-color"-->
                                     <tr  (click)="changedetails()">
-                                        <td>矿石</td>
-                                        <td>日计划</td>
-                                        <td>40% </td>
-                                        <td>2019-01-18 12：30</td>
+                                        <td>A0001</td>
+                                        <td>电动轮</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗油量</td>
                                     </tr>
                                     <tr (click)="changedetails()" >
-                                        <td>矿石</td>
-                                        <td>日计划</td>
-                                        <td>60% </td>
-                                        <td>2019-01-18 12：30</td>
+                                        <td>A0001</td>
+                                        <td>工程车</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗油量</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -91,8 +95,8 @@
 <div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
     <div class="entity-well entity-well--tasks">
         <div class="entity-well-header">
-      <span class="approval-head">
-        <span ><span>矿石</span>
+      <span class="approval-head">A0001
+        <span >电动轮
         </span>
       </span>
             <ul class="entity-well-header-nav nav s pull-right">
@@ -105,11 +109,16 @@
                 <div class="approve-formschema">
                     <table class="table table-striped table-forum smart-form details-table">
                         <tbody>
-                        <tr><td class="details-width">项目名称:</td><td class="">矿石</td></tr>
-                        <tr><td class="details-width">类型：</td><td >日计划</td></tr>
-                        <tr><td class="details-width">完成量:</td><td >20%</td></tr>
-                        <tr><td class="details-width">截止时间:</td><td >2019-01-18 12：30</td></tr>
-
+                        <tr><td class="details-width">设备编码:</td><td class="">A0001</td></tr>
+                        <tr><td class="details-width">设备名称：</td><td >电动轮</td></tr>
+                        <tr><td class="details-width">时间段:</td><td >2019/01/18-2019/01/19%</td></tr>
+                        <tr><td class="details-width">总耗油量:</td><td >100</td></tr>
+                        <tr><td class="details-width">耗油详情:</td>
+                            <td >
+                                <div>2019/01/18总耗油量100L</div>
+                                <div>2019/01/19总耗油量100L</div>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>

@@ -20,6 +20,16 @@ export const routes: Routes = [
         path: 'mining-mes-status',
         loadChildren: 'app/mining-mes/mining-mes-status/mining-mes-status.module#MiningMesStatusModule',
         data: {pageTitle: 'MiningMesStatus'}
+    },
+    {
+        path: 'mining-mes-explode',
+        loadChildren: 'app/mining-mes/mining-mes-explode/mining-mes-explode.module#MiningMesExplodeModule',
+        data: {pageTitle: 'MiningMesExplode'}
+    },
+    {
+        path: 'mining-mes-drill',
+        loadChildren: 'app/mining-mes/mining-mes-drill/mining-mes-drill.module#MiningMesDrillModule',
+        data: {pageTitle: 'MiningMesDrill'}
     }
 ];
 
