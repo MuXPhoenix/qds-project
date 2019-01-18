@@ -7,7 +7,7 @@
           <li><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
           <li  class="active"><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
           <li><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
-          <li><a routerLink="/ansteel-mining/drilling-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-task">最新任务</a></li>
           <li><a routerLink="/ansteel-mining/drilling-dutyshift">交接班</a></li>
           <li><a routerLink="/ansteel-mining/drilling-fuelling">加油调度</a></li>
         </ul>
@@ -43,7 +43,7 @@
                   </tr>
                   </thead>
                   <tbody  >
-                  <tr  >
+                  <tr (click)="changedetails()"  >
                     <td >A001</td>
                     <td >4.8 <sub>A</sub></td>
                     <td >26.5 <sub>V</sub></td>
@@ -62,7 +62,7 @@
                     <td >运行轨迹查询</td>
 
                   </tr>
-                  <tr  class="odd shown">
+                  <tr  class="odd shown" (click)="changedetails()" >
                     <td >A002</td>
                     <td >4.8 <sub>A</sub></td>
                     <td >26.5 <sub>V</sub></td>
@@ -81,7 +81,7 @@
                     <td >运行轨迹查询</td>
 
                   </tr>
-                  <tr  >
+                  <tr   (click)="changedetails()" >
                     <td >A003</td>
                     <td >4.8 <sub>A</sub></td>
                     <td >26.5 <sub>V</sub></td>
@@ -166,7 +166,7 @@
   </sa-widgets-grid>
 </div>
 
-<div class="slide-content"  style="position: fixed; display: block; z-index: 9991;">
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
   <div class="entity-well entity-well--tasks">
     <div class="entity-well-header">
       <span class="approval-head">A0001
@@ -181,45 +181,29 @@
     <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
       <div class="approve-top approve-intro">
         <div class="approve-formschema">
-          <P class="alert alert-info">基本信息</P>
-          <table class="table table-striped table-forum">
+          <table class="table table-striped table-forum smart-form details-table">
             <tbody>
+            <tr><td class="details-width">牙轮钻机编号:</td><td class="">A0003</td></tr>
             <tr>
-              <td class="width-120">钻孔编号:</td>
-              <td class="">A0003</td>
-              <td class="width-120">设计钻孔坐标:</td>
-              <td class="">116.307629,40.058359</td>
+              <td class="details-width">参数显示:</td>
+              <td class="details-label">
+                <div class="label-blue" >电流:4.8 <sub>A</sub></div>
+                <div class="label-blue" >电压:26.5 <sub>V</sub></div>
+                <div class="label-blue" >转速:4.8 200000 <sub>rpm</sub></div>
+                <div class="label-full" >油量:10 <sub> L</sub></div>
+              </td>
             </tr>
-            <tr>
-              <td class="width-120">钻机编号:</td>
-              <td >A0001</td>
-              <td class="width-120">钻机钻孔定位坐标:</td>
-              <td class="">116.307629,40.058359</td>
-            </tr>
-            <tr>
-              <td class="width-120">PDA编号：</td>
-              <td >A0001</td>
-              <td class="width-120">操作人员:</td>
-              <td class="">张三</td>
-            </tr>
-            <tr>
-              <td class="width-120">PDA钻孔定位坐标:</td>
-              <td >116.307629,40.058359</td>
-              <td class="width-120">分析元素:</td>
-              <td class="">铁</td>
-            </tr>
-            <tr>
-              <td class="width-120">化验分析结果:</td>
-              <td class="" colspan="3">28%</td>
-            </tr>
+            <tr><td class="details-width">运行状态：</td><td ><span class="label-normal" >正常</span></td></tr>
+            <tr><td class="details-width">故障原因:</td><td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td></tr>
+            <tr><td class="details-width">通话:</td><td >通话中</td></tr>
+            <tr><td class="details-width">当前位置:</td><td >当前位置</td></tr>
+            <tr><td class="details-width">累计钻孔深度:</td><td >累计钻孔深度</td></tr>
+            <tr><td class="details-width">参数上下限报警日志:</td><td >参数上下限报警日志参数上下限报警日志参数上下限报警日志参数上下限报警日志</td></tr>
+            <tr><td class="details-width">运行轨迹查询:</td><td >运行轨迹查询</td></tr>
+
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
-    <div class="body">
-      <div class="approve-foot show ">
-        <div class="tFlexbox tAlignCenter tJustifyCenter"></div>
       </div>
     </div>
   </div>

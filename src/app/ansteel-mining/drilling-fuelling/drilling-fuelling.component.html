@@ -10,11 +10,124 @@
           <li ><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
           <li><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
           <li><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
-          <li><a routerLink="/ansteel-mining/drilling-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-task">最新任务</a></li>
           <li ><a routerLink="/ansteel-mining/drilling-dutyshift">交接班</a></li>
           <li class="active"><a routerLink="/ansteel-mining/drilling-fuelling">加油调度</a></li>
         </ul>
       </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>加油调度</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <!--<div  class="row">-->
+                <!--<article  class="col-sm-12">-->
+                  <!--<div class="navbar navbar-default">-->
+                    <!--<form  class="navbar-form navbar-left ng-pristine ng-valid ng-touched " novalidate="" role="search" >-->
+                      <!--<div class="form-group pdlr-4">-->
+                        <!--<a class="btn default-btn btn-sm"><span class="fa-fw fa fa-stop  mr-5 text-warning"></span>审核</a>-->
+                      <!--</div>-->
+                      <!--&lt;!&ndash;<div class="form-group pdlr-4">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="keyword" placeholder="请输入搜索内容" type="text">&ndash;&gt;-->
+                      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                      <!--&lt;!&ndash;<div class="form-group pdlr-4">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<button class="btn btn-default" type="button" (click)="getAssetsList(1,0)">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<i  class="glyphicon glyphicon-search"></i>&ndash;&gt;-->
+                      <!--&lt;!&ndash;搜索&ndash;&gt;-->
+                      <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--</form>-->
+                  <!--</div>-->
+                <!--</article>-->
+              <!--</div>-->
+              <div class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>序号</th>
+                    <th>设备编码 </th>
+                    <th>设备种类</th>
+                    <th>申请时间</th>
+                    <th>申请状态</th>
+                    <th>加油点</th>
+                    <th>加油时间段</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr  (click)="changedetails()">
+                    <td>1</td>
+                    <td>A1001</td>
+                    <td>牙轮钻机 </td>
+                    <td>2019-01-15 12：15</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" >审核中</span>
+                        <span class="label-normal" style="display:none;">已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr (click)="changedetails()" >
+                    <td>2</td>
+                    <td>A1002</td>
+                    <td>牙轮钻机 </td>
+                    <td>2019-01-15 12：30</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" style="display:none;">审核中</span>
+                        <span class="label-normal" >已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td>2019-01-15 12：40</td>
+                    <td>2019-01-15 12:40-13:20</td>
+                  </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
 
 
     </div>
@@ -23,3 +136,176 @@
 
   </sa-widgets-grid>
 </div>
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+  <div class="entity-well entity-well--tasks">
+    <div class="entity-well-header">
+      <span class="approval-head">A0001
+        <span ><span>加油调度</span>
+        </span>
+      </span>
+      <ul class="entity-well-header-nav nav s pull-right">
+        <li class="divider-v"></li>
+        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+      <div class="approve-top approve-intro">
+        <div class="approve-head" >
+          <a class="approval-size" >
+            赵三
+          </a>
+          <p class="username" >加油审批</p>
+          <p class="text-warning" style="display:none;" >
+            等待审批中
+          </p>
+          <p class="text-success"  >
+            已同意
+          </p>
+          <p class="text-danger" style="display:none;">
+            已拒绝
+          </p>
+          <p class="text-primary" style="display:none;">
+            已撤销
+          </p>
+          <p class="text-danger" style="display:none;">
+            已作废
+          </p>
+        </div>
+        <!-- 已同意-->
+        <div class="approve-result agree pullout" ></div>
+        <!--已拒绝-->
+        <div class="approve-result refuse pullout" style="display:none;"></div>
+        <!--已撤销-->
+        <div class="approve-result revoke pullout" style="display:none;"></div>
+        <div class="approve-formschema">
+          <table class="table table-striped table-forum smart-form details-table">
+            <tbody>
+            <tr><td class="details-width">序号:</td><td class="">1</td></tr>
+            <tr><td class="details-width">设备编码:</td><td class="">A0002</td></tr>
+            <tr><td class="details-width">设备种类：</td><td >牙轮钻机</td></tr>
+            <tr><td class="details-width">申请时间:</td><td >2019-01-15 12：30</td></tr>
+            <tr><td class="details-width">申请状态:</td>
+              <td class="details-label">
+              <div class="label-maintain" >审核中</div>
+              <div class="label-normal" >已同意</div>
+              <div  class="label-full" >已拒绝</div>
+              <div  class="label-unknown" >已作废</div>
+              <div  class="label-blue" >已撤销</div>
+            </td>
+            </tr>
+            <tr><td class="details-width">加油点:</td><td >2019-01-15 12：40</td></tr>
+            <tr><td class="details-width">加油时间段:</td><td >2019-01-15 12:40-13:20</td></tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="approve-foot show ">
+        <div class="tFlexbox tAlignCenter tJustifyCenter">
+          <div class="tFlex1 approval-action tTap agree" data-toggle="modal" data-target="#myModal-consent">同意</div>
+          <div class="tFlex1 approval-action tTap refuse" data-toggle="modal" data-target="#myModal-reject">拒绝</div>
+          <div class="tFlex1 approval-action tTap reminders"  data-toggle="modal" data-target="#cuiban" >催办</div>
+          <div class="tFlex1 approval-action tTap revoke" data-toggle="modal" data-target="#myModal-withdraw"  >撤销</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--同意-->
+<div class="modal fade bs-example-modal-sm" id="myModal-consent"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 关闭按钮 -->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="text-align-center">
+          <h2 >同意</h2>
+        </div>
+      </div>
+      <div class="modal-footer tex-align-center">
+        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--拒绝-->
+<div class="modal fade bs-example-modal-sm" id="myModal-reject" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 关闭按钮 -->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="text-align-center">
+          <h2 >拒绝</h2>
+        </div>
+      </div>
+      <div class="modal-footer tex-align-center">
+        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--催办-->
+<div class="modal fade bs-example-modal-sm" id="cuiban" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 关闭按钮 -->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="text-align-center">
+          <h2 >你确定要发送改消息吗？</h2>
+        </div>
+      </div>
+      <div class="modal-footer tex-align-center">
+        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--撤销-->
+<div class="modal fade bs-example-modal-sm" id="myModal-withdraw" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 关闭按钮 -->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="text-align-center">
+          <h2 >你确定要撤销本次申请吗？</h2>
+        </div>
+      </div>
+      <div class="modal-footer tex-align-center">
+        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+

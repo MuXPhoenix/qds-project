@@ -125,6 +125,31 @@ export const routes: Routes = [
             path: 'mining-mes',
             loadChildren: 'app/mining-mes/mining-mes.module#MiningMesModule',
             data: {pageTitle: 'MiningMes'}
+        },
+        {
+            path: 'three-dimensional',
+            loadChildren: 'app/three-dimensional/three-dimensional.module#ThreeDimensionalModule',
+            data: {pageTitle: 'ThreeDimensional'}
+        },
+        {
+            path: 'energy',
+            loadChildren: 'app/energy/energy.module#EnergyModule',
+            data: {pageTitle: 'Energy'}
+        },
+        {
+            path: 'monitoring',
+            loadChildren: 'app/monitoring/monitoring.module#MonitoringModule',
+            data: {pageTitle: 'Monitoring'}
+        },
+        {
+            path: 'patrol',
+            loadChildren: 'app/patrol/patrol.module#PatrolModule',
+            data: {pageTitle: 'Patrol'}
+        },
+        {
+            path: 'security',
+            loadChildren: 'app/security/security.module#SecurityModule',
+            data: {pageTitle: 'SecurityModule'}
         }
     ]
   },

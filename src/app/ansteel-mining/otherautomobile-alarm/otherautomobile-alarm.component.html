@@ -21,7 +21,7 @@
           <li><a routerLink="/ansteel-mining/otherautomobile-index">首页</a></li>
           <li><a routerLink="/ansteel-mining/otherautomobile-status">状态</a></li>
           <li class="active"><a routerLink="/ansteel-mining/otherautomobile-alarm" >报警</a></li>
-          <li><a routerLink="/ansteel-mining/otherautomobile-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/otherautomobile-task">最新任务</a></li>
           <li><a routerLink="/ansteel-mining/otherautomobile-dutyshift">交接班</a></li>
           <li><a routerLink="/ansteel-mining/otherautomobile-fuelling">加油调度</a></li>
         </ul>
@@ -38,6 +38,116 @@
           <div>
             <!--小部件内容-->
             <div class="widget-body no-padding">
+              <div  class="row">
+                <article  class="col-sm-12">
+                  <div class="navbar navbar-default">
+                    <form  class="navbar-form navbar-left ng-pristine ng-valid ng-touched " novalidate="" role="search" >
+                      <div class="form-group pdlr-4">
+                        <strong> 筛选：</strong>
+                      </div>
+                      <div class="form-group pdlr-4">
+                        <strong> 时间选择：</strong>
+                      </div>
+                      <div class="form-group btn-group pdlr-4">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+
+                      </div>
+                      <div class="form-group pdlr-4">
+                        <strong> 至</strong>
+                      </div>
+                      <div class="form-group btn-group pdlr-4 dropdown">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+                      </div>
+                      <div class="form-group btn-group pdlr-4">
+                        <a class="btn default-btn btn-sm dropdown-toggle" data-toggle="dropdown">
+                          全部<i class="fa fa-fw fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li ><a >全部</a></li>
+                          <li ><a>编号</a></li>
+                          <li ><a >故障类型</a></li>
+                        </ul>
+                      </div>
+                      <div class="form-group pdlr-4">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="keyword" placeholder="请输入搜索内容" type="text">
+                      </div>
+                      <div class="form-group pdlr-4">
+                        <button class="btn btn-default" type="button" (click)="getAssetsList(1,0)">
+                          <i  class="glyphicon glyphicon-search"></i>
+                          搜索
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </article>
+              </div>
+              <div class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>序号</th>
+                    <th>编码 </th>
+                    <th>设备种类</th>
+                    <th>报警项目</th>
+                    <th>报警内容</th>
+                    <th>时间</th>
+                    <th>地点</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr  (click)="changedetails()">
+                    <td>1</td>
+                    <td>A1001</td>
+                    <td>外勤车 </td>
+                    <td><i  class="fa fa-circle text-danger font-xs">机械故障</i> </td>
+                    <td>报警内容报警内容报警内容报警内容报警内容报警内容</td>
+                    <td>2019-01-15 12：30</td>
+                    <td>地点地点地点地点地点地点</td>
+                  </tr>
+                  <tr (click)="changedetails()" >
+                    <td>2</td>
+                    <td>A1002</td>
+                    <td>外勤车 </td>
+                    <td><i  class="fa fa-circle text-danger font-xs">机械故障</i> </td>
+                    <td>报警内容报警内容报警内容报警内容报警内容报警内容</td>
+                    <td>2019-01-15 12：30</td>
+                    <td>地点地点地点地点地点地点</td>
+
+                  </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+
 
 
             </div>
@@ -53,4 +163,38 @@
 
 
   </sa-widgets-grid>
+</div>
+
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+  <div class="entity-well entity-well--tasks">
+    <div class="entity-well-header">
+      <span class="approval-head">A0002
+        <span ><span>外勤车报警信息</span>
+        </span>
+      </span>
+      <ul class="entity-well-header-nav nav s pull-right">
+        <li class="divider-v"></li>
+        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+      <div class="approve-top approve-intro">
+        <div class="approve-formschema">
+          <table class="table table-striped table-forum smart-form details-table">
+            <tbody>
+            <tr><td class="details-width">序号:</td><td class="">2</td></tr>
+            <tr><td class="details-width">编码：</td><td >A0002</td></tr>
+            <tr><td class="details-width">设备种类:</td><td >外勤车</td></tr>
+            <tr><td class="details-width">报警项目:</td><td ><i  class="fa fa-circle text-danger font-xs">机械故障</i></td></tr>
+            <tr><td class="details-width">报警内容:</td><td >报警内容报警内容报警内容报警内容报警内容报警内容</td></tr>
+            <tr><td class="details-width">时间:</td><td >2019-01-15 12：30</td></tr>
+            <tr><td class="details-width">地点:</td><td >地点地点地点地点地点地点</td></tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,109 @@
+<!--采矿三维模拟仿真单元-首页-->
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>采矿三维模拟仿真</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="">
+                <table class="table table-striped smart-form table-height-20 ">
+                  <thead class="">
+                  <tr>
+                    <th>名称</th>
+                    <th>生成时间</th>
+                    <th>目标地点 </th>
+                    <th>详情</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr>
+                    <td>名称</td>
+                    <td>2019-01-15 12：30</td>
+                    <td>地点地点地点</td>
+                    <td class="click-a"><a data-toggle="modal" data-target="#myModal">查看详情</a></td>
+                  </tr>
+                  <tr>
+                    <td>名称</td>
+                    <td>2019-01-15 12：30</td>
+                    <td>地点地点地点</td>
+                    <td class="click-a"><a data-toggle="modal" data-target="#myModal">查看详情</a></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>
+
+<!-- 详情 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 关闭按钮 -->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+        <!-- 标题 -->
+        <h3 class="modal-title" data-ng-bind='results.title'>详情</h3>
+      </div>
+      <div class="modal-body">
+        <b data-ng-bind='results.message'></b>
+        <div class="" style="height:auto;">
+          <img alt="" class="img-picture" height="auto" width="100%" src="assets/img/qidashan/bg2.jpg">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">确定</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
+

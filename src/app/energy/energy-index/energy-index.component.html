@@ -1,0 +1,416 @@
+<!--采矿能源智能管理单元-首页-->
+
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>总耗电量</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="col-md-6 col-sm-6 col-xs-12 text-align-center">
+                <div class="tab-list ">
+                  <ul>
+                    <li class="tab-li" [ngClass] = "item==0 ? 'tab-list-active' : ''" (click)="OnItemClick(0)">日累计</li>
+                    <li class="tab-li" [ngClass] = "item==1 ? 'tab-list-active' : ''" (click)="OnItemClick(1)">周累计</li>
+                    <li class="tab-li" [ngClass] = "item==2 ? 'tab-list-active' : ''" (click)="OnItemClick(2)">月累计</li>
+                    <li class="tab-li" [ngClass] = "item==3 ? 'tab-list-active' : ''" (click)="OnItemClick(3)">季累计</li>
+                    <li class="tab-li" [ngClass] = "item==4 ? 'tab-list-active' : ''" (click)="OnItemClick(4)">年累计</li>
+                  </ul>
+                </div>
+                <div class="tab-content">
+                  <div [style.display] = "item == 0 ? 'block' : 'none'">
+                    <div  echarts [options]="energyoption" style="width: 100%;height:400px;" class="demo-chart"></div>
+                    <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+                  </div>
+                  <div [style.display] = "item == 1 ? 'block' : 'none'">周累计</div>
+                  <div [style.display] = "item == 2 ? 'block' : 'none'">月累计</div>
+                  <div [style.display] = "item == 3 ? 'block' : 'none'">季累计</div>
+                  <div [style.display] = "item == 4 ? 'block' : 'none'">年累计</div>
+                </div>
+
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 text-align-center" style="margin-top: 60px;">
+                <div  echarts [options]="energy2option" style="width: 100%;height:400px;" class="demo-chart"></div>
+                <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>总耗油量</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="col-md-4 col-sm-4 col-xs-4 text-align-center" style="margin-top: 20px;">
+                <div  echarts [options]="energy3option" style="width: 100%;height:400px;" class="demo-chart"></div>
+                <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4 text-align-center" style="margin-top: 20px;">
+                <div  echarts [options]="energy4option" style="width: 100%;height:400px;" class="demo-chart"></div>
+                <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4 text-align-center" style="margin-top: 20px;">
+                <div  echarts [options]="energy5option" style="width: 100%;height:400px;" class="demo-chart"></div>
+                <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>油量情况</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="col-md-3 col-sm-3 col-xs-12 text-align-center" >
+                <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #00939e;
+                      }
+
+                      .cls-2 {
+                        fill: #96e6d2;
+                      }
+
+                      .cls-3, .cls-4 {
+                        fill: #fff;
+                      }
+
+                      .cls-3 {
+                        opacity: 0.5;
+                      }
+
+                      .cls-5 {
+                        fill: #f7941e;
+                      }
+                    </style>
+                  </defs>
+                  <title>油槽1</title>
+                  <g>
+                    <path class="cls-1" d="M485.7,370.14a10.83,10.83,0,0,1-8-3.08c-5.75-5.83-5.55-19.27-5.2-43.68.1-6.71.21-14.21.21-22.55,0-20.3-1.5-33-4.57-38.88-2.29-4.37-4.85-4.45-9.46-4.37l-.25-2.53.25-2.52c4.82,0,10.22,0,13.93,7.07,3.56,6.8,5.14,19.5,5.14,41.23,0,8.37-.11,15.9-.21,22.62-.31,21.52-.53,35.74,3.75,40.08a5.86,5.86,0,0,0,4.44,1.58c.11,0,.45,0,1-.58,8.3-8.37,7.8-66.92,7.5-101.89-.07-7-.13-13.58-.13-19.34h5.05c0,5.75.05,12.29.12,19.29.45,52.33.08,96.37-9,105.5A6.42,6.42,0,0,1,485.7,370.14Z"/>
+                    <polygon class="cls-1" points="485.11 151.13 475.53 160.56 444.4 128.98 453.97 119.54 485.11 151.13"/>
+                    <path class="cls-1" d="M462.65,374.82A25.19,25.19,0,0,1,437.46,400H319.76a25.19,25.19,0,0,1-25.2-25.19V105.19A25.2,25.2,0,0,1,319.76,80h117.7a25.19,25.19,0,0,1,25.19,25.2Z"/>
+                    <rect class="cls-2" x="314.97" y="106.81" width="127.26" height="80.64" rx="15.12" ry="15.12"/>
+                    <polygon class="cls-1" points="505.44 248.45 464.69 248.45 464.69 215.27 472.26 215.27 472.26 240.88 497.87 240.88 497.87 202.61 482 180.41 488.15 176.01 505.44 200.19 505.44 248.45"/>
+                    <rect class="cls-1" x="462.52" y="216.63" width="16.46" height="31.71"/>
+                    <path class="cls-1" d="M490.32,218.94h-27.8V145.45H475.2a15.12,15.12,0,0,1,15.12,15.13Z"/>
+                    <path class="cls-3" d="M427.11,106.81H361.32l76.33,76.33a15,15,0,0,0,4.58-10.81v-50.4A15.12,15.12,0,0,0,427.11,106.81Z"/>
+                    <path class="cls-4" d="M407.18,250.1a29,29,0,1,1-29-29A29,29,0,0,1,407.18,250.1Z"/>
+                    <path class="cls-5" d="M393.63,257a15.44,15.44,0,0,1-30.87,0c0-8.52,15.43-29.16,15.43-29.16S393.63,248.45,393.63,257Z"/>
+                  </g>
+                </svg>
+                <h4 class="tanktruck-h4">一号油槽</h4>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12 text-align-center" >
+                <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #00939e;
+                      }
+
+                      .cls-2 {
+                        fill: #96e6d2;
+                      }
+
+                      .cls-3, .cls-4 {
+                        fill: #fff;
+                      }
+
+                      .cls-3 {
+                        opacity: 0.5;
+                      }
+
+                      .cls-5 {
+                        fill: #f7941e;
+                      }
+                    </style>
+                  </defs>
+                  <title>油槽1</title>
+                  <g>
+                    <path class="cls-1" d="M485.7,370.14a10.83,10.83,0,0,1-8-3.08c-5.75-5.83-5.55-19.27-5.2-43.68.1-6.71.21-14.21.21-22.55,0-20.3-1.5-33-4.57-38.88-2.29-4.37-4.85-4.45-9.46-4.37l-.25-2.53.25-2.52c4.82,0,10.22,0,13.93,7.07,3.56,6.8,5.14,19.5,5.14,41.23,0,8.37-.11,15.9-.21,22.62-.31,21.52-.53,35.74,3.75,40.08a5.86,5.86,0,0,0,4.44,1.58c.11,0,.45,0,1-.58,8.3-8.37,7.8-66.92,7.5-101.89-.07-7-.13-13.58-.13-19.34h5.05c0,5.75.05,12.29.12,19.29.45,52.33.08,96.37-9,105.5A6.42,6.42,0,0,1,485.7,370.14Z"/>
+                    <polygon class="cls-1" points="485.11 151.13 475.53 160.56 444.4 128.98 453.97 119.54 485.11 151.13"/>
+                    <path class="cls-1" d="M462.65,374.82A25.19,25.19,0,0,1,437.46,400H319.76a25.19,25.19,0,0,1-25.2-25.19V105.19A25.2,25.2,0,0,1,319.76,80h117.7a25.19,25.19,0,0,1,25.19,25.2Z"/>
+                    <rect class="cls-2" x="314.97" y="106.81" width="127.26" height="80.64" rx="15.12" ry="15.12"/>
+                    <polygon class="cls-1" points="505.44 248.45 464.69 248.45 464.69 215.27 472.26 215.27 472.26 240.88 497.87 240.88 497.87 202.61 482 180.41 488.15 176.01 505.44 200.19 505.44 248.45"/>
+                    <rect class="cls-1" x="462.52" y="216.63" width="16.46" height="31.71"/>
+                    <path class="cls-1" d="M490.32,218.94h-27.8V145.45H475.2a15.12,15.12,0,0,1,15.12,15.13Z"/>
+                    <path class="cls-3" d="M427.11,106.81H361.32l76.33,76.33a15,15,0,0,0,4.58-10.81v-50.4A15.12,15.12,0,0,0,427.11,106.81Z"/>
+                    <path class="cls-4" d="M407.18,250.1a29,29,0,1,1-29-29A29,29,0,0,1,407.18,250.1Z"/>
+                    <path class="cls-5" d="M393.63,257a15.44,15.44,0,0,1-30.87,0c0-8.52,15.43-29.16,15.43-29.16S393.63,248.45,393.63,257Z"/>
+                  </g>
+                </svg>
+                <h4 class="tanktruck-h4">二号油槽</h4>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12 text-align-center" >
+                <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #00939e;
+                      }
+
+                      .cls-2 {
+                        fill: #96e6d2;
+                      }
+
+                      .cls-3 {
+                        fill: #fbb040;
+                      }
+
+                      .cls-4 {
+                        fill: #f7941e;
+                      }
+
+                      .cls-5 {
+                        fill: #fff;
+                        opacity: 0.5;
+                      }
+                    </style>
+                  </defs>
+                  <title>油车1</title>
+                  <g>
+                    <path class="cls-1" d="M454.13,149.44h38.29a28.23,28.23,0,0,1,25,15.19l34.44,66.06a28.2,28.2,0,0,0,16.2,13.77l.76.26a28.23,28.23,0,0,1,19.4,26.82v43.1H454.13Z"/>
+                    <path class="cls-2" d="M533.38,242.28a5.66,5.66,0,0,0,5.09-8.11l-28.76-59.59a22.59,22.59,0,0,0-20.35-12.78H472.13a5.64,5.64,0,0,0-5.65,5.64v69.19a5.65,5.65,0,0,0,5.65,5.65Z"/>
+                    <rect class="cls-3" x="339.05" y="118.41" width="45.81" height="18.8"/>
+                    <path class="cls-4" d="M178.44,247.09c0,28.73,18.18,52,40.61,52H414.3c22.42,0,40.61-23.3,40.61-52V186.41c0-28.74-18.19-52-40.61-52H219.05c-22.43,0-40.61,23.28-40.61,52Z"/>
+                    <rect class="cls-1" x="170.09" y="310.41" width="429.83" height="13.42"/>
+                    <path class="cls-3" d="M219.05,140H414.3c22.42,0,40.61,25.29,40.61,56.48v11.78c0-31.2-18.19-56.49-40.61-56.49H219.05c-22.43,0-40.61,25.29-40.61,56.49V196.51C178.44,165.32,196.62,140,219.05,140Z"/>
+                    <g>
+                      <rect class="cls-3" x="270.95" y="133.94" width="8.47" height="165.18"/>
+                      <rect class="cls-3" x="220.92" y="133.94" width="8.47" height="165.18"/>
+                      <g>
+                        <rect class="cls-3" x="225.16" y="142.39" width="50.03" height="5.64"/>
+                        <rect class="cls-3" x="225.16" y="165.99" width="50.03" height="5.64"/>
+                        <rect class="cls-3" x="225.16" y="189.57" width="50.03" height="5.64"/>
+                        <rect class="cls-3" x="225.16" y="213.17" width="50.02" height="5.64"/>
+                        <rect class="cls-3" x="225.16" y="236.75" width="50.03" height="5.65"/>
+                        <rect class="cls-3" x="225.16" y="260.33" width="50.03" height="5.66"/>
+                        <rect class="cls-3" x="225.16" y="283.93" width="50.03" height="5.65"/>
+                      </g>
+                    </g>
+                    <path class="cls-1" d="M515.2,330.71a30.89,30.89,0,1,0,30.88-30.89A30.87,30.87,0,0,0,515.2,330.71Z"/>
+                    <rect class="cls-1" x="178.44" y="294.87" width="276.47" height="15.53"/>
+                    <path class="cls-1" d="M385,330.71a30.89,30.89,0,1,0,30.89-30.89A30.88,30.88,0,0,0,385,330.71Z"/>
+                    <path class="cls-1" d="M188.4,330.71a30.89,30.89,0,1,0,30.88-30.89A30.88,30.88,0,0,0,188.4,330.71Z"/>
+                    <path class="cls-2" d="M530.26,330.71a15.83,15.83,0,1,0,15.82-15.83A15.81,15.81,0,0,0,530.26,330.71Z"/>
+                    <path class="cls-2" d="M400.07,330.71a15.82,15.82,0,1,0,15.82-15.83A15.81,15.81,0,0,0,400.07,330.71Z"/>
+                    <path class="cls-2" d="M203.46,330.71a15.83,15.83,0,1,0,15.82-15.83A15.81,15.81,0,0,0,203.46,330.71Z"/>
+                    <path class="cls-5" d="M472.13,161.81h17.23a22.5,22.5,0,0,1,11.75,3.31l-34.63,34.64V167.44A5.64,5.64,0,0,1,472.13,161.81Z"/>
+                    <path class="cls-1" d="M387.17,200.09a17.3,17.3,0,0,0,34.59,0c0-9.56-17.29-32.68-17.29-32.68S387.17,190.53,387.17,200.09Z"/>
+                  </g>
+                </svg>
+                <h4 class="tanktruck-h4">一号油槽车</h4>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12 text-align-center" >
+                <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #00939e;
+                      }
+
+                      .cls-2 {
+                        fill: #96e6d2;
+                      }
+
+                      .cls-3 {
+                        fill: #fbb040;
+                      }
+
+                      .cls-4 {
+                        fill: #f7941e;
+                      }
+
+                      .cls-5 {
+                        fill: #fff;
+                        opacity: 0.5;
+                      }
+                    </style>
+                  </defs>
+                  <title>油车1</title>
+                  <g>
+                    <path class="cls-1" d="M454.13,149.44h38.29a28.23,28.23,0,0,1,25,15.19l34.44,66.06a28.2,28.2,0,0,0,16.2,13.77l.76.26a28.23,28.23,0,0,1,19.4,26.82v43.1H454.13Z"/>
+                    <path class="cls-2" d="M533.38,242.28a5.66,5.66,0,0,0,5.09-8.11l-28.76-59.59a22.59,22.59,0,0,0-20.35-12.78H472.13a5.64,5.64,0,0,0-5.65,5.64v69.19a5.65,5.65,0,0,0,5.65,5.65Z"/>
+                    <rect class="cls-3" x="339.05" y="118.41" width="45.81" height="18.8"/>
+                    <path class="cls-4" d="M178.44,247.09c0,28.73,18.18,52,40.61,52H414.3c22.42,0,40.61-23.3,40.61-52V186.41c0-28.74-18.19-52-40.61-52H219.05c-22.43,0-40.61,23.28-40.61,52Z"/>
+                    <rect class="cls-1" x="170.09" y="310.41" width="429.83" height="13.42"/>
+                    <path class="cls-3" d="M219.05,140H414.3c22.42,0,40.61,25.29,40.61,56.48v11.78c0-31.2-18.19-56.49-40.61-56.49H219.05c-22.43,0-40.61,25.29-40.61,56.49V196.51C178.44,165.32,196.62,140,219.05,140Z"/>
+                    <g>
+                      <rect class="cls-3" x="270.95" y="133.94" width="8.47" height="165.18"/>
+                      <rect class="cls-3" x="220.92" y="133.94" width="8.47" height="165.18"/>
+                      <g>
+                        <rect class="cls-3" x="225.16" y="142.39" width="50.03" height="5.64"/>
+                        <rect class="cls-3" x="225.16" y="165.99" width="50.03" height="5.64"/>
+                        <rect class="cls-3" x="225.16" y="189.57" width="50.03" height="5.64"/>
+                        <rect class="cls-3" x="225.16" y="213.17" width="50.02" height="5.64"/>
+                        <rect class="cls-3" x="225.16" y="236.75" width="50.03" height="5.65"/>
+                        <rect class="cls-3" x="225.16" y="260.33" width="50.03" height="5.66"/>
+                        <rect class="cls-3" x="225.16" y="283.93" width="50.03" height="5.65"/>
+                      </g>
+                    </g>
+                    <path class="cls-1" d="M515.2,330.71a30.89,30.89,0,1,0,30.88-30.89A30.87,30.87,0,0,0,515.2,330.71Z"/>
+                    <rect class="cls-1" x="178.44" y="294.87" width="276.47" height="15.53"/>
+                    <path class="cls-1" d="M385,330.71a30.89,30.89,0,1,0,30.89-30.89A30.88,30.88,0,0,0,385,330.71Z"/>
+                    <path class="cls-1" d="M188.4,330.71a30.89,30.89,0,1,0,30.88-30.89A30.88,30.88,0,0,0,188.4,330.71Z"/>
+                    <path class="cls-2" d="M530.26,330.71a15.83,15.83,0,1,0,15.82-15.83A15.81,15.81,0,0,0,530.26,330.71Z"/>
+                    <path class="cls-2" d="M400.07,330.71a15.82,15.82,0,1,0,15.82-15.83A15.81,15.81,0,0,0,400.07,330.71Z"/>
+                    <path class="cls-2" d="M203.46,330.71a15.83,15.83,0,1,0,15.82-15.83A15.81,15.81,0,0,0,203.46,330.71Z"/>
+                    <path class="cls-5" d="M472.13,161.81h17.23a22.5,22.5,0,0,1,11.75,3.31l-34.63,34.64V167.44A5.64,5.64,0,0,1,472.13,161.81Z"/>
+                    <path class="cls-1" d="M387.17,200.09a17.3,17.3,0,0,0,34.59,0c0-9.56-17.29-32.68-17.29-32.68S387.17,190.53,387.17,200.09Z"/>
+                  </g>
+                </svg>
+                <h4 class="tanktruck-h4">二号油槽车</h4>
+
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>司机行驶数据</h2>
+            <div class="widget-toolbar">
+              <button  class="btn btn-xs btn-default"  routerLink="/energy/energy-driver-data">查看详情</button>
+            </div>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20 ">
+                  <thead class="">
+                  <tr>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>部门 </th>
+                    <th>驾龄</th>
+                    <th>事故（数）</th>
+                    <th>超速 </th>
+                    <th>油耗 </th>
+                    <th>行驶里程 </th>
+                    <th>平均时速 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr  >
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  >
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  >
+                    <td>2</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  >
+                    <td>3</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  >
+                    <td>4</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>
