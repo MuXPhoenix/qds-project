@@ -47,14 +47,29 @@ import { ProjectautomobileTaskComponent } from './projectautomobile-task/project
 import { ProjectautomobileDutyshiftComponent } from './projectautomobile-dutyshift/projectautomobile-dutyshift.component';
 import { ProjectautomobileFuellingComponent } from './projectautomobile-fuelling/projectautomobile-fuelling.component';
 import { ProjectautomobileSettingComponent } from './projectautomobile-setting/projectautomobile-setting.component';
+import {FilterStringPipe} from "../core/filter_string.pipe";
+import {wsClientService} from "../shared/ws/ws-client";
+import {TramcarIndexGuard} from "../core/guards/tramcar-index.guards";
 
 
 @NgModule({
-  declarations: [BlendingIndexComponent, BlendingDailyplanComponent, GisIndexComponent, DrillingIndexComponent, DrillingStatusComponent, DrillingAlarmComponent, DrillingTaskComponent, DrillingDutyshiftComponent, DrillingFuellingComponent, DrillingSettingComponent, ScraperIndexComponent, ScraperStatusComponent, ScraperAlarmComponent, ScraperTaskComponent, ScraperDutyshiftComponent, ScraperFuellingComponent, ScraperSettingComponent, TramcarIndexComponent, TramcarStatusComponent, TramcarAlarmComponent, TramcarTaskComponent, TramcarDutyshiftComponent, TramcarFuellingComponent, TramcarSettingComponent, TanktruckIndexComponent, TanktruckStatusComponent, TanktruckAlarmComponent, TanktruckTaskComponent, TanktruckDutyshiftComponent, TanktruckFuellingComponent, TanktruckSettingComponent, OtherautomobileIndexComponent, OtherautomobileStatusComponent, OtherautomobileAlarmComponent, OtherautomobileTaskComponent, OtherautomobileDutyshiftComponent, OtherautomobileFuellingComponent, OtherautomobileSettingComponent, ProjectautomobileIndexComponent, ProjectautomobileStatusComponent, ProjectautomobileAlarmComponent, ProjectautomobileTaskComponent, ProjectautomobileDutyshiftComponent, ProjectautomobileFuellingComponent, ProjectautomobileSettingComponent],
+  declarations: [BlendingIndexComponent, BlendingDailyplanComponent, GisIndexComponent, DrillingIndexComponent,
+    DrillingStatusComponent, DrillingAlarmComponent, DrillingTaskComponent, DrillingDutyshiftComponent, DrillingFuellingComponent,
+    DrillingSettingComponent, ScraperIndexComponent, ScraperStatusComponent, ScraperAlarmComponent, ScraperTaskComponent,
+    ScraperDutyshiftComponent, ScraperFuellingComponent, ScraperSettingComponent, TramcarIndexComponent, TramcarStatusComponent,
+    TramcarAlarmComponent, TramcarTaskComponent, TramcarDutyshiftComponent, TramcarFuellingComponent, TramcarSettingComponent,
+    TanktruckIndexComponent, TanktruckStatusComponent, TanktruckAlarmComponent, TanktruckTaskComponent, TanktruckDutyshiftComponent,
+    TanktruckFuellingComponent, TanktruckSettingComponent, OtherautomobileIndexComponent, OtherautomobileStatusComponent,
+    OtherautomobileAlarmComponent, OtherautomobileTaskComponent, OtherautomobileDutyshiftComponent,
+    OtherautomobileFuellingComponent, OtherautomobileSettingComponent, ProjectautomobileIndexComponent,
+    ProjectautomobileStatusComponent, ProjectautomobileAlarmComponent, ProjectautomobileTaskComponent,
+    ProjectautomobileDutyshiftComponent, ProjectautomobileFuellingComponent, ProjectautomobileSettingComponent,
+    FilterStringPipe],
   imports: [
     CommonModule,
       I3otpModule,
       routing
-  ]
+  ],
+  providers: [wsClientService,TramcarIndexGuard]
 })
 export class AnsteelMiningModule { }

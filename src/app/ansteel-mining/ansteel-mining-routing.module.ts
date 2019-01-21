@@ -44,6 +44,9 @@ import {ProjectautomobileSettingComponent} from "./projectautomobile-setting/pro
 import {ProjectautomobileStatusComponent} from "./projectautomobile-status/projectautomobile-status.component";
 import {ProjectautomobileTaskComponent} from "./projectautomobile-task/projectautomobile-task.component";
 import {OtherautomobileStatusComponent} from "./otherautomobile-status/otherautomobile-status.component";
+import {TramcarIndexGuard} from "../core/guards/tramcar-index.guards";
+
+
 
 export const routes:Routes = [
     {
@@ -125,10 +128,6 @@ export const routes:Routes = [
     {
         path: 'tramcar-fuelling',
         component: TramcarFuellingComponent
-    },
-    {
-        path: 'tramcar-index',
-        component: TramcarIndexComponent
     },
     {
         path: 'tramcar-setting',
@@ -225,7 +224,18 @@ export const routes:Routes = [
     {
         path: 'projectautomobile-task',
         component: ProjectautomobileTaskComponent
-    }
+    },
+    {
+        path: 'tramcar-index',
+        component: TramcarIndexComponent,
+        canDeactivate:[TramcarIndexGuard]  //路由守卫
+    },
+    // {
+    //     path: 'tramcar-index',
+    //     loadChildren:'./tramcar-index/tramcar-index.module#TramcarIndexModule',
+    //     canDeactivate:[TramcarIndexGuard],  //路由守卫
+    //     data: {pageTitle: 'tramcar-index'}
+    // }
 ];
 
 export const routing = RouterModule.forChild(routes)
