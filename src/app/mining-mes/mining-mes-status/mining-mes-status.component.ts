@@ -32,8 +32,8 @@ export class MiningMesStatusComponent implements OnInit {
                 radius : '55%',
                 center: ['50%', '60%'],
                 data:[
-                    {value:54758, name:'矿石', selected:true},
-                    {value:54758, name:'矿石自产'}
+                    {value:14252, name:'未完成', selected:true},
+                    {value:54758, name:'已完成'}
                 ],
                 itemStyle: {
                     emphasis: {
@@ -62,11 +62,8 @@ export class MiningMesStatusComponent implements OnInit {
                 radius : '55%',
                 center: ['50%', '60%'],
                 data:[
-                    {value:198674, name:'矿石', selected:true},
-                    {value:88380, name:'东邦南'},
-                    {value:36990, name:'东邦北'},
-                    {value:47502, name:'西邦'},
-                    {value:25802, name:'岩石自产'}
+                    {value:2255, name:'未完成', selected:true},
+                    {value:4758, name:'已完成'}
                 ],
                 itemStyle: {
                     emphasis: {
@@ -95,9 +92,9 @@ export class MiningMesStatusComponent implements OnInit {
                 radius : '55%',
                 center: ['50%', '60%'],
                 data:[
-                    {value:40, name:'工作', selected:true},
-                    {value:5, name:'停工'},
-                    {value:10, name:'维修'}
+                    {value:40, name:'工作（辆）', selected:true},
+                    {value:5, name:'停工（辆）'},
+                    {value:10, name:'维修（辆）'}
                 ],
                 itemStyle: {
                     emphasis: {
@@ -126,9 +123,9 @@ export class MiningMesStatusComponent implements OnInit {
                 radius : '55%',
                 center: ['50%', '60%'],
                 data:[
-                    {value:20, name:'工作', selected:true},
-                    {value:2, name:'停工'},
-                    {value:3, name:'维修'}
+                    {value:20, name:'工作（辆）', selected:true},
+                    {value:2, name:'停工（辆）'},
+                    {value:3, name:'维修（辆）'}
                 ],
                 itemStyle: {
                     emphasis: {
@@ -157,9 +154,9 @@ export class MiningMesStatusComponent implements OnInit {
                 radius : '55%',
                 center: ['50%', '60%'],
                 data:[
-                    {value:50, name:'工作', selected:true},
-                    {value:8, name:'停工'},
-                    {value:4, name:'维修'}
+                    {value:50, name:'工作（辆）', selected:true},
+                    {value:8, name:'停工（辆）'},
+                    {value:4, name:'维修（辆）'}
                 ],
                 itemStyle: {
                     emphasis: {
