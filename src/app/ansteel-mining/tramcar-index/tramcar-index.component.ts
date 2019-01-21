@@ -9,6 +9,8 @@ import {wsClientService} from "../../shared/ws/ws-client";
   templateUrl: './tramcar-index.component.html'
 })
 export class TramcarIndexComponent implements OnInit {
+
+  xy_details: boolean = false;  //单击展开，再次单击隐藏
   // mt_assets_type = 516;
   mining_list : any = [];
   mining_task_list : any = [];
@@ -309,6 +311,12 @@ export class TramcarIndexComponent implements OnInit {
     }
   }
 
+
+
+    //单击展开，再次单击隐藏
+    changedetails(){
+        this.xy_details = (this.xy_details == false);
+    }
 
 
 }

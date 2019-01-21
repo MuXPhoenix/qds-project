@@ -1,0 +1,127 @@
+<!--采矿能源智能管理单元-总耗油量-->
+
+<div id="content">
+    <sa-widgets-grid>
+
+        <div class="row">
+
+            <article class="col-sm-12 ">
+                <sa-widget [editbutton]="false" [deletebutton]="false" >
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>总耗油量</h2>
+                    </header>
+
+                    <div>
+                        <!--小部件内容-->
+                        <div class="widget-body no-padding">
+                            <div class="">
+                                <table class="table table-striped smart-form table-height-20">
+                                    <thead class="">
+                                    <tr>
+                                        <th>设备编码</th>
+                                        <th>设备名称 </th>
+                                        <th>时间段</th>
+                                        <th>总耗电量</th>
+                                        <th>耗电详情</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!-- class="table-color"-->
+                                    <tr  (click)="changedetails()">
+                                        <td>A0001</td>
+                                        <td>电铲</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗电量</td>
+                                    </tr>
+                                    <tr (click)="changedetails()" >
+                                        <td>A0001</td>
+                                        <td>牙轮</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗油量</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <!-- 底部-（分页部分）-->
+                            <div class="dt-toolbar">
+                                <div class="dib-left">
+                                    <span>共3条</span>
+                                </div>
+                                <div class="hidden-xs right">
+                                    <ul class="pagination pagination-sm">
+                                        <li class="disabled">
+                                            <a href="">上一页</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="">1</a>
+                                        </li>
+                                        <li >
+                                            <a href="">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="">...</a>
+                                        </li>
+                                        <li>
+                                            <a href="">99</a>
+                                        </li>
+                                        <li>
+                                            <a href="">下一页</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                </sa-widget>
+            </article>
+
+        </div>
+
+
+
+    </sa-widgets-grid>
+</div>
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+    <div class="entity-well entity-well--tasks">
+        <div class="entity-well-header">
+      <span class="approval-head">A0001
+        <span >电铲
+        </span>
+      </span>
+            <ul class="entity-well-header-nav nav s pull-right">
+                <li class="divider-v"></li>
+                <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+            </ul>
+        </div>
+        <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+            <div class="approve-top approve-intro">
+                <div class="approve-formschema">
+                    <table class="table table-striped table-forum smart-form details-table">
+                        <tbody>
+                        <tr><td class="details-width">设备编码:</td><td class="">A0001</td></tr>
+                        <tr><td class="details-width">设备名称：</td><td >电铲</td></tr>
+                        <tr><td class="details-width">时间段:</td><td >2019/01/18-2019/01/19%</td></tr>
+                        <tr><td class="details-width">总耗电量:</td><td >100</td></tr>
+                        <tr><td class="details-width">耗电详情:</td>
+                            <td >
+                                <div>2019/01/18总耗电量100L</div>
+                                <div>2019/01/19总耗电量100L</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

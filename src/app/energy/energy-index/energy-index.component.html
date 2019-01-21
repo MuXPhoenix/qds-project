@@ -1,0 +1,572 @@
+<!--采矿能源智能管理单元-首页-->
+
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>总耗电量</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="col-md-6 col-sm-6 col-xs-12 text-align-center">
+                <div class="tab-list ">
+                  <ul>
+                    <li class="tab-li" [ngClass] = "item==0 ? 'tab-list-active' : ''" (click)="OnItemClick(0)">日累计</li>
+                    <li class="tab-li" [ngClass] = "item==1 ? 'tab-list-active' : ''" (click)="OnItemClick(1)">周累计</li>
+                    <li class="tab-li" [ngClass] = "item==2 ? 'tab-list-active' : ''" (click)="OnItemClick(2)">月累计</li>
+                    <li class="tab-li" [ngClass] = "item==3 ? 'tab-list-active' : ''" (click)="OnItemClick(3)">季累计</li>
+                    <li class="tab-li" [ngClass] = "item==4 ? 'tab-list-active' : ''" (click)="OnItemClick(4)">年累计</li>
+                  </ul>
+                </div>
+                <div class="tab-content">
+                  <div [style.display] = "item == 0 ? 'block' : 'none'">
+                    <div  echarts [options]="energyoption" style="width: 100%;height:400px;" class="demo-chart"></div>
+                    <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+                  </div>
+                  <div [style.display] = "item == 1 ? 'block' : 'none'">周累计</div>
+                  <div [style.display] = "item == 2 ? 'block' : 'none'">月累计</div>
+                  <div [style.display] = "item == 3 ? 'block' : 'none'">季累计</div>
+                  <div [style.display] = "item == 4 ? 'block' : 'none'">年累计</div>
+                </div>
+
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 text-align-center" style="margin-top: 60px;">
+                <div  echarts [options]="energy2option" style="width: 100%;height:400px;" class="demo-chart"></div>
+                <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>总耗油量</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="col-md-4 col-sm-4 col-xs-4 text-align-center" style="margin-top: 20px;">
+                <div  echarts [options]="energy3option" style="width: 100%;height:400px;" class="demo-chart"></div>
+                <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4 text-align-center" style="margin-top: 20px;">
+                <div  echarts [options]="energy4option" style="width: 100%;height:400px;" class="demo-chart"></div>
+                <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4 text-align-center" style="margin-top: 20px;">
+                <div  echarts [options]="energy5option" style="width: 100%;height:400px;" class="demo-chart"></div>
+                <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>油量情况</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="col-md-3 col-sm-3 col-xs-12 text-align-center" >
+                <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+                  <defs>
+                    <style>
+                      .youcao-1 {
+                        fill: #40494c;
+                      }
+
+                      .youcao-1, .youcao-2, .youcao-3, .youcao-5, .youcao-6, .youcao-7 {
+                        fill-rule: evenodd;
+                      }
+
+                      .youcao-2 {
+                        fill: #6c787f;
+                      }
+
+                      .youcao-3 {
+                        fill: #fcc900;
+                      }
+
+                      .youcao-4 {
+                        fill: #262c31;
+                      }
+
+                      .youcao-5 {
+                        fill: #e2af0a;
+                      }
+
+                      .youcao-6 {
+                        fill: #343c40;
+                      }
+
+                      .youcao-7 {
+                        fill: #fefefe;
+                      }
+
+                      .youcao-8 {
+                        fill: #fff;
+                      }
+
+                      .youcao-9 {
+                        fill: #f7941e;
+                      }
+                    </style>
+                  </defs>
+                  <title>油槽</title>
+                  <g>
+                    <path class="youcao-1" d="M314.76,281.14H485.24a6.53,6.53,0,0,1,6.57,6.56v14.91H308.19V287.7a6.53,6.53,0,0,1,6.57-6.56Z"/>
+                    <path class="youcao-2" d="M318.72,265.08h37.64v16.06H318.72Zm123.14,0h37.65v16.06H441.86Z"/>
+                    <path class="youcao-3" d="M328.11,113.89H471.79a76.13,76.13,0,0,1,75.91,75.9h0a76.19,76.19,0,0,1-75.91,75.91H328.11c-41.71,0-75.81-34.2-75.81-75.91h0a76,76,0,0,1,75.81-75.9Z"/>
+                    <rect class="youcao-4" x="364.6" y="102" width="70.69" height="11.89"/>
+                    <path class="youcao-5" d="M328.21,113.89h20.85V265.7H328.21Zm122.72,0h20.86V265.7H450.93Z"/>
+                    <path class="youcao-6" d="M255.12,147.46h0a6.27,6.27,0,0,1,6.25,6.26v72.16a6.27,6.27,0,0,1-6.25,6.25h0a6.28,6.28,0,0,1-6.26-6.25V153.72a6.28,6.28,0,0,1,6.26-6.26Zm289.76,0h0a6.28,6.28,0,0,1,6.26,6.26v72.16a6.28,6.28,0,0,1-6.26,6.25h0a6.27,6.27,0,0,1-6.25-6.25V153.72a6.27,6.27,0,0,1,6.25-6.26Z"/>
+                    <path class="youcao-6" d="M293.59,302.61H506.3A19.76,19.76,0,0,1,526,322.32v22.52H273.88V322.32a19.76,19.76,0,0,1,19.71-19.71Z"/>
+                    <rect class="youcao-4" x="273.88" y="333.58" width="252.12" height="11.26"/>
+                    <path class="youcao-1" d="M463.76,311.68a33.16,33.16,0,1,1-33.16,33.16,33.11,33.11,0,0,1,33.16-33.16Z"/>
+                    <path class="youcao-1" d="M336.13,311.68A33.16,33.16,0,1,1,303,344.84a33.2,33.2,0,0,1,33.15-33.16Z"/>
+                    <path class="youcao-7" d="M463.76,326a18.88,18.88,0,1,1-18.87,18.87A18.87,18.87,0,0,1,463.76,326Z"/>
+                    <path class="youcao-6" d="M463.76,338a6.86,6.86,0,0,1,6.78,6.88,6.78,6.78,0,0,1-13.56,0,6.86,6.86,0,0,1,6.78-6.88Z"/>
+                    <path class="youcao-7" d="M336.13,326a18.88,18.88,0,1,1-18.87,18.87A18.89,18.89,0,0,1,336.13,326Z"/>
+                    <path class="youcao-6" d="M336.13,338a6.88,6.88,0,0,1,6.89,6.88,6.84,6.84,0,1,1-6.89-6.88Z"/>
+                    <path class="youcao-3" d="M500.25,341.5h-73a36.49,36.49,0,0,1,73,0Z"/>
+                    <path class="youcao-3" d="M372.63,341.5H299.74a36.45,36.45,0,0,1,72.89,0Z"/>
+                    <rect class="youcao-8" x="364.56" y="113.89" width="34" height="151.81"/>
+                    <rect class="youcao-9" x="364.56" y="142.73" width="34" height="122.97"/>
+                    <g>
+                      <rect class="youcao-4" x="462.91" y="119" width="8.47" height="182.43"/>
+                      <rect class="youcao-4" x="412.88" y="119" width="8.47" height="182.43"/>
+                      <g>
+                        <rect class="youcao-4" x="417.11" y="128.33" width="50.03" height="6.23"/>
+                        <rect class="youcao-4" x="417.11" y="154.39" width="50.03" height="6.22"/>
+                        <rect class="youcao-4" x="417.11" y="180.44" width="50.03" height="6.23"/>
+                        <rect class="youcao-4" x="417.12" y="206.5" width="50.02" height="6.23"/>
+                        <rect class="youcao-4" x="417.11" y="232.55" width="50.03" height="6.25"/>
+                        <rect class="youcao-4" x="417.11" y="258.59" width="50.03" height="6.25"/>
+                        <rect class="youcao-4" x="417.11" y="284.65" width="50.03" height="6.24"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                <h4 class="tanktruck-h4">一号油槽</h4>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12 text-align-center" >
+                <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+                  <defs>
+                    <style>
+                      .youcao-1 {
+                        fill: #40494c;
+                      }
+
+                      .youcao-1, .youcao-2, .youcao-3, .youcao-5, .youcao-6, .youcao-7 {
+                        fill-rule: evenodd;
+                      }
+
+                      .youcao-2 {
+                        fill: #6c787f;
+                      }
+
+                      .youcao-3 {
+                        fill: #fcc900;
+                      }
+
+                      .youcao-4 {
+                        fill: #262c31;
+                      }
+
+                      .youcao-5 {
+                        fill: #e2af0a;
+                      }
+
+                      .youcao-6 {
+                        fill: #343c40;
+                      }
+
+                      .youcao-7 {
+                        fill: #fefefe;
+                      }
+
+                      .youcao-8 {
+                        fill: #fff;
+                      }
+
+                      .youcao-9 {
+                        fill: #f7941e;
+                      }
+                    </style>
+                  </defs>
+                  <title>油槽</title>
+                  <g>
+                    <path class="youcao-1" d="M314.76,281.14H485.24a6.53,6.53,0,0,1,6.57,6.56v14.91H308.19V287.7a6.53,6.53,0,0,1,6.57-6.56Z"/>
+                    <path class="youcao-2" d="M318.72,265.08h37.64v16.06H318.72Zm123.14,0h37.65v16.06H441.86Z"/>
+                    <path class="youcao-3" d="M328.11,113.89H471.79a76.13,76.13,0,0,1,75.91,75.9h0a76.19,76.19,0,0,1-75.91,75.91H328.11c-41.71,0-75.81-34.2-75.81-75.91h0a76,76,0,0,1,75.81-75.9Z"/>
+                    <rect class="youcao-4" x="364.6" y="102" width="70.69" height="11.89"/>
+                    <path class="youcao-5" d="M328.21,113.89h20.85V265.7H328.21Zm122.72,0h20.86V265.7H450.93Z"/>
+                    <path class="youcao-6" d="M255.12,147.46h0a6.27,6.27,0,0,1,6.25,6.26v72.16a6.27,6.27,0,0,1-6.25,6.25h0a6.28,6.28,0,0,1-6.26-6.25V153.72a6.28,6.28,0,0,1,6.26-6.26Zm289.76,0h0a6.28,6.28,0,0,1,6.26,6.26v72.16a6.28,6.28,0,0,1-6.26,6.25h0a6.27,6.27,0,0,1-6.25-6.25V153.72a6.27,6.27,0,0,1,6.25-6.26Z"/>
+                    <path class="youcao-6" d="M293.59,302.61H506.3A19.76,19.76,0,0,1,526,322.32v22.52H273.88V322.32a19.76,19.76,0,0,1,19.71-19.71Z"/>
+                    <rect class="youcao-4" x="273.88" y="333.58" width="252.12" height="11.26"/>
+                    <path class="youcao-1" d="M463.76,311.68a33.16,33.16,0,1,1-33.16,33.16,33.11,33.11,0,0,1,33.16-33.16Z"/>
+                    <path class="youcao-1" d="M336.13,311.68A33.16,33.16,0,1,1,303,344.84a33.2,33.2,0,0,1,33.15-33.16Z"/>
+                    <path class="youcao-7" d="M463.76,326a18.88,18.88,0,1,1-18.87,18.87A18.87,18.87,0,0,1,463.76,326Z"/>
+                    <path class="youcao-6" d="M463.76,338a6.86,6.86,0,0,1,6.78,6.88,6.78,6.78,0,0,1-13.56,0,6.86,6.86,0,0,1,6.78-6.88Z"/>
+                    <path class="youcao-7" d="M336.13,326a18.88,18.88,0,1,1-18.87,18.87A18.89,18.89,0,0,1,336.13,326Z"/>
+                    <path class="youcao-6" d="M336.13,338a6.88,6.88,0,0,1,6.89,6.88,6.84,6.84,0,1,1-6.89-6.88Z"/>
+                    <path class="youcao-3" d="M500.25,341.5h-73a36.49,36.49,0,0,1,73,0Z"/>
+                    <path class="youcao-3" d="M372.63,341.5H299.74a36.45,36.45,0,0,1,72.89,0Z"/>
+                    <rect class="youcao-8" x="364.56" y="113.89" width="34" height="151.81"/>
+                    <rect class="youcao-9" x="364.56" y="142.73" width="34" height="122.97"/>
+                    <g>
+                      <rect class="youcao-4" x="462.91" y="119" width="8.47" height="182.43"/>
+                      <rect class="youcao-4" x="412.88" y="119" width="8.47" height="182.43"/>
+                      <g>
+                        <rect class="youcao-4" x="417.11" y="128.33" width="50.03" height="6.23"/>
+                        <rect class="youcao-4" x="417.11" y="154.39" width="50.03" height="6.22"/>
+                        <rect class="youcao-4" x="417.11" y="180.44" width="50.03" height="6.23"/>
+                        <rect class="youcao-4" x="417.12" y="206.5" width="50.02" height="6.23"/>
+                        <rect class="youcao-4" x="417.11" y="232.55" width="50.03" height="6.25"/>
+                        <rect class="youcao-4" x="417.11" y="258.59" width="50.03" height="6.25"/>
+                        <rect class="youcao-4" x="417.11" y="284.65" width="50.03" height="6.24"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                <h4 class="tanktruck-h4">二号油槽</h4>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12 text-align-center" >
+                <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+                  <defs>
+                    <style>
+                      .youche-1, .youche-10 {
+                        fill: #343c40;
+                      }
+
+                      .youche-2 {
+                        fill: #ffd348;
+                      }
+
+                      .youche-3 {
+                        fill: #262c31;
+                      }
+
+                      .youche-11, .youche-4 {
+                        fill: #fcc900;
+                      }
+
+                      .youche-5 {
+                        fill: #edb506;
+                      }
+
+                      .youche-6, .youche-7 {
+                        fill: #fff;
+                      }
+
+                      .youche-6 {
+                        opacity: 0.5;
+                      }
+
+                      .youche-8 {
+                        fill: #40494c;
+                      }
+
+                      .youche-10, .youche-11, .youche-8, .youche-9 {
+                        fill-rule: evenodd;
+                      }
+
+                      .youche-9 {
+                        fill: #fefefe;
+                      }
+
+                      .youche-12 {
+                        fill: #f7941e;
+                      }
+                    </style>
+                  </defs>
+                  <title>油车</title>
+                  <g>
+                    <path class="youche-1" d="M469.09,135.75h41.64a30.61,30.61,0,0,1,27.23,17l37.45,73.8A30.94,30.94,0,0,0,593,241.9l.83.29a31.48,31.48,0,0,1,21.1,30v48.16H469.09Z"/>
+                    <path class="youche-2" d="M548.34,228.59a5.65,5.65,0,0,0,5.08-8.11l-28.75-59.59a22.59,22.59,0,0,0-20.35-12.78H487.09a5.64,5.64,0,0,0-5.65,5.64v69.19a5.65,5.65,0,0,0,5.65,5.65Z"/>
+                    <rect class="youche-3" x="331.63" y="108.19" width="72.44" height="15.32"/>
+                    <path class="youche-4" d="M193.4,233.4c0,28.73,18.18,52,40.61,52H429.26c22.42,0,40.61-23.3,40.61-52V172.71c0-28.73-18.19-52-40.61-52H234c-22.43,0-40.61,23.28-40.61,52Z"/>
+                    <rect class="youche-3" x="185.04" y="319.31" width="429.83" height="18.82"/>
+                    <path class="youche-5" d="M234,126.34H429.26c22.42,0,40.61,25.28,40.61,56.48v11.77c0-31.19-18.19-56.48-40.61-56.48H234c-22.43,0-40.61,25.29-40.61,56.48V182.82C193.4,151.62,211.58,126.34,234,126.34Z"/>
+                    <g>
+                      <rect class="youche-3" x="285.91" y="120.25" width="8.47" height="165.18"/>
+                      <rect class="youche-3" x="235.88" y="120.25" width="8.47" height="165.18"/>
+                      <g>
+                        <rect class="youche-3" x="240.11" y="128.7" width="50.03" height="5.64"/>
+                        <rect class="youche-3" x="240.11" y="152.29" width="50.03" height="5.64"/>
+                        <rect class="youche-3" x="240.11" y="175.88" width="50.03" height="5.64"/>
+                        <rect class="youche-3" x="240.12" y="199.47" width="50.02" height="5.64"/>
+                        <rect class="youche-3" x="240.11" y="223.06" width="50.03" height="5.65"/>
+                        <rect class="youche-3" x="240.11" y="246.64" width="50.03" height="5.66"/>
+                        <rect class="youche-3" x="240.11" y="270.24" width="50.03" height="5.65"/>
+                      </g>
+                    </g>
+                    <rect class="youche-1" x="193.4" y="281.18" width="276.47" height="38.13"/>
+                    <path class="youche-6" d="M487.09,148.11h17.23a22.56,22.56,0,0,1,11.75,3.32l-34.63,34.64V153.75A5.65,5.65,0,0,1,487.09,148.11Z"/>
+                    <path class="youche-7" d="M402.13,186.4a17.3,17.3,0,0,0,34.59,0c0-9.56-17.3-32.69-17.3-32.69S402.13,176.84,402.13,186.4Z"/>
+                    <g>
+                      <path class="youche-8" d="M257.53,305.49a33.16,33.16,0,1,1-33.16,33.16,33.19,33.19,0,0,1,33.16-33.16Z"/>
+                      <path class="youche-9" d="M257.53,319.77a18.88,18.88,0,1,1-18.88,18.88,18.9,18.9,0,0,1,18.88-18.88Z"/>
+                      <path class="youche-10" d="M257.53,331.76a6.88,6.88,0,0,1,6.88,6.89,6.83,6.83,0,1,1-6.88-6.89Z"/>
+                      <path class="youche-11" d="M294,335.31H221.14a36.44,36.44,0,0,1,72.88,0Z"/>
+                    </g>
+                    <g>
+                      <path class="youche-8" d="M404,305.49a33.16,33.16,0,1,1-33.16,33.16A33.19,33.19,0,0,1,404,305.49Z"/>
+                      <path class="youche-9" d="M404,319.77a18.88,18.88,0,1,1-18.88,18.88A18.9,18.9,0,0,1,404,319.77Z"/>
+                      <path class="youche-10" d="M404,331.76a6.88,6.88,0,0,1,6.88,6.89,6.83,6.83,0,1,1-6.88-6.89Z"/>
+                      <path class="youche-11" d="M440.52,335.31H367.64a36.44,36.44,0,0,1,72.88,0Z"/>
+                    </g>
+                    <g>
+                      <path class="youche-8" d="M550.53,305.49a33.16,33.16,0,1,1-33.16,33.16,33.19,33.19,0,0,1,33.16-33.16Z"/>
+                      <path class="youche-9" d="M550.53,319.77a18.88,18.88,0,1,1-18.88,18.88,18.9,18.9,0,0,1,18.88-18.88Z"/>
+                      <path class="youche-10" d="M550.53,331.76a6.88,6.88,0,0,1,6.88,6.89,6.83,6.83,0,1,1-6.88-6.89Z"/>
+                      <path class="youche-11" d="M587,335.31H514.14a36.44,36.44,0,0,1,72.88,0Z"/>
+                    </g>
+                    <rect class="youche-7" x="334.81" y="120.7" width="34" height="160.49"/>
+                    <rect class="youche-12" x="334.81" y="234.05" width="34" height="47.14"/>
+                  </g>
+                </svg>
+                <h4 class="tanktruck-h4">一号油槽车</h4>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12 text-align-center" >
+                <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+                  <defs>
+                    <style>
+                      .youche-1, .youche-10 {
+                        fill: #343c40;
+                      }
+
+                      .youche-2 {
+                        fill: #ffd348;
+                      }
+
+                      .youche-3 {
+                        fill: #262c31;
+                      }
+
+                      .youche-11, .youche-4 {
+                        fill: #fcc900;
+                      }
+
+                      .youche-5 {
+                        fill: #edb506;
+                      }
+
+                      .youche-6, .youche-7 {
+                        fill: #fff;
+                      }
+
+                      .youche-6 {
+                        opacity: 0.5;
+                      }
+
+                      .youche-8 {
+                        fill: #40494c;
+                      }
+
+                      .youche-10, .youche-11, .youche-8, .youche-9 {
+                        fill-rule: evenodd;
+                      }
+
+                      .youche-9 {
+                        fill: #fefefe;
+                      }
+
+                      .youche-12 {
+                        fill: #f7941e;
+                      }
+                    </style>
+                  </defs>
+                  <title>油车</title>
+                  <g>
+                    <path class="youche-1" d="M469.09,135.75h41.64a30.61,30.61,0,0,1,27.23,17l37.45,73.8A30.94,30.94,0,0,0,593,241.9l.83.29a31.48,31.48,0,0,1,21.1,30v48.16H469.09Z"/>
+                    <path class="youche-2" d="M548.34,228.59a5.65,5.65,0,0,0,5.08-8.11l-28.75-59.59a22.59,22.59,0,0,0-20.35-12.78H487.09a5.64,5.64,0,0,0-5.65,5.64v69.19a5.65,5.65,0,0,0,5.65,5.65Z"/>
+                    <rect class="youche-3" x="331.63" y="108.19" width="72.44" height="15.32"/>
+                    <path class="youche-4" d="M193.4,233.4c0,28.73,18.18,52,40.61,52H429.26c22.42,0,40.61-23.3,40.61-52V172.71c0-28.73-18.19-52-40.61-52H234c-22.43,0-40.61,23.28-40.61,52Z"/>
+                    <rect class="youche-3" x="185.04" y="319.31" width="429.83" height="18.82"/>
+                    <path class="youche-5" d="M234,126.34H429.26c22.42,0,40.61,25.28,40.61,56.48v11.77c0-31.19-18.19-56.48-40.61-56.48H234c-22.43,0-40.61,25.29-40.61,56.48V182.82C193.4,151.62,211.58,126.34,234,126.34Z"/>
+                    <g>
+                      <rect class="youche-3" x="285.91" y="120.25" width="8.47" height="165.18"/>
+                      <rect class="youche-3" x="235.88" y="120.25" width="8.47" height="165.18"/>
+                      <g>
+                        <rect class="youche-3" x="240.11" y="128.7" width="50.03" height="5.64"/>
+                        <rect class="youche-3" x="240.11" y="152.29" width="50.03" height="5.64"/>
+                        <rect class="youche-3" x="240.11" y="175.88" width="50.03" height="5.64"/>
+                        <rect class="youche-3" x="240.12" y="199.47" width="50.02" height="5.64"/>
+                        <rect class="youche-3" x="240.11" y="223.06" width="50.03" height="5.65"/>
+                        <rect class="youche-3" x="240.11" y="246.64" width="50.03" height="5.66"/>
+                        <rect class="youche-3" x="240.11" y="270.24" width="50.03" height="5.65"/>
+                      </g>
+                    </g>
+                    <rect class="youche-1" x="193.4" y="281.18" width="276.47" height="38.13"/>
+                    <path class="youche-6" d="M487.09,148.11h17.23a22.56,22.56,0,0,1,11.75,3.32l-34.63,34.64V153.75A5.65,5.65,0,0,1,487.09,148.11Z"/>
+                    <path class="youche-7" d="M402.13,186.4a17.3,17.3,0,0,0,34.59,0c0-9.56-17.3-32.69-17.3-32.69S402.13,176.84,402.13,186.4Z"/>
+                    <g>
+                      <path class="youche-8" d="M257.53,305.49a33.16,33.16,0,1,1-33.16,33.16,33.19,33.19,0,0,1,33.16-33.16Z"/>
+                      <path class="youche-9" d="M257.53,319.77a18.88,18.88,0,1,1-18.88,18.88,18.9,18.9,0,0,1,18.88-18.88Z"/>
+                      <path class="youche-10" d="M257.53,331.76a6.88,6.88,0,0,1,6.88,6.89,6.83,6.83,0,1,1-6.88-6.89Z"/>
+                      <path class="youche-11" d="M294,335.31H221.14a36.44,36.44,0,0,1,72.88,0Z"/>
+                    </g>
+                    <g>
+                      <path class="youche-8" d="M404,305.49a33.16,33.16,0,1,1-33.16,33.16A33.19,33.19,0,0,1,404,305.49Z"/>
+                      <path class="youche-9" d="M404,319.77a18.88,18.88,0,1,1-18.88,18.88A18.9,18.9,0,0,1,404,319.77Z"/>
+                      <path class="youche-10" d="M404,331.76a6.88,6.88,0,0,1,6.88,6.89,6.83,6.83,0,1,1-6.88-6.89Z"/>
+                      <path class="youche-11" d="M440.52,335.31H367.64a36.44,36.44,0,0,1,72.88,0Z"/>
+                    </g>
+                    <g>
+                      <path class="youche-8" d="M550.53,305.49a33.16,33.16,0,1,1-33.16,33.16,33.19,33.19,0,0,1,33.16-33.16Z"/>
+                      <path class="youche-9" d="M550.53,319.77a18.88,18.88,0,1,1-18.88,18.88,18.9,18.9,0,0,1,18.88-18.88Z"/>
+                      <path class="youche-10" d="M550.53,331.76a6.88,6.88,0,0,1,6.88,6.89,6.83,6.83,0,1,1-6.88-6.89Z"/>
+                      <path class="youche-11" d="M587,335.31H514.14a36.44,36.44,0,0,1,72.88,0Z"/>
+                    </g>
+                    <rect class="youche-7" x="334.81" y="120.7" width="34" height="160.49"/>
+                    <rect class="youche-12" x="334.81" y="234.05" width="34" height="47.14"/>
+                  </g>
+                </svg>
+                <h4 class="tanktruck-h4">二号油槽车</h4>
+
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>司机行驶数据</h2>
+            <div class="widget-toolbar">
+              <button  class="btn btn-xs btn-default"  routerLink="/energy/energy-driver-data">查看详情</button>
+            </div>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20 ">
+                  <thead class="">
+                  <tr>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>部门 </th>
+                    <th>驾龄</th>
+                    <th>事故（数）</th>
+                    <th>超速 </th>
+                    <th>油耗 </th>
+                    <th>行驶里程 </th>
+                    <th>平均时速 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr  >
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  >
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  >
+                    <td>2</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  >
+                    <td>3</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  >
+                    <td>4</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>

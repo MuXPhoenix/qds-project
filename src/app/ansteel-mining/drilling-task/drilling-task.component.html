@@ -1,4 +1,4 @@
-<!--牙轮生产智能指挥模块-任务列表-->
+<!--牙轮生产智能指挥模块-最新任务-->
 
 <div id="content">
   <sa-widgets-grid>
@@ -10,11 +10,87 @@
           <li ><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
           <li><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
           <li><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
-          <li class="active"><a routerLink="/ansteel-mining/drilling-task">任务列表</a></li>
+          <li class="active"><a routerLink="/ansteel-mining/drilling-task">最新任务</a></li>
           <li ><a routerLink="/ansteel-mining/drilling-dutyshift">交接班</a></li>
           <li ><a routerLink="/ansteel-mining/drilling-fuelling">加油调度</a></li>
         </ul>
       </div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>最新任务</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+              <div style="padding:0;" class="">
+                <div  class="">
+                  <table class="table table-striped smart-form table-height-20">
+                    <thead class="">
+                    <tr>
+                      <th  >序号</th>
+                      <th >编号</th>
+                      <th >设备种类</th>
+                      <th >最新任务</th>
+                      <th >时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- class="table-color"-->
+                    <tr   (click)="changedetails()">
+                      <td  >1</td>
+                      <td  >A001</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（A001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >2</td>
+                      <td  >A001</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（A001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
 
 
     </div>
@@ -22,4 +98,34 @@
 
 
   </sa-widgets-grid>
+</div>
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+  <div class="entity-well entity-well--tasks">
+    <div class="entity-well-header">
+      <span class="approval-head">A0001
+        <span ><span>牙轮钻机交接最新任务</span>
+        </span>
+      </span>
+      <ul class="entity-well-header-nav nav s pull-right">
+        <li class="divider-v"></li>
+        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+      <div class="approve-top approve-intro">
+        <div class="approve-formschema">
+          <table class="table table-striped table-forum smart-form details-table">
+            <tbody>
+            <tr><td class="details-width">序号:</td><td class="">1</td></tr>
+            <tr><td class="details-width">编号：</td><td >A001 </td></tr>
+            <tr><td class="details-width">设备种类:</td><td >牙轮钻机</td></tr>
+            <tr><td class="details-width">最新任务:</td><td >2018-01-19 13:50某某设备（A001）到某某地点做某某事情</td></tr>
+            <tr><td class="details-width">时间:</td><td >2018-01-17 10:30</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

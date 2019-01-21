@@ -21,7 +21,7 @@
           <li ><a routerLink="/ansteel-mining/tanktruck-index">首页</a></li>
           <li class="active"><a routerLink="/ansteel-mining/tanktruck-status">状态</a></li>
           <li ><a routerLink="/ansteel-mining/tanktruck-alarm" >报警</a></li>
-          <li><a routerLink="/ansteel-mining/tanktruck-task">任务列表</a></li>
+          <li><a routerLink="/ansteel-mining/tanktruck-task">最新任务</a></li>
           <li ><a routerLink="/ansteel-mining/tanktruck-dutyshift">交接班</a></li>
           <li ><a routerLink="/ansteel-mining/tanktruck-fuelling">加油调度</a></li>
         </ul>
@@ -30,20 +30,137 @@
       </div>
 
       <article class="col-sm-12 ">
-        <sa-widget [editbutton]="false" [deletebutton]="false" >
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
           <header>
             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-            <h2>状态</h2>
+            <h2>油槽状态</h2>
           </header>
-
           <div>
-            <!--小部件内容-->
-            <div class="widget-body no-padding">
+            <div class="widget-body no-padding" >
+              <div class="">
+                <table  class="table table-striped smart-form table-border-th table-height-20">
+                  <thead>
+                  <tr >
+                    <th rowspan="2">设备编号</th>
+                    <th colspan="4">参数显示</th>
+                    <th rowspan="2">运行状态</th>
+                    <th rowspan="2">故障原因</th>
+                    <th rowspan="2">通话</th>
+                    <th rowspan="2">当前位置</th>
+                    <th rowspan="2">运行轨迹查询</th>
+                  </tr>
+                  <tr>
+                    <th >电流</th>
+                    <th >电压</th>
+                    <th >转速</th>
+                    <th style="border-right: 1px solid #ddd">油量</th>
+                  </tr>
+                  </thead>
+                  <tbody  >
+                  <tr (click)="changedetails()"  >
+                    <td >A001</td>
+                    <td >4.8 A</td>
+                    <td >26.5 V</td>
+                    <td >200000 rpm</td>
+                    <td >100  L</td>
+                    <td >
+                      <span>
+                      <span class="label-normal" >正常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >运行轨迹查询</td>
 
+                  </tr>
+                  <tr  class="odd shown" (click)="changedetails()" >
+                    <td >A002</td>
+                    <td >4.8 A</td>
+                    <td >26.5 V</td>
+                    <td >200000 rpm</td>
+                    <td >100  L</td>
+                    <td >
+                    <span>
+                      <span class="label-blue" >维修</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">机械故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr   (click)="changedetails()" >
+                    <td >A003</td>
+                    <td >4.8 A</td>
+                    <td >26.5 V</td>
+                    <td >200000 rpm</td>
+                    <td >100  L</td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">钻头故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  >
+                    <td >A004</td>
+                    <td >4.8 A</td>
+                    <td >26.5 V</td>
+                    <td >200000 rpm</td>
+                    <td >100  L</td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">履带故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  </tbody>
+
+                </table>
+
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
             </div>
           </div>
-
         </sa-widget>
       </article>
 
@@ -54,4 +171,45 @@
 
 
   </sa-widgets-grid>
+</div>
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+  <div class="entity-well entity-well--tasks">
+    <div class="entity-well-header">
+      <span class="approval-head">A0001
+        <span ><span>油槽状态</span>
+        </span>
+      </span>
+      <ul class="entity-well-header-nav nav s pull-right">
+        <li class="divider-v"></li>
+        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+      <div class="approve-top approve-intro">
+        <div class="approve-formschema">
+          <table class="table table-striped table-forum smart-form details-table">
+            <tbody>
+            <tr><td class="details-width">设备编号:</td><td class="">A0003</td></tr>
+            <tr>
+              <td class="details-width">参数显示:</td>
+              <td class="details-label">
+                <div class="label-blue" >电流:4.8 A</div>
+                <div class="label-blue" >电压:26.5 V</div>
+                <div class="label-blue" >转速:4.8 200000 rpm</div>
+                <div class="label-full" >油量:10  L</div>
+              </td>
+            </tr>
+            <tr><td class="details-width">运行状态：</td><td ><span class="label-normal" >正常</span></td></tr>
+            <tr><td class="details-width">故障原因:</td><td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td></tr>
+            <tr><td class="details-width">通话:</td><td >通话中</td></tr>
+            <tr><td class="details-width">当前位置:</td><td >当前位置</td></tr>
+            <tr><td class="details-width">运行轨迹查询:</td><td >运行轨迹查询</td></tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

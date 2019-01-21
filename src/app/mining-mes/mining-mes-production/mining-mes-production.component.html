@@ -1,0 +1,191 @@
+<!--采矿综合管理单元-生产报表-->
+
+<div id="content">
+    <sa-widgets-grid>
+
+        <div class="row">
+
+            <article class="col-sm-12 ">
+                <sa-widget [editbutton]="false" [deletebutton]="false" >
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>生产报表</h2>
+                    </header>
+
+                    <div>
+                        <!--小部件内容-->
+                        <div class="widget-body no-padding">
+                            <div  class="row">
+                                <article  class="col-sm-12">
+                                    <div class="navbar navbar-default">
+                                        <form  class="navbar-form navbar-left ng-pristine ng-valid ng-touched " novalidate="" role="search" >
+                                            <div class="form-group pdlr-4">
+                                                <strong> 筛选：</strong>
+                                            </div>
+                                            <div class="form-group pdlr-4">
+                                                <strong> 时间选择：</strong>
+                                            </div>
+                                            <div class="form-group btn-group pdlr-4">
+                                                <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+
+                                            </div>
+                                            <div class="form-group pdlr-4">
+                                                <strong> 至</strong>
+                                            </div>
+                                            <div class="form-group btn-group pdlr-4 dropdown">
+                                                <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+                                            </div>
+                                            <div class="form-group btn-group pdlr-4">
+                                                <a class="btn default-btn btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                    全部<i class="fa fa-fw fa-chevron-down"></i></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li ><a >全部</a></li>
+                                                    <li ><a>矿石</a></li>
+                                                    <li ><a >岩石</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="form-group pdlr-4">
+                                                <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="keyword" placeholder="请输入搜索内容" type="text">
+                                            </div>
+                                            <div class="form-group pdlr-4">
+                                                <button class="btn btn-default" type="button" (click)="getAssetsList(1,0)">
+                                                    <i  class="glyphicon glyphicon-search"></i>
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="">
+                                <table class="table table-striped smart-form table-height-20">
+                                    <thead class="">
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>类型 </th>
+                                        <th>完成量</th>
+                                        <th>单位</th>
+                                        <th>计划量</th>
+                                        <th>产量</th>
+                                        <th>超欠量</th>
+                                        <th>计划累计量</th>
+                                        <th>实际累计量</th>
+                                        <th>超欠量</th>
+                                        <th>截止时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!-- class="table-color"-->
+                                    <tr  (click)="changedetails()">
+                                        <td>矿石</td>
+                                        <td>日计划</td>
+                                        <td>20% </td>
+                                        <td>吨 </td>
+                                        <td>42500</td>
+                                        <td>54758</td>
+                                        <td>12258</td>
+                                        <td>977500</td>
+                                        <td>960642</td>
+                                        <td>-1065338</td>
+                                        <td>2019-01-18 12：30</td>
+                                    </tr>
+                                    <tr (click)="changedetails()" >
+                                        <td>矿石</td>
+                                        <td>日计划</td>
+                                        <td>20% </td>
+                                        <td>吨</td>
+                                        <td>42500</td>
+                                        <td>54758</td>
+                                        <td>12258</td>
+                                        <td>977500</td>
+                                        <td>960642</td>
+                                        <td>-1065338</td>
+                                        <td>2019-01-18 12：30</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <!-- 底部-（分页部分）-->
+                            <div class="dt-toolbar">
+                                <div class="dib-left">
+                                    <span>共3条</span>
+                                </div>
+                                <div class="hidden-xs right">
+                                    <ul class="pagination pagination-sm">
+                                        <li class="disabled">
+                                            <a href="">上一页</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="">1</a>
+                                        </li>
+                                        <li >
+                                            <a href="">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="">...</a>
+                                        </li>
+                                        <li>
+                                            <a href="">99</a>
+                                        </li>
+                                        <li>
+                                            <a href="">下一页</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                </sa-widget>
+            </article>
+
+        </div>
+
+
+
+    </sa-widgets-grid>
+</div>
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+    <div class="entity-well entity-well--tasks">
+        <div class="entity-well-header">
+      <span class="approval-head">A0002
+        <span ><span>矿石</span>
+        </span>
+      </span>
+            <ul class="entity-well-header-nav nav s pull-right">
+                <li class="divider-v"></li>
+                <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+            </ul>
+        </div>
+        <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+            <div class="approve-top approve-intro">
+                <div class="approve-formschema">
+                    <table class="table table-striped table-forum smart-form details-table">
+                        <tbody>
+                        <tr><td class="details-width">名称:</td><td class="">矿石</td></tr>
+                        <tr><td class="details-width">类型：</td><td >日计划</td></tr>
+                        <tr><td class="details-width">完成量:</td><td >20%</td></tr>
+                        <tr><td class="details-width">单位:</td><td >吨</td></tr>
+                        <tr><td class="details-width">计划量:</td><td >42500</td></tr>
+                        <tr><td class="details-width">产量:</td><td >54758</td></tr>
+                        <tr><td class="details-width">超欠量:</td><td >12258</td></tr>
+                        <tr><td class="details-width">计划累计量:</td><td >977500</td></tr>
+                        <tr><td class="details-width">实际累计量:</td><td >960642</td></tr>
+                        <tr><td class="details-width">超欠量:</td><td >-1065338</td></tr>
+                        <tr><td class="details-width">截止时间:</td><td >2019-01-18 12：30</td></tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

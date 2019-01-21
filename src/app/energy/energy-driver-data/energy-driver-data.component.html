@@ -1,0 +1,166 @@
+<!--采矿能源智能管理单元-司机行驶数据-->
+
+<div id="content">
+  <sa-widgets-grid>
+    <div class="row">
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>司机行驶数据</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20 ">
+                  <thead class="">
+                  <tr>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>部门 </th>
+                    <th>驾龄</th>
+                    <th>事故（数）</th>
+                    <th>超速 </th>
+                    <th>油耗 </th>
+                    <th>行驶里程 </th>
+                    <th>平均时速 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr (click)="changedetails()" >
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  (click)="changedetails()">
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr (click)="changedetails()" >
+                    <td>2</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  (click)="changedetails()">
+                    <td>3</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  <tr  (click)="changedetails()">
+                    <td>4</td>
+                    <td>张三</td>
+                    <td>部门</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>2</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+  <div class="entity-well entity-well--tasks">
+    <div class="entity-well-header">
+      <span class="approval-head">A1001
+        <span ><span>司机名字</span>
+        </span>
+      </span>
+      <ul class="entity-well-header-nav nav s pull-right">
+        <li class="divider-v"></li>
+        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+      <div class="approve-top approve-intro">
+        <div class="approve-formschema">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div  echarts [options]="driverdataoption" style="width: 100%;height:400px;" class="demo-chart"></div>
+          </div>
+          <table class="table table-striped table-forum smart-form details-table">
+            <tbody>
+            <tr><td class="details-width">编号:</td><td class="">A0001</td></tr>
+            <tr><td class="details-width">姓名:</td><td class="">张三</td></tr>
+            <tr><td class="details-width">部门：</td><td >部门</td></tr>
+            <tr><td class="details-width">事故（数）:</td><td >3</td></tr>
+            <tr><td class="details-width">超速:</td><td >10</td></tr>
+            <tr><td class="details-width">油耗:</td><td >10</td></tr>
+            <tr><td class="details-width">行驶里程:</td><td >20</td></tr>
+            <tr><td class="details-width">平均时速:</td><td >18</td></tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

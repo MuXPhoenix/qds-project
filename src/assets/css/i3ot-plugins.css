@@ -13,9 +13,6 @@
     -moz-border-radius: 0;
     -webkit-border-radius: 0
 }
-.modal-body {
-    min-height: 200px;
-}
 
 a:focus, a:hover {
     color: #3782e7;
@@ -95,9 +92,9 @@ a:focus, a:hover {
 .click-a>a:link{
     color:#3782e7;/* 未访问的链接 */
 }
-.click-a>a:visited{
-    color:#00FF00;/* 已访问的链接 */
-}
+/*.click-a>a:visited{*/
+    /*color:#00FF00;!* 已访问的链接 *!*/
+/*}*/
 .click-a>a:hover{
     color:#0000ff;/* 当有鼠标悬停在链接上 */
     text-decoration: underline;
@@ -1180,7 +1177,7 @@ h1,h2,h3,h4 {
     box-shadow: none;
     border: 1px solid #CCC;
     overflow: auto;
-    height: 400px;
+    height: 320px;
     padding: 10px;
 }
 .border-overflow-320::-webkit-scrollbar

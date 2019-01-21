@@ -2795,7 +2795,7 @@ table.has-columns-hidden>tbody>tr.row-detail>td>ul>li>span.columnTitle {
     width: 100%;
     min-height:40px;
     float: left;
-    border-bottom: 1px solid #ccc;
+    /*border-bottom: 1px solid #ccc;*/
     border-top: 1px solid #ccc;
     background: #fafafa
 }
@@ -6116,4 +6116,15 @@ ul.checkable.checkable--popboxmenu li a .label-name {
     display: inline-block;
     vertical-align: middle;
     margin-top: -5px
+}
+
+/*表格详情页*/
+.details-width{
+    width:30%;
+    font-weight:600;
+}
+.details-table .details-label div{
+    margin: 0 10px 10px 0;
+    padding: 8px;
+    display: inline-block;
 }

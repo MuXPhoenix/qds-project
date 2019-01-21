@@ -1,0 +1,178 @@
+<!--安全智能管理单元-首页-->
+
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>安全</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="">
+                <table class="table table-striped smart-form table-height-20 ">
+                  <thead class="">
+                  <tr>
+                    <th>序号</th>
+                    <th>警报类型</th>
+                    <th>设备编号 </th>
+                    <th>设备名称</th>
+                    <th>警报地点</th>
+                    <th>现场照片</th>
+                    <th>安全级别</th>
+                    <th>警报内容</th>
+                    <th>时间 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr   (click)="changedetails()">
+                    <td>001</td>
+                    <td>车辆警报</td>
+                    <td>s001</td>
+                    <td>电动轮</td>
+                    <td>A区</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/chapter4.png">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/chapter4.png">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/chapter4.png">
+                      </div>
+                    </td>
+                    <td>高</td>
+                    <td>某某地方A0001发生了线路故障，请及时处理</td>
+                    <td>2019-01-15 12：30</td>
+                  </tr>
+                  <tr   (click)="changedetails()">
+                    <td>002</td>
+                    <td>车辆警报</td>
+                    <td>s002</td>
+                    <td>电动轮</td>
+                    <td>A区</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/superbox/superbox-thumb-2.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/superbox/superbox-thumb-4.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/superbox/superbox-thumb-6.jpg">
+                      </div>
+                    </td>
+                    <td>高</td>
+                    <td>某某地方A0001发生了线路故障，请及时处理</td>
+                    <td>2019-01-15 12：30</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共3条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+  <div class="entity-well entity-well--tasks">
+    <div class="entity-well-header">
+      <span class="approval-head">A0002
+        <span ><span></span>
+        </span>
+      </span>
+      <ul class="entity-well-header-nav nav s pull-right">
+        <li class="divider-v"></li>
+        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+      <div class="approve-top approve-intro">
+        <div class="approve-formschema">
+          <table class="table table-striped table-forum smart-form details-table">
+            <tbody>
+            <tr><td class="details-width">序号:</td><td >001</td></tr>
+            <tr><td class="details-width">警报类型：</td><td >车辆警报</td></tr>
+            <tr><td class="details-width">设备编号:</td><td >s001</td></tr>
+            <tr><td class="details-width">设备名称:</td><td >电动轮</td></tr>
+            <tr><td class="details-width">警报地点:</td><td >A区</td></tr>
+            <tr><td class="details-width">现场照片:</td>
+              <td >
+                <div id="myCarousel" class="carousel slide">
+                  <!-- 轮播（Carousel）指标 -->
+                  <ol class="carousel-indicators" style="width:100%;left: 0%;">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                  </ol>
+                  <!-- 轮播（Carousel）项目 -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img src="assets/img/qidashan/w-banner.jpg" alt="First slide">
+                    </div>
+                    <div class="item">
+                      <img src="assets/img/qidashan/w-banner1.jpg" alt="Second slide">
+                    </div>
+                    <div class="item">
+                      <img src="assets/img/qidashan/w-banner2.jpg" alt="Third slide">
+                    </div>
+                  </div>
+                  <!-- 轮播（Carousel）导航 -->
+                  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">上一个</span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">下一个</span>
+                  </a>
+                </div>
+            </td>
+            </tr>
+            <tr><td class="details-width">安全级别:</td><td >高</td></tr>
+            <tr><td class="details-width">警报内容:</td><td >某某地方A0001发生了线路故障，请及时处理</td></tr>
+            <tr><td class="details-width">时间:</td><td >2019-01-15 12：30</td></tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

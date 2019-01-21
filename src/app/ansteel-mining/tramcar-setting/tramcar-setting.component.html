@@ -12,6 +12,74 @@
           <div>
             <!--小部件内容-->
             <div class="widget-body no-padding">
+              <div class="">
+                <table class="table table-striped smart-form table-height-20">
+                  <thead class="">
+                  <tr>
+                    <th>序号</th>
+                    <th>参数 </th>
+                    <th>报警值</th>
+                    <th>操作</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr  >
+                    <td>1</td>
+                    <td>电流</td>
+                    <td>10A</td>
+                    <td><a data-toggle="modal" data-target="#myModal-setting">修改</a></td>
+                  </tr>
+                  <tr  >
+                    <td>2</td>
+                    <td>电压</td>
+                    <td>30V</td>
+                    <td><a data-toggle="modal" data-target="#myModal-setting">修改</a></td>
+                  </tr>
+                  <tr  >
+                    <td>3</td>
+                    <td>转速</td>
+                    <td>5000rpm</td>
+                    <td><a data-toggle="modal" data-target="#myModal-setting">修改</a></td>
+                  </tr>
+                  <tr  >
+                    <td>4</td>
+                    <td>油量</td>
+                    <td>20L</td>
+                    <td><a data-toggle="modal" data-target="#myModal-setting">修改</a></td>
+                  </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共4条</span>
+                </div>
+                <div class="hidden-xs right">
+                  <!--<ul class="pagination pagination-sm">-->
+                  <!--<li class="disabled">-->
+                  <!--<a href="">上一页</a>-->
+                  <!--</li>-->
+                  <!--<li class="active">-->
+                  <!--<a href="">1</a>-->
+                  <!--</li>-->
+                  <!--<li >-->
+                  <!--<a href="">2</a>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<a href="">...</a>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<a href="">99</a>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                  <!--<a href="">下一页</a>-->
+                  <!--</li>-->
+                  <!--</ul>-->
+                </div>
+              </div>
 
             </div>
           </div>
@@ -20,4 +88,49 @@
       </article>
     </div>
   </sa-widgets-grid>
+</div>
+
+
+<!--修改-->
+<div class="modal fade bs-example-modal-sm" id="myModal-setting"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 关闭按钮 -->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <form id="smart-form-register" class="smart-form" >
+          <fieldset>
+            <div class="form-group col col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+              <section >
+                <label class="label">参数名称</label>
+                <label class="input">
+                  <input type="text" name="name" placeholder="请输入参数名称 " maxlength="30" />
+                </label>
+              </section>
+
+            </div>
+            <div class="form-group col col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+              <section >
+                <label class="label">报警值</label>
+                <label class="input">
+                  <input type="text" name="name" placeholder="请输入报警值 " maxlength="30" />
+                </label>
+              </section>
+
+            </div>
+          </fieldset>
+        </form>
+
+      </div>
+      <div class="modal-footer tex-align-center">
+        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">保存</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1004,3 +1004,58 @@ pd-tb10{
     background-color: #e36d4f;
     border: 1px solid #e26646;
 }
+
+/*选项卡*/
+/*.tab-list.tab-li{*/
+    /*padding:8px 10px;*/
+    /*background:#7a869c;*/
+    /*color: #fff;*/
+/*}*/
+
+.tab-list ul li{
+    color: #fff;
+    background:#7a869c;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 10px 10px 0;
+    display:inline-block;
+    cursor: pointer;
+}
+.tab-list ul li:hover{
+    color: #fff;
+    background:#3782e7;
+}
+.tab-list ul li.tab-list-active{
+    color: #fff;
+    background:#3782e7;
+}
+
+.partner-box-header{
+    height: 80px;
+    margin: 12px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    /*background: url(../img/qidashan/bg-bk.png);*/
+    background: linear-gradient(45deg,#75c1f9,#3271db);
+}
+.partner-box-header h3 {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 36px;
+    padding-top:20px;
+}
+
+.svg-center-bt{
+    position: absolute;
+    z-indent: 2;
+    top: 20px;
+}
+.tanktruck-h4{
+    margin-top: -20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #3782e7;
+}

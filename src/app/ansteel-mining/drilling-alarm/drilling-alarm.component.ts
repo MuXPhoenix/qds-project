@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DrillingAlarmComponent implements OnInit {
 
-  constructor() { }
+    xy_details: boolean = false;  //单击展开，再次单击隐藏
 
-  ngOnInit() {
-  }
+    constructor() { }
+
+    ngOnInit() {
+    }
+    //单击展开，再次单击隐藏
+    changedetails(){
+        this.xy_details = (this.xy_details == false);
+    }
+
 
 }

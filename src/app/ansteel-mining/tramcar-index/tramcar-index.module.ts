@@ -1,9 +1,7 @@
-/**
- * Created by Administrator on 2018/12/19 0019.
- */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
+import {I3otpModule} from "../../shared/i3otp.module";
 import {TramcarIndexComponent} from "./tramcar-index.component";
 
 const routes: Routes = [{
@@ -15,6 +13,7 @@ const routes: Routes = [{
 @NgModule({
     imports: [
         CommonModule,
+        I3otpModule,
         RouterModule.forChild(routes)
     ],
     exports: [RouterModule],
