@@ -12,11 +12,6 @@ export const routes: Routes = [
         data: {pageTitle: 'MiningMesProduction'}
     },
     {
-        path: 'mining-mes-progress',
-        loadChildren: 'app/mining-mes/mining-mes-progress/mining-mes-progress.module#MiningMesProgressModule',
-        data: {pageTitle: 'MiningMesProgress'}
-    },
-    {
         path: 'mining-mes-status',
         loadChildren: 'app/mining-mes/mining-mes-status/mining-mes-status.module#MiningMesStatusModule',
         data: {pageTitle: 'MiningMesStatus'}

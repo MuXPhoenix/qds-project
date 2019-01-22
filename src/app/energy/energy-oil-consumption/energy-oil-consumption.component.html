@@ -15,6 +15,39 @@
                     <div>
                         <!--小部件内容-->
                         <div class="widget-body no-padding">
+                            <div  class="row">
+                                <article  class="col-sm-12">
+                                    <div class="navbar navbar-default">
+                                        <form  class="navbar-form navbar-left ng-pristine ng-valid ng-touched " novalidate="" role="search" >
+                                            <div class="form-group pdlr-4">
+                                                <strong> 筛选：</strong>
+                                            </div>
+                                            <div class="form-group pdlr-4">
+                                                <strong> 时间选择：</strong>
+                                            </div>
+                                            <div class="form-group btn-group pdlr-4">
+                                                <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+
+                                            </div>
+                                            <div class="form-group pdlr-4">
+                                                <strong> 至</strong>
+                                            </div>
+                                            <div class="form-group btn-group pdlr-4 dropdown">
+                                                <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+                                            </div>
+                                            <div class="form-group pdlr-4">
+                                                <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="keyword" placeholder="请输入搜索内容" type="text">
+                                            </div>
+                                            <div class="form-group pdlr-4">
+                                                <button class="btn btn-default" type="button" (click)="getAssetsList(1,0)">
+                                                    <i  class="glyphicon glyphicon-search"></i>
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </article>
+                            </div>
                             <div class="">
                                 <table class="table table-striped smart-form table-height-20">
                                     <thead class="">
