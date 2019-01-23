@@ -1,6 +1,6 @@
 *.log
 *.tmp
-*.src/app/style
+src/app/style
 idea
 .
 node_modules
