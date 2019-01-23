@@ -937,9 +937,10 @@ pd-tb10{
     top: 20px;
     right: 20px;
     position: absolute;
+    z-index:20;
 }
 
-.frame-gis, frame-gis-box, .frame-gis-header {
+.frame-gis-header {
     height: 34px;
     background: #fff;
     border-bottom: 2px solid #ddd;
@@ -950,7 +951,7 @@ pd-tb10{
     background-color: rgba(255,255,255,0.7);
 }
 .frame-gis-left{
-    padding-left: 6px;
+    padding:0 6px;
     display: inline-block;
     float:left;
     font-size:14px;
@@ -981,6 +982,7 @@ pd-tb10{
 }
 .frame-gis-marquee{
     margin:4px;
+    max-height: 160px;
 }
 .frame-gis-cneter{
     margin-bottom:6px;
@@ -991,85 +993,74 @@ pd-tb10{
     line-height:1.5em;
 }
 
-/*相反*/
-.frame-bg-inverse{
-    background:#95a5a6;
-    border: 1px solid #8fa0a1;
+.frame-gis-widget{
+    bottom: 20px;
+    right:20px;
+    position: absolute;
 }
-/*主要*/
-.frame-bg-primary{
-    background-color: #3498db;
-    border: 1px solid #2b94d9;
+.frame-gis-widget,.frame-widget{
+    display:inline-block;
+    padding-left: 10px;
 }
-/*成功*/
-.frame-bg-success {
-    background-color: #2ecc71;
-    border: 1px solid #2cc46c;
-}
-/*警告*/
-.frame-bg-warning{
-    background-color: #f1c40f;
-    border: 1px solid #e8bd0e;
-}
-/*危险*/
-.frame-bg-danger {
-    background-color: #e74c3c;
-    border: 1px solid #e64433;
-}
-/*信息*/
-.frame-bg-info {
-    background-color: #3bbfb4;
-    border: 1px solid #39b7ad;
-}
-/*.frame-gis-marquee,.frame-gis-text{*/
-    /*padding:4px 6px;*/
-    /*color:#ffff;*/
-/*}*/
+
 /*背景颜色*/
+/*默认*/
 .panel-default {
     background-color: #ecf0f1;
     border: 1px solid #e6ebed;
 }
+/*相反*/
 .panel-inverse {
     background-color: #95a5a6;
     border: 1px solid #8fa0a1;
 }
+/*主要*/
 .panel-primary{
     background-color: #3498db;
     border: 1px solid #2b94d9;
 }
+/*成功*/
 .panel-success {
     background-color: #2ecc71;
     border: 1px solid #2cc46c;
 }
+/*警告*/
 .panel-warning{
     background-color: #f1c40f;
     border: 1px solid #e8bd0e;
 }
+/*危险*/
 .panel-danger {
     background-color: #e74c3c;
     border: 1px solid #e64433;
 }
+/*信息*/
 .panel-info {
     background-color: #3bbfb4;
     border: 1px solid #39b7ad;
 }
+/*褐色*/
 .panel-brown {
     background-color: #c0392b;
     border: 1px solid #b83729;
 }
+
+/*靛蓝*/
 .panel-indigo{
     background-color: #7863bc;
     border: 1px solid #725cb9;
 }
+/*橙色*/
 .panel-orange{
     background-color: #e67e22;
     border: 1px solid #e4791a;
 }
+/*深蓝色*/
 .panel-midnightblue{
     background-color: #34495e;
     border: 1px solid #304457;
 }
+/*星空*/
 .panel-sky {
     background-color: #82c4e6;
     border: 1px solid #79c0e4;
@@ -1078,33 +1069,33 @@ pd-tb10{
     background-color: #e73c68;
     border: 1px solid #e63361;
 }
+/*洋红*/
 .panel-purple {
     background-color: #e044ab;
     border: 1px solid #df3ba7;
 }
+/*绿色*/
 .panel-green{
     background-color: #37bf8d;
     border: 1px solid #35b787;
 }
+/*葡萄色*/
 .panel-grape{
     background-color: #7a869c;
     border: 1px solid #748198;
 }
+/*东洋*/
 .panel-toyo {
     background-color: #556b8d;
     border: 1px solid #516687;
 }
+/*茜草色素*/
 .panel-alizarin {
     background-color: #e36d4f;
     border: 1px solid #e26646;
 }
 
 /*选项卡*/
-/*.tab-list.tab-li{*/
-    /*padding:8px 10px;*/
-    /*background:#7a869c;*/
-    /*color: #fff;*/
-/*}*/
 
 .tab-list ul li{
     color: #fff;

@@ -9,7 +9,7 @@
         <a href="#"><i class="fa fa-lg fa-fw fa-cube"></i>{{'采矿三维模拟仿真单元' | i18n}}</a>
         <ul>
           <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-index">{{'首页' | i18n}}</a>
+            <a routerLink="/three-dimensional/three-dimensional-index">{{'首页' | i18n}}</a>
           </li>
         </ul>
       </li>
@@ -100,10 +100,10 @@
             <a href="#">{{'铁运生产指挥系统' | i18n}}</a>
             <ul>
               <li routerLinkActive="active">
-                <a routerLink="/ansteel-mining/tramcar-index">{{'首页' | i18n}}</a>
+                <a routerLink="/ansteel-mining/trains-index">{{'首页' | i18n}}</a>
               </li>
               <li routerLinkActive="active">
-                <a routerLink="/ansteel-mining/tramcar-setting">{{'设置' | i18n}}</a>
+                <a routerLink="/ansteel-mining/trains-setting">{{'设置' | i18n}}</a>
               </li>
             </ul>
           </li>
@@ -114,10 +114,10 @@
         <a href="#"><i class="fa fa-lg fa-fw fa-delicious"></i>{{'采矿质检系统' | i18n}}</a>
         <ul>
           <li routerLinkActive="active">
-            <a routerLink="/patrol/patrol-index">{{'钻孔信息' | i18n}}</a>
+            <a routerLink="/quality/quality-drilling">{{'钻孔信息' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/patrol/patrol-index">{{'化验管理' | i18n}}</a>
+            <a routerLink="/quality/quality-quality">{{'化验管理' | i18n}}</a>
           </li>
         </ul>
       </li>
@@ -126,10 +126,10 @@
         <a href="#"><i class="fa fa-lg fa-fw fa-delicious"></i>{{'巡检管理系统' | i18n}}</a>
         <ul>
           <li routerLinkActive="active">
-            <a routerLink="/patrol/patrol-index">{{'巡检任务列表' | i18n}}</a>
+            <a routerLink="/patrol/patrol-task-view">{{'巡检任务列表' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/patrol/patrol-index">{{'整改情况' | i18n}}</a>
+            <a routerLink="/patrol/patrol-situation-view">{{'整改情况' | i18n}}</a>
           </li>
         </ul>
       </li>
@@ -138,7 +138,7 @@
         <a href="#"><i class="fa fa-lg fa-fw fa-shield"></i>{{'安全管理系统' | i18n}}</a>
         <ul>
           <li routerLinkActive="active">
-            <a routerLink="/security/security-index">{{'安全事件列表' | i18n}}</a>
+            <a routerLink="/security/security-view">{{'安全事件' | i18n}}</a>
           </li>
         </ul>
       </li>
@@ -367,6 +367,16 @@
           </li>
         </ul>
       </li>
+
+      <li style="display: none;">
+        <a href="#"><i class="fa fa-lg fa-fw fa-delicious"></i>{{'页面' | i18n}}</a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/style/style-dashboard">{{'首页' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
     </ul>
 
   </nav>

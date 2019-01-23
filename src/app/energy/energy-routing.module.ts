@@ -25,6 +25,21 @@ export const routes: Routes = [
         path: 'energy-electricity',
         loadChildren: 'app/energy/energy-electricity/energy-electricity.module#EnergyElectricityModule',
         data: {pageTitle: 'EnergyElectricity'}
+    },
+    {
+        path: 'energy-electricity-view',
+        loadChildren: 'app/energy/energy-electricity-view/energy-electricity-view.module#EnergyElectricityViewModule',
+        data: {pageTitle: 'EnergyElectricityView'}
+    },
+    {
+        path: 'energy-consume-electricityview',
+        loadChildren: 'app/energy/energy-consume-electricityview/energy-consume-electricityview.module#EnergyConsumeElectricityviewModule',
+        data: {pageTitle: 'EnergyConsumeElectricityview'}
+    },
+    {
+        path: 'energy-oil-consumptionview',
+        loadChildren: 'app/energy/energy-oil-consumptionview/energy-oil-consumptionview.module#EnergyOilConsumptionviewModule',
+        data: {pageTitle: 'EnergyOilConsumptionview'}
     }
 ];
 

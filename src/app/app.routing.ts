@@ -150,6 +150,16 @@ export const routes: Routes = [
             path: 'security',
             loadChildren: 'app/security/security.module#SecurityModule',
             data: {pageTitle: 'SecurityModule'}
+        },
+        {
+            path: 'quality',
+            loadChildren: 'app/quality/quality.module#QualityModule',
+            data: {pageTitle: 'Quality'}
+        },
+        {
+            path: 'style',
+            loadChildren: 'app/style/style.module#StyleModule',
+            data: {pageTitle: 'Style'}
         }
     ]
   },

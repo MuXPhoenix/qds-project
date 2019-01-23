@@ -1,4 +1,4 @@
-<!--监控管理单元-列表-->
+<!--监控管理系统-监控区域列表-->
 <div id="content" >
   <sa-widgets-grid>
 
@@ -8,7 +8,13 @@
         <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
           <header>
             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-            <h2>监控记录</h2>
+            <h2>监控区域</h2>
+            <div class="widget-toolbar">
+              <button  class="btn btn-xs btn-default" routerLink="/monitoring/monitoring-index">查看gis图</button>
+            </div>
+            <div class="widget-toolbar">
+              <button  class="btn btn-xs btn-default" routerLink="/monitoring/monitoring-view">查看视图</button>
+            </div>
           </header>
           <div>
             <div class="widget-body no-padding" >

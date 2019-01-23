@@ -1,0 +1,48 @@
+<!--面板-->
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="text-align-center">
+          <div class="tab-list ">
+            <ul>
+              <li class="tab-li tab-list-active" routerLink="/style/style-dashboard">dashboard</li>
+              <li class="tab-li"  routerLink="/style/style-table">table</li>
+              <li class="tab-li" routerLink="/style/style-form">form</li>
+              <li class="tab-li" routerLink="/style/style-layouts">layouts</li>
+              <li class="tab-li" routerLink="/style/style-color">color</li>
+              <li class="tab-li" routerLink="/style/style-buttons">buttons</li>
+              <li class="tab-li" routerLink="/style/style-editors">editors</li>
+              <li class="tab-li" routerLink="/style/style-carousel">carousel</li>
+              <li class="tab-li" routerLink="/style/style-gis">gis</li>
+              <li class="tab-li" routerLink="/style/style-view">view</li>
+              <li class="tab-li" routerLink="/style/style-scada">scada</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>面板</h2>
+          </header>
+          <div>
+            <div class="widget-body" >
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>
