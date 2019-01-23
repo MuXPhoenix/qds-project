@@ -4,152 +4,470 @@
   <sa-widgets-grid>
 
     <div class="row">
-      <article class="col-sm-12 ">
-        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
-          <header>
-            <span class="widget-icon"> <i class="fa fa-align-justify"></i> </span>
-            <h2>采矿综合信息管理模块（GIS）</h2>
-          </header>
-          <div>
-            <div class="widget-body" >
-              <p class="alert alert-info no-margin">生产计划</p>
-              <div class="row mg-b20">
-                <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success mg-t10">
-                    生产计划导入…
-                  </button>
-                </div>
 
-              </div>
-              <p class="alert alert-info no-margin">三维实体建模</p>
-              <div class="row mg-b20">
-                <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success mg-t10">
-                    布孔设计导入...
-                  </button>
-                </div>
-                <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success mg-t10">
-                    钻孔设计导入…
-                  </button>
-                </div>
-                <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success mg-t10">
-                    爆破设计导入…
-                  </button>
-                </div>
-                <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success mg-t10">
-                    区块设计导入…
-                  </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </sa-widget>
-      </article>
-    </div>
-
-    <div class="row">
       <article class="col-sm-12 ">
         <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
           <header>
             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-            <h2>取样化验分析</h2>
+            <h2>生产计划</h2>
           </header>
           <div>
             <div class="widget-body no-padding" >
-              <div style="padding:0;" class="height-overflow">
-                <div  class="table-responsive">
-                  <table class="table table-bordered table-border smart-form table-height-20 text-align-center">
-                    <thead>
-                    <tr>
-                      <th>钻孔编号</th>
-                      <th>设计钻孔坐标</th>
-                      <th>钻机编号 </th>
-                      <th>钻机钻孔定位坐标</th>
-                      <th>PDA编号 </th>
-                      <th>操作人员 </th>
-                      <th>PDA钻孔定位坐标</th>
-                      <th>分析元素</th>
-                      <th>化验分析结果</th>
-                      <th>二维码生成并打印</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ><!-- class="table-color"-->
-                      <td ><span class="">A0001</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="">A0001</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="">A0001</span></td>
-                      <td><span class="" >张三</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="" >铁</span></td>
-                      <td><span class="" >28%</span></td>
-                      <td><div class="" style="height:auto;" data-toggle="modal" data-target="#myModal">
-                        <img  alt=""  height="22" width="22" class="img-picture"  src="assets/img/qidashan/ew.png">
+              <div  class="row">
+                <article  class="col-sm-12">
+                  <div class="navbar navbar-default">
+                    <form  class="navbar-form navbar-left ng-pristine ng-valid ng-touched " novalidate="" role="search" >
+                      <div class="form-group pdlr-4">
+                        <strong> 时间选择：</strong>
                       </div>
-                      </td>
-                    </tr>
-                    <tr >
-                      <td ><span class="">A0002</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="">A0001</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="">A0001</span></td>
-                      <td><span class="" >张三</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="" >铁</span></td>
-                      <td><span class="" >28%</span></td>
-                      <td><div class="" style="height:auto;" data-toggle="modal" data-target="#myModal">
-                        <img  alt=""  height="22" width="22" class="img-picture"  src="assets/img/qidashan/ew.png">
-                      </div>
-                      </td>
-                    </tr>
-                    <tr >
-                      <td ><span class="">A0003</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="">A0001</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="">A0001</span></td>
-                      <td><span class="" >张三</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="" >铁</span></td>
-                      <td><span class="" >28%</span></td>
-                      <td><div class="" style="height:auto;" data-toggle="modal" data-target="#myModal">
-                        <img  alt=""  height="22" width="22" class="img-picture"  src="assets/img/qidashan/ew.png">
-                      </div>
-                      </td>
-                    </tr>
-                    <tr >
-                      <td ><span class="">A0004</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="">A0001</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="">A0001</span></td>
-                      <td><span class="" >张三</span></td>
-                      <td><span class="">116.307629,40.058359</span></td>
-                      <td><span class="" >铁</span></td>
-                      <td><span class="" >28%</span></td>
-                      <td><div class="" style="height:auto;" data-toggle="modal" data-target="#myModal">
-                        <img  alt=""  height="22" width="22" class="img-picture"  src="assets/img/qidashan/ew.png">
-                      </div>
-                      </td>
-                    </tr>
+                      <div class="form-group btn-group pdlr-4">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
 
+                      </div>
+                      <div class="form-group pdlr-4">
+                        <strong> 至</strong>
+                      </div>
+                      <div class="form-group btn-group pdlr-4">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+                      </div>
+                      <div class="form-group btn-group pdlr-4">
+                        <a class="btn default-btn btn-sm dropdown-toggle" data-toggle="dropdown">
+                          日计划<i class="fa fa-fw fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li ><a >日计划</a></li>
+                          <li ><a>周计划</a></li>
+                          <li ><a >月计划</a></li>
+                          <li ><a >季计划</a></li>
+                          <li ><a >年计划</a></li>
+                        </ul>
+                      </div>
+                      <!--<div class="form-group pdlr-4">-->
+                      <!--<input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="keyword" placeholder="请输入搜索内容" type="text">-->
+                      <!--</div>-->
+                      <!--<div class="form-group pdlr-4">-->
+                      <!--<button class="btn btn-default" type="button" (click)="getAssetsList(1,0)">-->
+                      <!--<i  class="glyphicon glyphicon-search"></i>-->
+                      <!--搜索-->
+                      <!--</button>-->
+                      <!--</div>-->
+                    </form>
+                  </div>
+                </article>
+              </div>
 
-                    </tbody>
-                  </table>
-                </div>
+              <div  class="table-responsive" >
+                <table class="table table-striped smart-form table-border-th table-height-20">
+                  <thead >
+                  <tr style="border-top: 1px solid #ddd;">
+                    <th  rowspan="3">计划</th>
+                    <th rowspan="3">日期</th>
+                    <th rowspan="3">采剥总量</th>
+                    <th rowspan="3">资产总量</th>
+                    <th rowspan="3">矿石</th>
+                    <th colspan="6" class="text-align-center">岩石</th>
+                    <th rowspan="3">矿石破碎</th>
+                    <th rowspan="3">岩石破碎</th>
+                    <th rowspan="3">北破</th>
+                    <th rowspan="3">北破输出</th>
+                    <th rowspan="3">铁运量</th>
+                    <th rowspan="3">穿孔米道</th>
+                    <th rowspan="3">潜孔钻米道</th>
+                    <th rowspan="3">爆破量</th>
+                    <th colspan="3"  class="text-align-center">调选供矿</th>
+                    <th rowspan="3">辅料量</th>
+                    <th rowspan="3">分流量</th>
+                  </tr>
+                  <tr>
+                    <th rowspan="2">总量</th>
+                    <th rowspan="2">资产</th>
+                    <th colspan="4"  class="text-align-center">外委</th>
+                    <th rowspan="2">小计</th>
+                    <th rowspan="2">采场供矿</th>
+                    <th rowspan="2">鞍千供调选</th>
+                  </tr>
+                  <tr>
+                    <th >小计</th>
+                    <th >东邦南</th>
+                    <th >东邦北</th>
+                    <th >西邦</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+                  <tr >
+                    <td  >日计划</td>
+                    <td  >2019-01-17 12：00</td>
+                    <td  >22522</td>
+                    <td  >454554555</td>
+                    <td  >4545545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >55555</td>
+                    <td  >5545</td>
+                    <td  >5455454</td>
+                    <td  >5455454</td>
+                    <td  >45777</td>
+                    <td  >7778</td>
+                    <td  >45454</td>
+                    <td  >787878</td>
+                    <td  >8787878</td>
+                    <td  >7875552</td>
+                    <td  >787878</td>
+                    <td  >7878755</td>
+                    <td  >22121</td>
+                    <td  >2121</td>
+                    <td  >2475111</td>
+                    <td  >21100</td>
+                    <td  >1242121</td>
+                  </tr>
+
+                  </tbody>
+                </table>
               </div>
               <!-- 底部-（分页部分）-->
               <div class="dt-toolbar">
                 <div class="dib-left">
-                  <span>共3条</span>
+                  <span>共30条</span>
                 </div>
-                <div class="hidden-xs right">
+                <div class=" hidden-xs right">
                   <ul class="pagination pagination-sm">
                     <li class="disabled">
                       <a href="">上一页</a>
@@ -157,11 +475,8 @@
                     <li class="active">
                       <a href="">1</a>
                     </li>
-                    <li>
+                    <li >
                       <a href="">2</a>
-                    </li>
-                    <li>
-                      <a href="">3</a>
                     </li>
                     <li>
                       <a href="">...</a>
@@ -175,117 +490,483 @@
                   </ul>
                 </div>
               </div>
+
             </div>
           </div>
         </sa-widget>
       </article>
-    </div>
-  </sa-widgets-grid>
-</div>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>布孔计划</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <!-- 关闭按钮 -->
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          ×
-        </button>
-        <!-- 标题 -->
-        <h3 class="modal-title" data-ng-bind='results.title'></h3>
-        <!-- <h4 class="modal-title" id="myModalLabel">
-            模态框（Modal）标题
-        </h4> -->
-      </div>
-      <div class="modal-body">
-        <div class="text-align-center">
-          <img  alt=""  height="200" width="200" class="img-picture"  src="assets/img/qidashan/ew.png">
-        </div>
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20 ">
+                  <thead class="">
+                  <tr>
+                    <th>日期</th>
+                    <th>布孔采区</th>
+                    <th>钻孔编号及位置 </th>
+                    <th>倾斜角度</th>
+                    <th>钻孔深度</th>
+                    <th>所需钻机数 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>A区</td>
+                    <td>YL：位置</td>
+                    <td>45</td>
+                    <td>100</td>
+                    <td>2</td>
+                  </tr>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">保存为图片</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal -->
-</div>
+                  </tbody>
+                </table>
+              </div>
 
-
-
-<div class="slide-content"  style="position: fixed; display: none; z-index: 9991;">
-  <div class="entity-well entity-well--tasks">
-    <div class="entity-well-header">
-      <span class="approval-head">A0001
-        <span ><span>取样化验分析</span>
-        </span>
-      </span>
-      <ul class="entity-well-header-nav nav s pull-right">
-        <li class="divider-v"></li>
-        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
-      </ul>
-    </div>
-    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
-      <div class="approve-top approve-intro">
-        <div class="approve-formschema">
-          <P class="alert alert-info">基本信息</P>
-          <table class="table table-striped table-forum">
-            <tbody>
-            <tr>
-              <td class="width-120">钻孔编号:</td>
-              <td class="">A0003</td>
-              <td class="width-120">设计钻孔坐标:</td>
-              <td class="">116.307629,40.058359</td>
-            </tr>
-            <tr>
-              <td class="width-120">钻机编号:</td>
-              <td >A0001</td>
-              <td class="width-120">钻机钻孔定位坐标:</td>
-              <td class="">116.307629,40.058359</td>
-            </tr>
-            <tr>
-              <td class="width-120">PDA编号：</td>
-              <td >A0001</td>
-              <td class="width-120">操作人员:</td>
-              <td class="">张三</td>
-            </tr>
-            <tr>
-              <td class="width-120">PDA钻孔定位坐标:</td>
-              <td >116.307629,40.058359</td>
-              <td class="width-120">分析元素:</td>
-              <td class="">铁</td>
-            </tr>
-            <tr>
-              <td class="width-120">化验分析结果:</td>
-              <td class="" colspan="3">28%</td>
-            </tr>
-            <tr>
-              <td class="width-120">二维码生成并打印:</td>
-              <td class="" colspan="3">
-                <div class="" style="height:auto;" >
-                  <img  alt=""  height="200" width="200" class="img-picture"  src="assets/img/qidashan/ew.png">
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共35条</span>
                 </div>
-                <button type="button" class="btn btn-primary mg-t10" >保存为图片</button>
-              </td>
-            </tr>
-            </tbody>
-          </table>
-          <!--<div class="line component-textareafield"><label class="label">所在部门:</label><span></span></div>-->
-          <!--<div class="line component-textfield"><label class="label">请假类型:</label><span>调休</span></div>-->
-          <!--<div class="line component-textfield"><label class="label">开始时间:</label><span>2018-04-11</span></div>-->
-          <!--<div class="line component-textfield"><label class="label">结束时间:</label><span>2018-04-21</span></div>-->
-          <!--<div class="line component-textfield"><label class="label">请假天数:</label><span>10</span></div>-->
-          <!--<div class="line component-textfield"><label class="label">请假事由:</label><span>dsafdsadf</span></div>-->
-          <!--<div class="line component-ddphotofield"><label class="label">图片:</label><div class="picture mb-20"></div></div>-->
-        </div>
-      </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>爆破计划</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20 ">
+                  <thead class="">
+                  <tr>
+                    <th>日期</th>
+                    <th>时间</th>
+                    <th>爆破采区 </th>
+                    <th>爆破位置</th>
+                    <th>填装炸药量</th>
+                    <th>爆破人员 </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>张三</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>张三</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>张三</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>张三</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>李四</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>张三</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>张三</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>李四</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>张三</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>张三</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>李四</td>
+                  </tr>
+                  <tr>
+                    <td>2019-01-15</td>
+                    <td>12：30</td>
+                    <td>A区</td>
+                    <td>位置</td>
+                    <td>100</td>
+                    <td>张三</td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共35条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>爆破计划</h2>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+
+
+              <div  class="">
+                <table class="table table-striped smart-form table-height-20 ">
+                  <thead class="">
+                  <tr>
+                    <th>区块编号</th>
+                    <th>所属采区</th>
+                    <th>平均品位 </th>
+                    <th>总方量</th>
+                    <th>剥采比</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>1001</td>
+                    <td>A区</td>
+                    <td>45</td>
+                    <td>2000</td>
+                    <td>20%</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共35条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+
+      
     </div>
-    <div class="body">
-      <div class="approve-foot show ">
-        <div class="tFlexbox tAlignCenter tJustifyCenter"></div>
-      </div>
-    </div>
-  </div>
+
+    
+  </sa-widgets-grid>
 </div>
 

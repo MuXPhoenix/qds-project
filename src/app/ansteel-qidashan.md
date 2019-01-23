@@ -21,8 +21,9 @@ mining-mes-drillview 采矿综合管理单元-钻孔进度
 ## 采矿建模与配矿系统 ansteel-mining
 （采矿配矿决策系统）
 ```
-blending-index 采矿综合质量配矿优化决策模块-首页（采矿综合信息管理系统（GIS））
-blending-dailyplan 采矿综合质量配矿优化决策模块-日计划(采矿综合质量配矿优化决策系统)
+gis-index 采矿综合质量配矿优化决策模块-首页（采矿综合信息管理系统（GIS））
+blending-index 采矿综合质量配矿优化决策模块-首页（采矿综合质量配矿优化决策系统）
+blending-dailyplan 采矿综合质量配矿优化决策模块-日计划(采矿综合质量配矿优化决策系统-详情)
 ```
 
 ## 采矿智慧生产指挥单元 ansteel-mining  （采矿生产指挥系统）

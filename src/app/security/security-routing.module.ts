@@ -12,9 +12,9 @@ export const routes: Routes = [
         data: {pageTitle: 'SecurityTask'}
     },
     {
-        path: 'security-index',
-        loadChildren: 'app/security/security-index/security-index.module#SecurityIndexModule',
-        data: {pageTitle: 'SecurityIndex'}
+        path: 'security-view',
+        loadChildren: 'app/security/security-view/security-view.module#SecurityViewModule',
+        data: {pageTitle: 'SecurityView'}
     }
 ];
 

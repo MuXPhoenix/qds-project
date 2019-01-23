@@ -11,4 +11,7 @@ style-carousel 轮播
 style-gis
 style-view  视图
 style-scada
+style-awesome-icons
+style-glyph-icons
+
 ```

@@ -1,3 +1,43 @@
-<p>
-  security-view works!
-</p>
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>安全管理</h2>
+            <div class="widget-toolbar">
+              <button  class="btn btn-xs btn-default" routerLink="/security/security-task" >查看表格</button>
+            </div>
+          </header>
+          <div>
+            <div class="widget-body" >
+              <div class="text-align-center">
+                <div class="tab-list ">
+                  <ul>
+                    <li class="tab-li tab-list-active">全部</li>
+                    <li class="tab-li ">当天</li>
+                    <li class="tab-li">近一周</li>
+                    <li class="tab-li">近一个月</li>
+                    <li class="tab-li">近一个季</li>
+                    <li class="tab-li">近一年</li>
+                    <li class="tab-li">自定义</li>
+                  </ul>
+                </div>
+                <div  theme = "macarons" echarts [options]="securityoption" style="width: 100%;height:640px;" class="demo-chart"></div>
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>

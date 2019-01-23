@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./style-dashboard.component.css']
 })
 export class StyleDashboardComponent implements OnInit {
+    item:number = 0;
 
   constructor() { }
 
   ngOnInit() {
   }
+    OnItemClick(value){
+        this.item = value;
+        console.log(this.item);
+    }
 
 }

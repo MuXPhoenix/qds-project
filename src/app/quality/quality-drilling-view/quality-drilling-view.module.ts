@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
 import {I3otpModule} from "../../shared/i3otp.module";
 import {QualityDrillingViewComponent} from "./quality-drilling-view.component";
+import {AngularEchartsModule} from "ngx-echarts";
 
 
 const routes: Routes = [{
@@ -19,6 +20,7 @@ const routes: Routes = [{
     imports: [
         CommonModule,
         I3otpModule,
+        AngularEchartsModule,
         RouterModule.forChild(routes)
     ],
     exports: [RouterModule],

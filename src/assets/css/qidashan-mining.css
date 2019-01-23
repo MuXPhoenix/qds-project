@@ -1095,6 +1095,80 @@ pd-tb10{
     border: 1px solid #e26646;
 }
 
+/*文字颜色*/
+/*默认*/
+.xtext-default {
+    color: #ecf0f1;
+}
+/*相反*/
+.xtext-inverse {
+    color: #95a5a6;
+}
+/*主要*/
+.xtext-primary{
+    color: #3498db;
+}
+/*成功*/
+.xtext-success {
+    color: #2ecc71;
+}
+/*警告*/
+.xtext-warning{
+    color: #f1c40f;
+}
+/*危险*/
+.xtext-danger {
+    color: #e74c3c;
+}
+/*信息*/
+.xtext-info {
+    color: #3bbfb4;
+}
+/*褐色*/
+.xtext-brown {
+    color: #c0392b;
+}
+
+/*靛蓝*/
+.xtext-indigo{
+    color: #7863bc;
+}
+/*橙色*/
+.xtext-orange{
+    color: #e67e22;
+}
+/*深蓝色*/
+.xtext-midnightblue{
+    color: #34495e;
+}
+/*星空*/
+.xtext-sky {
+   color: #82c4e6;
+}
+.xtext-magenta {
+    color: #e73c68;
+}
+/*洋红*/
+.xtext-purple {
+   color: #e044ab;
+}
+/*绿色*/
+.xtext-green{
+    color: #37bf8d;
+}
+/*葡萄色*/
+.xtext-grape{
+    color: #7a869c;
+}
+/*东洋*/
+.xtext-toyo {
+    color: #556b8d;
+}
+/*茜草色素*/
+.xtext-alizarin {
+    color: #e36d4f;
+}
+
 /*选项卡*/
 
 .tab-list ul li{

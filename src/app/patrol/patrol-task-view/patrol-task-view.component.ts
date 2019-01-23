@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+declare var $: any;
 @Component({
   selector: 'app-patrol-task-view',
   templateUrl: './patrol-task-view.component.html'

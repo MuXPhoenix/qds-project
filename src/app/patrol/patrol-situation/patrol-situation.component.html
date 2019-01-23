@@ -10,14 +10,14 @@
             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
             <h2>整改情况</h2>
             <div class="widget-toolbar">
-              <button  class="btn btn-xs btn-default" routerLink="/patrol/patrol-situation-view" >查看详情</button>
+              <button  class="btn btn-xs btn-default" routerLink="/patrol/patrol-situation-view" >查看视图</button>
             </div>
           </header>
           <div>
             <div class="widget-body no-padding" >
-              <div class="">
+              <div class="table-responsive">
                 <table class="table table-striped smart-form table-height-20 ">
-                  <thead class="">
+                  <thead >
                   <tr>
                     <th>危险源类型</th>
                     <th>危险级别</th>
@@ -33,35 +33,279 @@
                   </thead>
                   <tbody>
                   <!-- class="table-color"-->
-                  <tr>
-                    <td>危险源类型</td>
-                    <th>二级</th>
+                  <tr (click)="changedetails()">
+                    <td>车辆事故</td>
+                    <td>二级</td>
                     <td>2019-01-23 08：00</td>
-                    <td>危险源坐标位置</td>
-                    <td>危险源坐标位置</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
                     <td>10天</td>
                     <td>所属巡检任务</td>
                     <td>李四</td>
                     <td>张三</td>
                     <td>
                       <div>
-                        <span class="label-maintain" >整改中</span>
+                        <span class="xtext-midnightblue" >已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>车辆事故</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue" >已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td>危险源类型</td>
-                    <th>二级</th>
+                    <td>设备故障</td>
+                    <td>二级</td>
                     <td>2019-01-23 08：00</td>
-                    <td>危险源坐标位置</td>
-                    <td>危险源坐标位置</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
                     <td>10天</td>
                     <td>所属巡检任务</td>
                     <td>李四</td>
                     <td>张三</td>
                     <td>
                       <div>
-                        <span class="label-maintain" >整改中</span>
+                        <span class="xtext-midnightblue" style="display: none;" >已整改</span>
+                        <span class="xtext-warning"  >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>安全隐患</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue" >已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>安全隐患</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue" >已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>安全隐患</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue" >已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>设备故障</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue" >已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>安全隐患</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue"  style="display: none;">已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>设备故障</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue" >已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>道路阻断</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue" >已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>设备故障</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue" style="display: none;" >已整改</span>
+                        <span class="xtext-warning"  >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>道路阻断</td>
+                    <td>二级</td>
+                    <td>2019-01-23 08：00</td>
+                    <td>116.411168,40.040332</td>
+                    <td>
+                      <div class="" style="height:auto;">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner.jpg">
+                        <img alt="" class="img-picture" height="22" width="22" src="assets/img/qidashan/w-banner2.jpg">
+                      </div>
+                    </td>
+                    <td>10天</td>
+                    <td>所属巡检任务</td>
+                    <td>李四</td>
+                    <td>张三</td>
+                    <td>
+                      <div>
+                        <span class="xtext-midnightblue" >已整改</span>
+                        <span class="xtext-warning" style="display: none;" >待整改</span>
+                        <span class="xtext-danger" style="display: none;">到期未整改</span>
                       </div>
                     </td>
                   </tr>
@@ -72,7 +316,7 @@
               <!-- 底部-（分页部分）-->
               <div class="dt-toolbar">
                 <div class="dib-left">
-                  <span>共3条</span>
+                  <span>共50条</span>
                 </div>
                 <div class=" hidden-xs right">
                   <ul class="pagination pagination-sm">
@@ -112,27 +356,78 @@
 </div>
 
 
-<!-- 详情 -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <!-- 关闭按钮 -->
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          ×
-        </button>
-        <!-- 标题 -->
-        <h3 class="modal-title" data-ng-bind='results.title'>S0001 A区实时监控</h3>
-      </div>
-      <div class="modal-body">
-        <b data-ng-bind='results.message'></b>
-        <div class="" style="height:auto;">
-          <img alt="" class="img-picture" height="auto" width="100%" src="assets/img/qidashan/bg2.jpg">
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+  <div class="entity-well entity-well--tasks">
+    <div class="entity-well-header">
+      <span class="approval-head">车辆事故
+        <span ><span></span>
+        </span>
+      </span>
+      <ul class="entity-well-header-nav nav s pull-right">
+        <li class="divider-v"></li>
+        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+      <div class="approve-top approve-intro">
+        <div class="approve-formschema">
+          <table class="table table-striped table-forum smart-form details-table">
+            <tbody>
+            <tr><td class="details-width">危险源类型:</td><td >车辆事故</td></tr>
+            <tr><td class="details-width">危险级别：</td><td >二级</td></tr>
+            <tr><td class="details-width">发现时间:</td><td >2019-01-23 08：00</td></tr>
+            <tr><td class="details-width">危险源坐标位置:</td><td >116.411168,40.040332</td></tr>
+            <tr><td class="details-width">危险源现场照片:</td><td >
+              <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators" style="width:100%;left: 0%;">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="assets/img/qidashan/w-banner.jpg" alt="First slide">
+                  </div>
+                  <div class="item">
+                    <img src="assets/img/qidashan/w-banner1.jpg" alt="Second slide">
+                  </div>
+                  <div class="item">
+                    <img src="assets/img/qidashan/w-banner2.jpg" alt="Third slide">
+                  </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">上一个</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">下一个</span>
+                </a>
+              </div>
+            </td></tr>
+            <tr><td class="details-width">整改期限:</td>
+              <td >
+                10天
+              </td>
+            </tr>
+            <tr><td class="details-width">所属巡检任务:</td><td >所属巡检任务</td></tr>
+            <tr><td class="details-width">巡检人:</td><td >李四</td></tr>
+            <tr><td class="details-width">抄送:</td><td >张三</td></tr>
+            <tr><td class="details-width">整改状态:</td><td ><div>
+              <span class="xtext-midnightblue"  >已整改</span>
+              <span class="xtext-warning" style="display: none;" >待整改</span>
+              <span class="xtext-danger" style="display: none;">到期未整改</span>
+            </div></td></tr>
+
+            </tbody>
+          </table>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal -->
+    </div>
+  </div>
 </div>
+

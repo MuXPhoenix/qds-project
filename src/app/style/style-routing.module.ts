@@ -55,6 +55,16 @@ export const routes: Routes = [
         path: 'style-view',
         loadChildren: 'app/style/style-view/style-view.module#StyleViewModule',
         data: {pageTitle: 'StyleView'}
+    },
+    {
+        path: 'style-awesome-icons',
+        loadChildren: 'app/style/style-awesome-icons/style-awesome-icons.module#StyleAwesomeIconsModule',
+        data: {pageTitle: 'StyleAwesomeIcons'}
+    },
+    {
+        path: 'style-glyph-icons',
+        loadChildren: 'app/style/style-glyph-icons/style-glyph-icons.module#StyleGlyphIconsModule',
+        data: {pageTitle: 'StyleGlyphIcons'}
     }
 ];
 

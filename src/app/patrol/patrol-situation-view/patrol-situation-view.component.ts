@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-patrol-situation-view',
   templateUrl: './patrol-situation-view.component.html'
@@ -66,14 +65,14 @@ export class PatrolSituationViewComponent implements OnInit {
             {
                 name:'已处理',
                 type:'bar',
-                barWidth : 10,
+                barWidth : 16,
                 stack: '危险源',
                 data:[180, 180, 160, 200, 100, 130, 110]
             },
             {
                 name:'未处理',
                 type:'bar',
-                barWidth : 10,
+                barWidth : 16,
                 stack: '危险源',
                 data:[20, 120, 40, 100, 100, 170, 90]
             }

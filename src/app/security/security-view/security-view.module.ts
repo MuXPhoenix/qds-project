@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
 import {I3otpModule} from "../../shared/i3otp.module";
 import {SecurityViewComponent} from "./security-view.component";
+import {AngularEchartsModule} from "ngx-echarts";
 
 const routes: Routes = [{
     path: '',
@@ -18,6 +19,7 @@ const routes: Routes = [{
     imports: [
         CommonModule,
         I3otpModule,
+        AngularEchartsModule,
         RouterModule.forChild(routes)
     ],
     exports: [RouterModule],
