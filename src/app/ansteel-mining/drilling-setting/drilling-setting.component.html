@@ -10,78 +10,315 @@
           </header>
 
           <div>
-            <!--小部件内容-->
-            <div class="widget-body no-padding">
-              <div class="">
-                <table class="table table-striped smart-form table-height-20">
-                  <thead class="">
-                  <tr>
-                    <th>序号</th>
-                    <th>参数 </th>
-                    <th>报警值</th>
-                    <th>操作</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <!-- class="table-color"-->
-                  <tr  >
-                    <td>1</td>
-                    <td>电流</td>
-                    <td>10A</td>
-                    <td><a data-toggle="modal" data-target="#myModal-setting">修改</a></td>
-                  </tr>
-                  <tr  >
-                    <td>2</td>
-                    <td>电压</td>
-                    <td>30V</td>
-                    <td><a data-toggle="modal" data-target="#myModal-setting">修改</a></td>
-                  </tr>
-                  <tr  >
-                    <td>3</td>
-                    <td>转速</td>
-                    <td>5000rpm</td>
-                    <td><a data-toggle="modal" data-target="#myModal-setting">修改</a></td>
-                  </tr>
-                  <tr  >
-                    <td>4</td>
-                    <td>油量</td>
-                    <td>20L</td>
-                    <td><a data-toggle="modal" data-target="#myModal-setting">修改</a></td>
-                  </tr>
-                  </tbody>
-                </table>
 
-              </div>
-              <!-- 底部-（分页部分）-->
-              <div class="dt-toolbar">
-                <div class="dib-left">
-                  <span>共4条</span>
-                </div>
-                <div class="hidden-xs right">
-                  <!--<ul class="pagination pagination-sm">-->
-                    <!--<li class="disabled">-->
-                      <!--<a href="">上一页</a>-->
-                    <!--</li>-->
-                    <!--<li class="active">-->
-                      <!--<a href="">1</a>-->
-                    <!--</li>-->
-                    <!--<li >-->
-                      <!--<a href="">2</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<a href="">...</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<a href="">99</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<a href="">下一页</a>-->
-                    <!--</li>-->
-                  <!--</ul>-->
-                </div>
-              </div>
+            <div class="no-padding">
+              <div class="widget-body">
+                <div id="myTabContent" class="tab-content" >
+                  <div class="tab-pane fade active in pd-10 no-padding-bottom" id="s1">
+                    <div class="row">
+                      <article class="col-sm-12 col-md-12 col-lg-6">
+                        <sa-widget >
+                          <div>
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                              <alert type="info" class="no-margin" *ngIf="s_id == 0">
+                                <i class="fa-fw fa fa-plus"></i>
+                                添加图表取值范围和颜色效果
+                              </alert>
+                              <alert type="info" class="no-margin" *ngIf="s_id != 0">
+                                <i class="fa-fw fa fa-plus"></i>
+                                修改图表取值范围和颜色效果
+                              </alert>
+                              <div class="widget-body">
 
+                                <form class=""  novalidate>
+                                  <fieldset>
+                                    <div class="col-sm-12">
+                                      <div class="form-group">
+                                        <label >选择名称</label>
+                                        <input type="hidden" name="s_id" >
+                                        <select class="form-control" style="width:100%" name="s_name" >
+                                          <option value="0" >--请选择---</option>
+                                          <option value="A"  >电流</option>
+                                          <option value="V">电压</option>
+                                          <option value="rpm">转速</option>
+                                          <option value="L">油量</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+                                  <fieldset>
+                                    <legend><span style="margin-left: 13px;">第一阶段</span></legend>
+
+                                    <div class="form-group margin-top-10 ">
+                                      <div class="col-sm-12">
+                                        <div class="form-group">
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                              <label>范围取值(最小值)</label>
+                                              <input required class="form-control"  placeholder="请输入范围最小值" name="s_interval1_1"  minlength="1" maxlength="10" type="text">
+                                            </div>
+                                          </div>
+                                          <!--<div class="col-sm-2">
+                                            <div class="form-group">
+                                              <label>  </label>
+                                              <b>至</b>
+                                            </div>
+                                          </div>-->
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                              <div class="form-group">
+                                                <label>范围取值(最大值)</label>
+                                                <input required class="form-control" placeholder="请输入范围最大值" name="s_interval1_2"  minlength="1" maxlength="10" type="text">
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                              <label>颜色</label>
+                                              <input class="form-control" type="color"  maxlength="10" placeholder="#dff0d8" name="s_color1"  />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </fieldset>
+                                  <fieldset>
+                                    <legend><span style="margin-left: 13px;">第二阶段</span></legend>
+                                    <div class="form-group margin-top-10 ">
+                                      <div class="col-sm-12">
+
+                                        <div class="form-group">
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                              <label>范围取值(最小值)</label>
+                                              <input required class="form-control"  placeholder="请输入范围最小值" name="s_interval2_1"  minlength="1" maxlength="10" type="text">
+                                            </div>
+                                          </div>
+                                          <!-- <div class="col-sm-1">
+                                             <div class="form-group">
+                                               <label>  </label>
+                                               <b>至</b>
+                                             </div>
+                                           </div>-->
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                              <label>范围取值(最大值)</label>
+                                              <input required class="form-control" placeholder="请输入范围最大值" name="s_interval2_2"  minlength="1" maxlength="10" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                              <label>颜色</label>
+                                              <input class="form-control"  type="color" placeholder="#fcf8e3" maxlength="10" name="s_color2" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+                                  <fieldset>
+                                    <legend><span style="margin-left: 13px;">第三阶段</span></legend>
+                                    <div class="form-group margin-top-10 ">
+                                      <div class="col-sm-12">
+
+                                        <div class="form-group">
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                              <label>范围取值(最小值)</label>
+                                              <input required class="form-control"  placeholder="请输入范围最小值" name="s_interval3_1"  minlength="1" maxlength="10" type="text">
+                                            </div>
+                                          </div>
+                                          <!--<div class="col-sm-1">
+                                            <div class="form-group">
+                                              <label>  </label>
+                                              <b>至</b>
+                                            </div>
+                                          </div>-->
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                              <label>范围取值(最大值)</label>
+                                              <input required class="form-control" placeholder="请输入范围最大值" name="s_interval3_2"  minlength="1" maxlength="10" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                              <label>颜色</label>
+                                              <input class="form-control"   saColorpicker type="color" placeholder="#f2dede" maxlength="10" name="s_color3" />
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </fieldset>
+                                  <fieldset>
+                                    <div class="col-sm-12">
+                                      <button class="btn btn-warning btn-xs text-center" style="padding:6px;margin:24px 0;">
+                                        <i class="fa fa-plus"></i> <span class="hidden-mobile">添加新的阶段</span>
+                                      </button>
+                                    </div>
+                                  </fieldset>
+                                  <div class="widget-footer" style="padding-bottom: 8px;margin-bottom: -13px;">
+                                    <button type="button" class="btn btn-default" >
+                                      返回
+                                    </button>
+                                    <button class="btn btn-success" type="button">保存并新增</button>
+                                    <button class="btn btn-primary" type="submit">
+                                      保存
+                                    </button>
+                                  </div>
+                                </form>
+
+
+                              </div>
+                            </div>
+                            <!-- end widget content -->
+                          </div>
+                          <!-- end widget div -->
+                        </sa-widget>
+                      </article>
+                      <article class="col-sm-12 col-md-12 col-lg-6">
+                        <sa-widget >
+                          <div>
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                              <alert type="info" class="no-margin" >
+                                <i class="fa-fw fa fa-table"></i>
+                                显示图表取值范围和颜色效果
+                              </alert>
+
+                              <div  class="row mt-10">
+                                <article  class="col-sm-12">
+                                  <div class="navbar navbar-default">
+                                    <form  class="navbar-form navbar-left ng-pristine ng-valid ng-touched" novalidate="" role="search" >
+                                      <div class="form-group pdlr-4">
+                                        <a class="btn default-btn btn-sm" >
+                                          <span class="glyphicon glyphicon-pencil mr-5 color-yellow"></span>修改</a>
+                                      </div>
+                                      <div class="form-group pdlr-4">
+                                        <a class="btn default-btn btn-sm" >
+                                          <span class="fa-fw fa  fa-trash-o mr-5 color-red"></span>删除</a>
+                                      </div>
+                                      <div class="form-group pdlr-4">
+                                        <a class="btn btn-success btn-sm" >
+                                          恢复默认颜色</a>
+                                      </div>
+                                      <div class="form-group btn-group pdlr-4">
+                                        <a class="btn default-btn btn-sm dropdown-toggle"  data-toggle="dropdown">
+                                          <span class="fa-fw fa fa-th-large mr-5 color-red"></span>批处理<i class="fa fa-fw fa-chevron-down"></i></a>
+
+                                        <ul class="dropdown-menu" role="menu">
+                                          <li><a ><span class="fa-fw fa  fa-trash-o color-red mr-5"></span>批量删除</a></li>
+                                          <li><a >批量恢复默认颜色</a></li>
+                                        </ul>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </article>
+                              </div>
+
+                              <div style="padding:0;" class="height-overflow">
+                                <div style="padding: 0;z-index: 2;" class="table-responsive">
+                                  <table class="table table-striped   smart-form">
+                                    <thead>
+                                    <tr >
+                                      <td><label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline" >
+                                        <i></i>
+                                      </label>
+                                      </td>
+                                      <th>名称</th>
+                                      <th colspan="3">取值范围</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr >
+                                      <td><label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline" >
+                                        <i></i>
+                                      </label>
+                                      <td><span >电流</span></td>
+                                      <td style="background-color: rgb(223, 240, 216);"> 第<span ><span>一</span></span>阶段 <br><small class="text-muted"><i>10A-11A</i></small></td>
+                                      <td style="background-color: rgb(252, 248, 227);"> 第<span ><span>二</span></span>阶段 <br><small class="text-muted"><i>12A-13A</i></small></td>
+                                      <td style="background-color: rgb(242, 222, 222);"> 第<span ><span>三</span></span>阶段 <br><small class="text-muted"><i>14A-15A</i></small></td>
+                                    </tr>
+
+                                    <tr >
+                                      <td><label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline" >
+                                        <i></i>
+                                      </label>
+                                      <td><span >电压</span></td>
+                                      <td style="background-color: rgb(223, 240, 216);"> 第<span ><span>一</span></span>阶段 <br><small class="text-muted"><i>30V-31V</i></small></td>
+                                      <td style="background-color: rgb(252, 248, 227);"> 第<span ><span>二</span></span>阶段 <br><small class="text-muted"><i>32V-33V</i></small></td>
+                                      <td style="background-color: rgb(242, 222, 222);"> 第<span ><span>三</span></span>阶段 <br><small class="text-muted"><i>34V-36V</i></small></td>
+                                    </tr>
+
+
+                                    <tr >
+                                      <td><label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline" >
+                                        <i></i>
+                                      </label>
+                                      <td><span >转速</span></td>
+                                      <td style="background-color: rgb(223, 240, 216);"> 第<span ><span>一</span></span>阶段 <br><small class="text-muted"><i>5000rpm-5200rpm</i></small></td>
+                                      <td style="background-color: rgb(252, 248, 227);"> 第<span ><span>二</span></span>阶段 <br><small class="text-muted"><i>5200rpm-5600rpm</i></small></td>
+                                      <td style="background-color: rgb(242, 222, 222);"> 第<span ><span>三</span></span>阶段 <br><small class="text-muted"><i>5600rpm-6000rpm</i></small></td>
+                                    </tr>
+
+
+                                    <tr >
+                                      <td><label class="checkbox">
+                                        <input type="checkbox" name="checkbox-inline" >
+                                        <i></i>
+                                      </label>
+                                      <td><span >油量</span></td>
+                                      <td style="background-color: rgb(223, 240, 216);"> 第<span ><span>一</span></span>阶段 <br><small class="text-muted"><i>20L-18L</i></small></td>
+                                      <td style="background-color: rgb(252, 248, 227);"> 第<span ><span>二</span></span>阶段 <br><small class="text-muted"><i>18L-16L</i></small></td>
+                                      <td style="background-color: rgb(242, 222, 222);"> 第<span ><span>三</span></span>阶段 <br><small class="text-muted"><i>16L-10L</i></small></td>
+                                    </tr>
+
+
+
+                                    </tbody>
+                                  </table>
+
+                                </div>
+                              </div>
+
+
+                              <!-- 底部-（分页部分）-->
+                              <div class="dt-toolbar">
+                                <div class="col-xs-12 col-sm-6">
+                                  <span>共5条</span>
+                                </div>
+                                <div class="hidden-xs right">
+                                  <!--<ul class="pagination pagination-sm">
+                                    <li *ngFor="let p of categoryList?.page" class="{{p.class}}">
+                                      <a (click)="pagination(p.value)" *ngIf="p.method=='method'">{{p.text}}</a>
+                                      <a *ngIf="p.method==''">{{p.text}}</a>
+                                    </li>
+                                  </ul>-->
+                                </div>
+                              </div>
+
+                            </div>
+                            <!-- end widget content -->
+                          </div>
+                          <!-- end widget div -->
+                        </sa-widget>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
+
           </div>
 
         </sa-widget>
@@ -90,47 +327,3 @@
   </sa-widgets-grid>
 </div>
 
-
-<!--修改-->
-<div class="modal fade bs-example-modal-sm" id="myModal-setting"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <!-- 关闭按钮 -->
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          ×
-        </button>
-
-      </div>
-      <div class="modal-body">
-        <form id="smart-form-register" class="smart-form" >
-          <fieldset>
-            <div class="form-group col col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-              <section >
-                <label class="label">参数名称</label>
-                <label class="input">
-                  <input type="text" name="name" placeholder="请输入参数名称 " maxlength="30" />
-                </label>
-              </section>
-
-            </div>
-            <div class="form-group col col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-              <section >
-                <label class="label">报警值</label>
-                <label class="input">
-                  <input type="text" name="name" placeholder="请输入报警值 " maxlength="30" />
-                </label>
-              </section>
-
-            </div>
-          </fieldset>
-        </form>
-
-      </div>
-      <div class="modal-footer tex-align-center">
-        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">保存</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-      </div>
-    </div>
-  </div>
-</div>

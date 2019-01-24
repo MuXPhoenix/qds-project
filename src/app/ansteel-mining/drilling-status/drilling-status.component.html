@@ -5,6 +5,7 @@
       <div class="col-sm-12">
         <ul class="nav nav-tabs mi-nav-tabs">
           <li><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-data">数据统计</a></li>
           <li  class="active"><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
           <li><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
           <li><a routerLink="/ansteel-mining/drilling-task">最新任务</a></li>
@@ -21,7 +22,7 @@
           </header>
           <div>
             <div class="widget-body no-padding" >
-              <div class="">
+              <div class="table-responsive">
                 <table  class="table table-striped smart-form table-border-th table-height-20">
                   <thead>
                   <tr >
@@ -43,7 +44,7 @@
                   </thead>
                   <tbody  >
                   <tr (click)="changedetails()"  >
-                    <td >A001</td>
+                    <td >YL001</td>
                     <td >4.8A</td>
                     <td >26.5V</td>
                     <td >2000rpm</td>
@@ -60,8 +61,8 @@
                     <td >运行轨迹查询</td>
 
                   </tr>
-                  <tr  class="odd shown" (click)="changedetails()" >
-                    <td >A002</td>
+                  <tr   (click)="changedetails()" >
+                    <td >YL002</td>
                     <td >4.8A</td>
                     <td >26.5V</td>
                     <td >2000rpm</td>
@@ -79,7 +80,7 @@
 
                   </tr>
                   <tr   (click)="changedetails()" >
-                    <td >A003</td>
+                    <td >YL003</td>
                     <td >4.8A</td>
                     <td >26.5V</td>
                     <td >2000rpm</td>
@@ -97,7 +98,151 @@
 
                   </tr>
                   <tr  >
-                    <td >A004</td>
+                    <td >YL004</td>
+                    <td >4.8 A</td>
+                    <td >26.5V</td>
+                    <td >2000rpm</td>
+                    <td >100L</td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">履带故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr (click)="changedetails()"  >
+                    <td >YL005</td>
+                    <td >4.8A</td>
+                    <td >26.5V</td>
+                    <td >2000rpm</td>
+                    <td >100L</td>
+                    <td >
+                      <span>
+                      <span class="label-normal" >正常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr   (click)="changedetails()" >
+                    <td >YL006</td>
+                    <td >4.8A</td>
+                    <td >26.5V</td>
+                    <td >2000rpm</td>
+                    <td >100L</td>
+                    <td >
+                    <span>
+                      <span class="label-blue" >维修</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">机械故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr   (click)="changedetails()" >
+                    <td >YL007</td>
+                    <td >4.8A</td>
+                    <td >26.5V</td>
+                    <td >2000rpm</td>
+                    <td >100L</td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">钻头故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  >
+                    <td >YL008</td>
+                    <td >4.8 A</td>
+                    <td >26.5V</td>
+                    <td >2000rpm</td>
+                    <td >100L</td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">履带故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr (click)="changedetails()"  >
+                    <td >YL009</td>
+                    <td >4.8A</td>
+                    <td >26.5V</td>
+                    <td >2000rpm</td>
+                    <td >100L</td>
+                    <td >
+                      <span>
+                      <span class="label-normal" >正常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr   (click)="changedetails()" >
+                    <td >YL010</td>
+                    <td >4.8A</td>
+                    <td >26.5V</td>
+                    <td >2000rpm</td>
+                    <td >100L</td>
+                    <td >
+                    <span>
+                      <span class="label-blue" >维修</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">机械故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr   (click)="changedetails()" >
+                    <td >YL011</td>
+                    <td >4.8A</td>
+                    <td >26.5V</td>
+                    <td >2000rpm</td>
+                    <td >100L</td>
+                    <td >
+                      <span>
+                      <span class="label-full" >异常</span>
+                    </span>
+                    </td>
+                    <td ><i  class="fa fa-circle text-danger font-xs">钻头故障</i></td>
+                    <td >通话中</td>
+                    <td >当前位置</td>
+                    <td >累计钻孔深度</td>
+                    <td >运行轨迹查询</td>
+
+                  </tr>
+                  <tr  >
+                    <td >YL012</td>
                     <td >4.8 A</td>
                     <td >26.5V</td>
                     <td >2000rpm</td>
@@ -122,7 +267,7 @@
               <!-- 底部-（分页部分）-->
               <div class="dt-toolbar">
                 <div class="dib-left">
-                  <span>共3条</span>
+                  <span>共32条</span>
                 </div>
                 <div class="hidden-xs right">
                   <ul class="pagination pagination-sm">
@@ -164,7 +309,7 @@
 <div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
   <div class="entity-well entity-well--tasks">
     <div class="entity-well-header">
-      <span class="approval-head">A0001
+      <span class="approval-head">YL0001
         <span ><span>牙轮钻机状态</span>
         </span>
       </span>
@@ -178,7 +323,7 @@
         <div class="approve-formschema">
           <table class="table table-striped table-forum smart-form details-table">
             <tbody>
-            <tr><td class="details-width">设备编号:</td><td class="">A0003</td></tr>
+            <tr><td class="details-width">设备编号:</td><td class="">YL0003</td></tr>
             <tr>
               <td class="details-width">参数显示:</td>
               <td class="details-label">

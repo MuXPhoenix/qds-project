@@ -15,6 +15,11 @@ export const routes: Routes = [
         path: 'monitoring-history',
         loadChildren: 'app/monitoring/monitoring-history/monitoring-history.module#MonitoringHistoryModule',
         data: {pageTitle: 'MonitoringHistory'}
+    },
+    {
+        path: 'monitoring-view',
+        loadChildren: 'app/monitoring/monitoring-view/monitoring-view.module#MonitoringViewModule',
+        data: {pageTitle: 'MonitoringView'}
     }
 ];
 

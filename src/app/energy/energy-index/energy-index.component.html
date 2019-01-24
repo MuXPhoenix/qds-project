@@ -25,7 +25,7 @@
                 </div>
                 <div class="tab-content">
                   <div [style.display] = "item == 0 ? 'block' : 'none'">
-                    <div  echarts [options]="energyoption" style="width: 100%;height:400px;" class="demo-chart"></div>
+                    <div theme = "macarons"  echarts [options]="energyoption" style="width: 100%;height:400px;" class="demo-chart"></div>
                     <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
                   </div>
                   <div [style.display] = "item == 1 ? 'block' : 'none'">周累计</div>
@@ -36,7 +36,7 @@
 
               </div>
               <div class="col-md-6 col-sm-6 col-xs-12 text-align-center" style="margin-top: 60px;">
-                <div  echarts [options]="energy2option" style="width: 100%;height:400px;" class="demo-chart"></div>
+                <div  theme = "macarons" echarts [options]="energy2option" style="width: 100%;height:400px;" class="demo-chart"></div>
                 <div style="margin-bottom:20px;"><button  type="button" class="btn btn-primary">查看详情</button></div>
               </div>
             </div>

@@ -1,0 +1,39 @@
+<!--采矿能源管理系统-设备油耗统计-->
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>设备油耗统计</h2>
+            <div class="widget-toolbar">
+              <button  class="btn btn-xs btn-default" routerLink="/energy/energy-oil-consumption" >查看表格</button>
+            </div>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="col-md-4 col-sm-4 col-xs-4 text-align-center" style="margin-top: 20px;">
+                <div  theme = "macarons"  echarts [options]="energy3option" style="width: 100%;height:400px;" class="demo-chart"></div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4 text-align-center" style="margin-top: 20px;">
+                <div theme = "macarons"  echarts [options]="energy4option" style="width: 100%;height:400px;" class="demo-chart"></div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4 text-align-center" style="margin-top: 20px;">
+                <div theme = "macarons"  echarts [options]="energy5option" style="width: 100%;height:400px;" class="demo-chart"></div>
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MiningMesProgressComponent } from './mining-mes-progress.component';
+import { DrillingDataComponent } from './drilling-data.component';
 
-describe('MiningMesProgressComponent', () => {
-  let component: MiningMesProgressComponent;
-  let fixture: ComponentFixture<MiningMesProgressComponent>;
+describe('DrillingDataComponent', () => {
+  let component: DrillingDataComponent;
+  let fixture: ComponentFixture<DrillingDataComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MiningMesProgressComponent ]
+      declarations: [ DrillingDataComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MiningMesProgressComponent);
+    fixture = TestBed.createComponent(DrillingDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

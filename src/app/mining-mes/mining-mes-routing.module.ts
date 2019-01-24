@@ -12,11 +12,6 @@ export const routes: Routes = [
         data: {pageTitle: 'MiningMesProduction'}
     },
     {
-        path: 'mining-mes-progress',
-        loadChildren: 'app/mining-mes/mining-mes-progress/mining-mes-progress.module#MiningMesProgressModule',
-        data: {pageTitle: 'MiningMesProgress'}
-    },
-    {
         path: 'mining-mes-status',
         loadChildren: 'app/mining-mes/mining-mes-status/mining-mes-status.module#MiningMesStatusModule',
         data: {pageTitle: 'MiningMesStatus'}
@@ -30,6 +25,21 @@ export const routes: Routes = [
         path: 'mining-mes-drill',
         loadChildren: 'app/mining-mes/mining-mes-drill/mining-mes-drill.module#MiningMesDrillModule',
         data: {pageTitle: 'MiningMesDrill'}
+    },
+    {
+        path: 'mining-mes-drillview',
+        loadChildren: 'app/mining-mes/mining-mes-drillview/mining-mes-drillview.module#MiningMesDrillviewModule',
+        data: {pageTitle: 'MiningMesDrillview'}
+    },
+    {
+        path: 'mining-mes-explodeview',
+        loadChildren: 'app/mining-mes/mining-mes-explodeview/mining-mes-explodeview.module#MiningMesExplodeviewModule',
+        data: {pageTitle: 'MiningMesExplodeview'}
+    },
+    {
+        path: 'mining-mes-productionview',
+        loadChildren: 'app/mining-mes/mining-mes-productionview/mining-mes-productionview.module#MiningMesProductionviewModule',
+        data: {pageTitle: 'MiningMesProductionview'}
     }
 ];
 

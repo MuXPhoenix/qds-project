@@ -5,26 +5,66 @@
 
     <!--动态读取--->
     <ul saSmartMenu >
-
       <li>
-        <a href="#"><i class="fa fa-lg fa-fw  fa-external-link-square"></i>{{'采矿智慧生产指挥单元' | i18n}}</a>
+        <a href="#"><i class="fa fa-lg fa-fw fa-cube"></i>{{'采矿三维模拟仿真单元' | i18n}}</a>
         <ul>
-          <li >
-            <a href="#">{{'采矿综合质量配矿优化决策模块' | i18n}}</a>
-            <ul>
-              <li routerLinkActive="active">
-                <a routerLink="/ansteel-mining/blending-index">{{'首页' | i18n}}</a>
-              </li>
-              <li routerLinkActive="active">
-                <a routerLink="/ansteel-mining/blending-dailyplan">{{'日计划' | i18n}}</a>
-              </li>
-            </ul>
+          <li routerLinkActive="active">
+            <a routerLink="/three-dimensional/three-dimensional-index">{{'首页' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-cube"></i>{{'采矿配矿决策系统' | i18n}}</a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/ansteel-mining/gis-index">{{'采矿综合信息管理系统（GIS）' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/ansteel-mining/gis-index">{{'采矿综合信息管理模块（GIS）' | i18n}}</a>
+            <a routerLink="/ansteel-mining/blending-index">{{'采矿综合质量配矿优化决策系统' | i18n}}</a>
           </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-database"></i>{{'采矿综合管理系统' | i18n}}</a>
+        <ul>
+          <!--<li routerLinkActive="active">-->
+            <!--<a routerLink="/mining-mes/mining-mes-index">{{'首页' | i18n}}</a>-->
+          <!--</li>-->
+          <li routerLinkActive="active">
+            <a routerLink="/mining-mes/mining-mes-status">{{'当前生产状态' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/mining-mes/mining-mes-productionview">{{'生产报表' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/mining-mes/mining-mes-explodeview">{{'爆破进度表' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/mining-mes/mining-mes-drillview">{{'钻孔进度表' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw  fa-external-link-square"></i>{{'采矿生产指挥系统' | i18n}}</a>
+        <ul>
+          <!--<li >-->
+            <!--<a href="#">{{'采矿综合质量配矿优化决策模块' | i18n}}</a>-->
+            <!--<ul>-->
+              <!--<li routerLinkActive="active">-->
+                <!--<a routerLink="/ansteel-mining/blending-index">{{'首页' | i18n}}</a>-->
+              <!--</li>-->
+              <!--<li routerLinkActive="active">-->
+                <!--<a routerLink="/ansteel-mining/blending-dailyplan">{{'日计划' | i18n}}</a>-->
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</li>-->
+          <!--<li routerLinkActive="active">-->
+            <!--<a routerLink="/ansteel-mining/gis-index">{{'采矿综合信息管理模块（GIS）' | i18n}}</a>-->
+          <!--</li>-->
           <li >
-            <a href="#">{{'牙轮生产智能指挥模块' | i18n}}</a>
+            <a href="#">{{'牙轮生产指挥系统' | i18n}}</a>
             <ul>
               <li routerLinkActive="active">
                 <a routerLink="/ansteel-mining/drilling-index">{{'首页' | i18n}}</a>
@@ -35,7 +75,7 @@
             </ul>
           </li>
           <li>
-            <a href="#">{{'铲装品位智能跟踪模块' | i18n}}</a>
+            <a href="#">{{'电铲生产指挥系统' | i18n}}</a>
             <ul>
               <li routerLinkActive="active">
                 <a routerLink="/ansteel-mining/scraper-index">{{'首页' | i18n}}</a>
@@ -46,7 +86,7 @@
             </ul>
           </li>
           <li>
-            <a href="#">{{'采运生产智能指挥模块' | i18n}}</a>
+            <a href="#">{{'运输生产指挥系统' | i18n}}</a>
             <ul>
               <li routerLinkActive="active">
                 <a routerLink="/ansteel-mining/tramcar-index">{{'首页' | i18n}}</a>
@@ -56,87 +96,99 @@
               </li>
             </ul>
           </li>
+          <li>
+            <a href="#">{{'铁运生产指挥系统' | i18n}}</a>
+            <ul>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/trains-index">{{'首页' | i18n}}</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/trains-setting">{{'设置' | i18n}}</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">{{'破碎站生产指挥系统' | i18n}}</a>
+            <ul>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/trains-index">{{'首页' | i18n}}</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/trains-setting">{{'设置' | i18n}}</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </li>
 
       <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-database"></i>{{'采矿综合管理单元' | i18n}}</a>
+        <a href="#"><i class="fa fa-lg fa-fw fa-delicious"></i>{{'采矿质检系统' | i18n}}</a>
         <ul>
           <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-index">{{'首页' | i18n}}</a>
+            <a routerLink="/quality/quality-drilling-view">{{'钻孔信息' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-status">{{'当前生产状态' | i18n}}</a>
-          </li>
-          <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-production">{{'生产报表' | i18n}}</a>
-          </li>
-          <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-progress">{{'生产进度表' | i18n}}</a>
-          </li>
-          <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-explode">{{'爆破进度表' | i18n}}</a>
-          </li>
-          <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-drill">{{'钻孔进度表' | i18n}}</a>
+            <a routerLink="/quality/quality-assay-view">{{'化验管理' | i18n}}</a>
           </li>
         </ul>
       </li>
+
       <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-cube"></i>{{'采矿三维模拟仿真单元' | i18n}}</a>
+        <a href="#"><i class="fa fa-lg fa-fw fa-delicious"></i>{{'巡检管理系统' | i18n}}</a>
         <ul>
-        <li routerLinkActive="active">
-          <a routerLink="/three-dimensional/three-dimensional-index">{{'首页' | i18n}}</a>
-        </li>
-      </ul>
-      </li>
-      <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i>{{'采矿能源智能管理单元' | i18n}}</a>
-        <ul>
-        <li routerLinkActive="active">
-        <a routerLink="/energy/energy-index">{{'首页' | i18n}}</a>
-        </li>
           <li routerLinkActive="active">
-            <a routerLink="/energy/energy-driver-data">{{'司机行驶数据' | i18n}}</a>
+            <a routerLink="/patrol/patrol-task-view">{{'巡检任务列表' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/energy/energy-oil-consumption">{{'总耗油量' | i18n}}</a>
-          </li>
-          <li routerLinkActive="active">
-            <a routerLink="/energy/energy-consume-electricity">{{'总耗电量' | i18n}}</a>
-          </li>
-          <li routerLinkActive="active">
-            <a routerLink="/energy/energy-electricity">{{'油量情况' | i18n}}</a>
+            <a routerLink="/patrol/patrol-situation-view">{{'整改情况' | i18n}}</a>
           </li>
         </ul>
       </li>
+
       <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-delicious"></i>{{'巡检智能管理单元' | i18n}}</a>
+        <a href="#"><i class="fa fa-lg fa-fw fa-shield"></i>{{'安全管理系统' | i18n}}</a>
         <ul>
-        <li routerLinkActive="active">
-        <a routerLink="/patrol/patrol-index">{{'首页' | i18n}}</a>
-        </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-video-camera"></i>{{'监控管理单元' | i18n}}</a>
-        <ul>
-        <li routerLinkActive="active">
-        <a routerLink="/monitoring/monitoring-index">{{'首页' | i18n}}</a>
-        </li>
           <li routerLinkActive="active">
-            <a routerLink="/monitoring/monitoring-task">{{'视频列表' | i18n}}</a>
+            <a routerLink="/security/security-view">{{'安全事件' | i18n}}</a>
           </li>
         </ul>
       </li>
+
       <li>
-        <a href="#"><i class="fa fa-lg fa-fw fa-shield"></i>{{'安全智能管理单元' | i18n}}</a>
+        <a href="#"><i class="fa fa-lg fa-fw fa-video-camera"></i>{{'监控管理系统' | i18n}}</a>
         <ul>
-        <li routerLinkActive="active">
-        <a routerLink="/security/security-index">{{'首页' | i18n}}</a>
-        </li>
+          <li routerLinkActive="active">
+            <a routerLink="/monitoring/monitoring-index">{{'监控区域列表' | i18n}}</a>
+          </li>
+          <!--<li routerLinkActive="active">-->
+            <!--<a routerLink="/monitoring/monitoring-task">{{'视频列表' | i18n}}</a>-->
+          <!--</li>-->
         </ul>
       </li>
+
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i>{{'采矿能源管理系统' | i18n}}</a>
+        <ul>
+        <!--<li routerLinkActive="active">-->
+        <!--<a routerLink="/energy/energy-index">{{'首页' | i18n}}</a>-->
+        <!--</li>-->
+          <!--<li routerLinkActive="active">-->
+            <!--<a routerLink="/energy/energy-driver-data">{{'司机行驶数据' | i18n}}</a>-->
+          <!--</li>-->
+          <li routerLinkActive="active">
+            <a routerLink="/energy/energy-oil-consumptionview">{{'设备油耗统计' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/energy/energy-consume-electricityview">{{'设备电耗统计' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/energy/energy-electricity-view">{{'油站余量统计' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+
 
 
 
@@ -315,6 +367,9 @@
             </li>
           </ul>
         </li>
+        <li routerLinkActive="active">
+          <a routerLink="/style/style-dashboard">{{'首页' | i18n}}</a>
+        </li>
       </ul>
     </li>
 
@@ -326,6 +381,7 @@
           </li>
         </ul>
       </li>
+
     </ul>
 
   </nav>

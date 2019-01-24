@@ -1,4 +1,4 @@
-<!--采矿综合质量配矿优化决策模块-->
+<!--采矿综合质量配矿优化决策系统-->
 
 <div id="content">
   <sa-widgets-grid>
@@ -7,7 +7,7 @@
         <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
           <header>
             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-            <h2>采矿综合质量配矿优化决策模块</h2>
+            <h2>采矿综合质量配矿优化决策系统</h2>
           </header>
           <div>
             <div class="widget-body" >
@@ -117,6 +117,9 @@
           <header>
             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
             <h2>配矿策略</h2>
+            <div class="widget-toolbar">
+              <button  class="btn btn-xs btn-default" routerLink="/ansteel-mining/blending-dailyplan" >查看详情</button>
+            </div>
           </header>
           <div>
             <div class="widget-body no-padding" >
@@ -904,8 +907,10 @@
                     <li>
                       <a href="">下一页</a>
                     </li>
+                    <li class="disabled">
+                      <a href="">共32条</a>
+                    </li>
                   </ul>
-                  <span>共32条</span>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-align-right">
                   <button type="submit" class="btn btn-sm btn-primary  mr-5 ">

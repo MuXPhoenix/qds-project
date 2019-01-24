@@ -8,6 +8,7 @@
       <div class="col-sm-12">
         <ul class="nav nav-tabs mi-nav-tabs">
           <li ><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-data">数据统计</a></li>
           <li><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
           <li><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
           <li class="active"><a routerLink="/ansteel-mining/drilling-task">最新任务</a></li>
@@ -26,7 +27,7 @@
             <div class="widget-body no-padding" >
 
               <div style="padding:0;" class="">
-                <div  class="">
+                <div  class="table-responsive">
                   <table class="table table-striped smart-form table-height-20">
                     <thead class="">
                     <tr>
@@ -41,16 +42,86 @@
                     <!-- class="table-color"-->
                     <tr   (click)="changedetails()">
                       <td  >1</td>
-                      <td  >A001</td>
+                      <td  >YL001</td>
                       <td  >牙轮钻机</td>
-                      <td  >2018-01-19 13:50某某设备（A001）到某某地点做某某事情</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
                       <td  >2018-01-17 10:30</td>
                     </tr>
                     <tr   (click)="changedetails()">
                       <td  >2</td>
-                      <td  >A001</td>
+                      <td  >YL002</td>
                       <td  >牙轮钻机</td>
-                      <td  >2018-01-19 13:50某某设备（A001）到某某地点做某某事情</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >3</td>
+                      <td  >YL003</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >4</td>
+                      <td  >YL004</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >5</td>
+                      <td  >YL005</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >6</td>
+                      <td  >YL006</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >7</td>
+                      <td  >YL007</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >8</td>
+                      <td  >YL008</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >9</td>
+                      <td  >YL009</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >10</td>
+                      <td  >YL010</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >11</td>
+                      <td  >YL011</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
+                      <td  >2018-01-17 10:30</td>
+                    </tr>
+                    <tr   (click)="changedetails()">
+                      <td  >12</td>
+                      <td  >YL012</td>
+                      <td  >牙轮钻机</td>
+                      <td  >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td>
                       <td  >2018-01-17 10:30</td>
                     </tr>
                     </tbody>
@@ -60,7 +131,7 @@
               <!-- 底部-（分页部分）-->
               <div class="dt-toolbar">
                 <div class="dib-left">
-                  <span>共3条</span>
+                  <span>共33条</span>
                 </div>
                 <div class=" hidden-xs right">
                   <ul class="pagination pagination-sm">
@@ -103,7 +174,7 @@
 <div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
   <div class="entity-well entity-well--tasks">
     <div class="entity-well-header">
-      <span class="approval-head">A0001
+      <span class="approval-head">YL0001
         <span ><span>牙轮钻机交接最新任务</span>
         </span>
       </span>
@@ -118,9 +189,9 @@
           <table class="table table-striped table-forum smart-form details-table">
             <tbody>
             <tr><td class="details-width">序号:</td><td class="">1</td></tr>
-            <tr><td class="details-width">编号：</td><td >A001 </td></tr>
+            <tr><td class="details-width">编号：</td><td >YL001 </td></tr>
             <tr><td class="details-width">设备种类:</td><td >牙轮钻机</td></tr>
-            <tr><td class="details-width">最新任务:</td><td >2018-01-19 13:50某某设备（A001）到某某地点做某某事情</td></tr>
+            <tr><td class="details-width">最新任务:</td><td >2018-01-19 13:50某某设备（YL001）到某某地点做某某事情</td></tr>
             <tr><td class="details-width">时间:</td><td >2018-01-17 10:30</td></tr>
             </tbody>
           </table>

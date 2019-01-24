@@ -1,0 +1,289 @@
+
+<!--巡检管理系统-巡检任务列表-->
+<div id="content" >
+  <sa-widgets-grid>
+
+    <div class="row">
+
+      <article class="col-sm-12 ">
+        <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>巡检任务列表</h2>
+            <div class="widget-toolbar">
+              <button  class="btn btn-xs btn-default" routerLink="/patrol/patrol-task-view" >查看视图</button>
+            </div>
+          </header>
+          <div>
+            <div class="widget-body no-padding" >
+              <div class="table-responsive">
+                <table class="table table-striped smart-form table-height-20 ">
+                  <thead class="">
+                  <tr>
+                    <th>日期</th>
+                    <th>时间</th>
+                    <th>巡检目的地</th>
+                    <th>巡检任务</th>
+                    <th>巡检人员</th>
+                    <th>执行状态</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!-- class="table-color"-->
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue" >执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue" >执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue"  style="display:none;">执行中</span>
+                        <span class="label-normal">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue" >执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue" style="display:none;" >执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain" >待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue" >执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue" >执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue"  style="display:none;">执行中</span>
+                        <span class="label-normal">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue" >执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue" >执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue"  style="display:none;">执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr (click)="changedetails()">
+                    <td>2019-01-23</td>
+                    <td>08：40</td>
+                    <td>巡检地址</td>
+                    <td>某某地方发生了请及时巡检</td>
+                    <td>张三</td>
+                    <td >
+                      <div>
+                        <span class="label-blue" >执行中</span>
+                        <span class="label-normal" style="display:none;">已执行</span>
+                        <span  class="label-maintain" style="display:none;">待执行</span>
+                      </div>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- 底部-（分页部分）-->
+              <div class="dt-toolbar">
+                <div class="dib-left">
+                  <span>共30条</span>
+                </div>
+                <div class=" hidden-xs right">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                      <a href="">上一页</a>
+                    </li>
+                    <li class="active">
+                      <a href="">1</a>
+                    </li>
+                    <li >
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">...</a>
+                    </li>
+                    <li>
+                      <a href="">99</a>
+                    </li>
+                    <li>
+                      <a href="">下一页</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+
+
+
+    </div>
+
+
+
+  </sa-widgets-grid>
+</div>
+
+
+
+
+<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+  <div class="entity-well entity-well--tasks">
+    <div class="entity-well-header">
+      <span class="approval-head">张三
+        <span ><span></span>
+        </span>
+      </span>
+      <ul class="entity-well-header-nav nav s pull-right">
+        <li class="divider-v"></li>
+        <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
+      <div class="approve-top approve-intro">
+        <div class="approve-formschema">
+          <table class="table table-striped table-forum smart-form details-table">
+            <tbody>
+            <tr><td class="details-width">日期:</td><td >2019-01-23</td></tr>
+            <tr><td class="details-width">时间：</td><td >08：40</td></tr>
+            <tr><td class="details-width">巡检目的地:</td><td >巡检地址</td></tr>
+            <tr><td class="details-width">巡检任务:</td><td >某某地方发生了请及时巡检</td></tr>
+            <tr><td class="details-width">巡检人员:</td><td >张三</td></tr>
+            <tr><td class="details-width">执行状态:</td>
+              <td >
+                <div>
+                  <span class="label-blue" >执行中</span>
+                  <span class="label-normal" style="display:none;">已执行</span>
+                  <span  class="label-maintain" style="display:none;">待执行</span>
+                </div>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

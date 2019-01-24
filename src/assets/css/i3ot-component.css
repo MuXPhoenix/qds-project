@@ -4630,7 +4630,7 @@ div.dataTables_editor{
     /*-moz-flex-direction: column;*/
     flex-direction: column;
     -ms-flex-direction: column;
-    box-shadow: 0 7px 21px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     display: -webkit-box;
     display: -moz-box;
     display: -webkit-flex;

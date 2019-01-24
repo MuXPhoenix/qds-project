@@ -39,7 +39,6 @@
           <div>
             <div class="widget-body svg-no-margin" >
               <div class="col-sm-12">
-
                 <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1364 500">
                   <defs>
                     <style>
@@ -247,7 +246,6 @@
                   </g>
                 </svg>
 
-
                 <div class="text-align-center svg-center-bt">
                   <div class="tab-list ">
                     <ul>
@@ -259,42 +257,80 @@
                     </ul>
                   </div>
                 </div>
-                <div class="svg-right-top" >
-                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
 
-                  <div *ngFor="let ml of mining_log_list?.data" class="alert alert-info alert-dismissible" >
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <span class="svg-glyphicon">
-                      <i class="glyphicon glyphicon-eye-open"></i>
-                    </span>
-                    <span class="svg-glyphicon">
-                      <i class="glyphicon glyphicon-eye-close"></i>
-                    </span>
+                <div class="frame-gis">
+                  <div class="frame-gis-box">
+                    <div class="frame-gis-header">
+                      <div class="frame-gis-left">
+                        <span>最新任务</span>
+                      </div>
+                      <div class="frame-gis-right">
+                        <a><i class="fa fa-minus "></i></a>
+                        <a><i class="fa fa-expand "></i></a>
+                      </div>
+                    </div>
+                    <marquee behavior="scroll" direction="up" scrolldelay="10" scrollamount="3" onMouseOver="this.stop()" onMouseOut="this.start()" class="frame-gis-marquee">
+                      <div [ngClass]="{'frame-gis-cneter':true, ' panel-inverse':(inds%2==0),' panel-primary':(inds%2!=0)}" *ngFor="let ml of mining_log_list?.data;let inds = index;">
+                        <span>
+                          <strong>
                     {{ ml.ml_title }}
                     ({{ ml.created_at }})
-                    <!--<strong>电动车023</strong>完成了任务-->
-                  </div>
-                </div>
+                        </strong>
+                        </span>
+                      </div>
+                    </marquee>
 
-                <div class="svg-right-bottom" >
-                  <!--/*success 成功 info 信息 warning 警告 danger 危险*/-->
-                  <div  *ngFor="let mw of mining_waring_list?.data" class="alert alert-danger alert-dismissible" >
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <span class="svg-glyphicon">
-                      <i class="glyphicon glyphicon-eye-open"></i>
-                    </span>
-                    <span class="svg-glyphicon">
-                      <i class="glyphicon glyphicon-eye-close"></i>
-                    </span>
+                  </div>
+                  <div class="frame-gis-box">
+                    <div class="frame-gis-header">
+                      <div class="frame-gis-left">
+                        <span>最新报警</span>
+                      </div>
+                      <div class="frame-gis-right">
+                        <a><i class="fa fa-minus "></i></a>
+                        <a><i class="fa fa-expand "></i></a>
+                      </div>
+                    </div>
+                    <marquee behavior="scroll" direction="up" scrolldelay="10" scrollamount="3" onMouseOver="this.stop()" onMouseOut="this.start()" class="frame-gis-marquee">
+                      <!--//panel-warning-->
+                      <div [ngClass]="{'frame-gis-cneter':true, ' panel-inverse':(inds%2==0),' panel-danger':(inds%2!=0)}" *ngFor="let mw of mining_waring_list?.data;let inds_alarm = index;">
+                        <span>
                     {{ mw.ml_title }}
                     ({{ mw.created_at }})
-                    <!--<strong>电动车023</strong>报警提示需要加油-->
+                        </span>
+                      </div>
+                    </marquee>
+                  </div>
+                </div>
+                <div class="frame-gis-widget">
+                  <!--先关闭的在下方，同一时间只能显示两个信息。-->
+                  <div class="frame-widget">
+                    <div class="frame-gis-header">
+                      <div class="frame-gis-left">
+                        <span>最新任务</span>
+                      </div>
+                      <div class="frame-gis-right">
+                        <a><i class="fa fa-expand "></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="frame-widget">
+                    <div class="frame-gis-header">
+                      <div class="frame-gis-left">
+                        <span>最新报警</span>
+                      </div>
+                      <div class="frame-gis-right">
+                        <a><i class="fa fa-expand "></i></a>
+                      </div>
+                    </div>
                   </div>
 
                 </div>
 
+
+
               </div>
-            </div>
+          </div>
           </div>
         </sa-widget>
       </article>

@@ -227,6 +227,76 @@ export const routes: Routes = [
         loadChildren: 'app/ansteel-mining/projectautomobile-task/projectautomobile-task.module#ProjectautomobileTaskModule',
         data: {pageTitle: 'ProjectautomobileTask'}
     },
+    {
+        path: 'trains-alarm',
+        loadChildren: 'app/ansteel-mining/trains-alarm/trains-alarm.module#TrainsAlarmModule',
+        data: {pageTitle: 'TrainsAlarm'}
+    },
+    {
+        path: 'trains-data',
+        loadChildren: 'app/ansteel-mining/trains-data/trains-data.module#TrainsDataModule',
+        data: {pageTitle: 'TrainsData'}
+    },
+    {
+        path: 'trains-dutyshift',
+        loadChildren: 'app/ansteel-mining/trains-dutyshift/trains-dutyshift.module#TrainsDutyshiftModule',
+        data: {pageTitle: 'TrainsDutyshift'}
+    },
+    {
+        path: 'trains-fuelling',
+        loadChildren: 'app/ansteel-mining/trains-fuelling/trains-fuelling.module#TrainsFuellingModule',
+        data: {pageTitle: 'TrainsFuelling'}
+    },
+    {
+        path: 'trains-index',
+        loadChildren: 'app/ansteel-mining/trains-index/trains-index.module#TrainsIndexModule',
+        data: {pageTitle: 'TrainsIndex'}
+    },
+    {
+        path: 'trains-setting',
+        loadChildren: 'app/ansteel-mining/trains-setting/trains-setting.module#TrainsSettingModule',
+        data: {pageTitle: 'TrainsSetting'}
+    },
+    {
+        path: 'trains-status',
+        loadChildren: 'app/ansteel-mining/trains-status/trains-status.module#TrainsStatusModule',
+        data: {pageTitle: 'TrainsStatus'}
+    },
+    {
+        path: 'trains-task',
+        loadChildren: 'app/ansteel-mining/trains-task/trains-task.module#TrainsTaskModule',
+        data: {pageTitle: 'TrainsTask'}
+    },
+    {
+        path: 'tramcar-data',
+        loadChildren: 'app/ansteel-mining/tramcar-data/tramcar-data.module#TramcarDataModule',
+        data: {pageTitle: 'TramcarData'}
+    },
+    {
+        path: 'tanktruck-data',
+        loadChildren: 'app/ansteel-mining/tanktruck-data/tanktruck-data.module#TanktruckDataModule',
+        data: {pageTitle: 'TanktruckData'}
+    },
+    {
+        path: 'scraper-data',
+        loadChildren: 'app/ansteel-mining/scraper-data/scraper-data.module#ScraperDataModule',
+        data: {pageTitle: 'ScraperData'}
+    },
+    {
+        path: 'projectautomobile-data',
+        loadChildren: 'app/ansteel-mining/projectautomobile-data/projectautomobile-data.module#ProjectautomobileDataModule',
+        data: {pageTitle: 'ProjectautomobileData'}
+    },
+    {
+        path: 'otherautomobile-data',
+        loadChildren: 'app/ansteel-mining/otherautomobile-data/otherautomobile-data.module#OtherautomobileDataModule',
+        data: {pageTitle: 'OtherautomobileData'}
+    },
+    {
+        path: 'drilling-data',
+        loadChildren: 'app/ansteel-mining/drilling-data/drilling-data.module#DrillingDataModule',
+        data: {pageTitle: 'DrillingData'}
+    }
 ];
 
 export const routing = RouterModule.forChild(routes);

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-mining-mes-progress',
-  templateUrl: './mining-mes-progress.component.html'
+  selector: 'app-patrol-situation',
+  templateUrl: './patrol-situation.component.html'
 })
-export class MiningMesProgressComponent implements OnInit {
+export class PatrolSituationComponent implements OnInit {
     xy_details: boolean = false;  //单击展开，再次单击隐藏
 
     constructor() { }
