@@ -6,6 +6,9 @@
 .svg-no-margin{
     margin: -13px -26px 0;
 }
+.btn{
+    margin:0 4px;
+}
 
 /*导航*/
 .mi-nav-tabs{
@@ -15,6 +18,14 @@
 }
 .mi-nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
     background-color: #f0f0f0;
+    -webkit-box-shadow: 0 -2px 0 #3782e7;
+    -moz-box-shadow: 0 -2px 0 #3782e7;
+    box-shadow: 0 -2px 0 #3782e7;
+    border: 2px solid #3782e7;
+    color: #3782e7;
+    border-top-width: 0!important;
+    margin-top: 1px!important;
+    font-weight: 700;
 }
 
 
@@ -1021,12 +1032,12 @@ pd-tb10{
 }
 /*成功*/
 .panel-success {
-    background-color: #2ecc71;
-    border: 1px solid #2cc46c;
+    background-color: #0fbe03;
+    border: 1px solid #22be00;
 }
 /*警告*/
 .panel-warning{
-    background-color: #f1c40f;
+    background-color: #efc108;
     border: 1px solid #e8bd0e;
 }
 /*危险*/
@@ -1110,11 +1121,11 @@ pd-tb10{
 }
 /*成功*/
 .xtext-success {
-    color: #2ecc71;
+    color: #0fbe03;
 }
 /*警告*/
 .xtext-warning{
-    color: #f1c40f;
+    color: #efc108;
 }
 /*危险*/
 .xtext-danger {
@@ -1216,4 +1227,32 @@ pd-tb10{
     margin-bottom: 20px;
     font-weight: 600;
     color: #3782e7;
+}
+
+/*监控*/
+.monv{
+    border: 1px solid #e7e7e7;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+}
+.monv-top{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}
+.monv-top i{
+    font-size: 56px;
+}
+.monv-top i:hover{
+    color:#3782e7;
+}
+.monv-prev a img{
+    width: 400px;
+    height: 225px;
 }

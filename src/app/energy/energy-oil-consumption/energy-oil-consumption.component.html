@@ -1,4 +1,4 @@
-<!--采矿能源智能管理单元-总耗油量-->
+<!--采矿能源管理系统-设备油耗统计-->
 
 <div id="content">
     <sa-widgets-grid>
@@ -9,8 +9,12 @@
                 <sa-widget [editbutton]="false" [deletebutton]="false" >
                     <header>
                         <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                        <h2>总耗油量</h2>
+                        <h2>设备油耗统计</h2>
+                        <div class="widget-toolbar">
+                            <button  class="btn btn-xs btn-default" routerLink="/energy/energy-oil-consumptionview" >查看视图</button>
+                        </div>
                     </header>
+
 
                     <div>
                         <!--小部件内容-->
@@ -48,7 +52,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="">
+                            <div class="table-responsive">
                                 <table class="table table-striped smart-form table-height-20">
                                     <thead class="">
                                     <tr>
@@ -75,6 +79,76 @@
                                         <td>100 </td>
                                         <td>2019/01/18总耗油量</td>
                                     </tr>
+                                    <tr  (click)="changedetails()">
+                                        <td>A0001</td>
+                                        <td>电铲</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗电量</td>
+                                    </tr>
+                                    <tr (click)="changedetails()" >
+                                        <td>A0001</td>
+                                        <td>牙轮</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗油量</td>
+                                    </tr>
+                                    <tr  (click)="changedetails()">
+                                        <td>A0001</td>
+                                        <td>电铲</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗电量</td>
+                                    </tr>
+                                    <tr (click)="changedetails()" >
+                                        <td>A0001</td>
+                                        <td>牙轮</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗油量</td>
+                                    </tr>
+                                    <tr  (click)="changedetails()">
+                                        <td>A0001</td>
+                                        <td>电铲</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗电量</td>
+                                    </tr>
+                                    <tr (click)="changedetails()" >
+                                        <td>A0001</td>
+                                        <td>牙轮</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗油量</td>
+                                    </tr>
+                                    <tr  (click)="changedetails()">
+                                        <td>A0001</td>
+                                        <td>电铲</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗电量</td>
+                                    </tr>
+                                    <tr (click)="changedetails()" >
+                                        <td>A0001</td>
+                                        <td>牙轮</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗油量</td>
+                                    </tr>
+                                    <tr  (click)="changedetails()">
+                                        <td>A0001</td>
+                                        <td>电铲</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗电量</td>
+                                    </tr>
+                                    <tr (click)="changedetails()" >
+                                        <td>A0001</td>
+                                        <td>牙轮</td>
+                                        <td>2019/01/18-2019/01/19</td>
+                                        <td>100 </td>
+                                        <td>2019/01/18总耗油量</td>
+                                    </tr>
                                     </tbody>
                                 </table>
 
@@ -82,7 +156,7 @@
                             <!-- 底部-（分页部分）-->
                             <div class="dt-toolbar">
                                 <div class="dib-left">
-                                    <span>共3条</span>
+                                    <span>共30条</span>
                                 </div>
                                 <div class="hidden-xs right">
                                     <ul class="pagination pagination-sm">

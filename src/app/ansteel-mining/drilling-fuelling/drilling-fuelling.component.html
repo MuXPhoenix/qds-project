@@ -8,6 +8,7 @@
       <div class="col-sm-12">
         <ul class="nav nav-tabs mi-nav-tabs">
           <li ><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-data">数据统计</a></li>
           <li><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
           <li><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
           <li><a routerLink="/ansteel-mining/drilling-task">最新任务</a></li>
@@ -24,7 +25,7 @@
           </header>
           <div>
             <div class="widget-body no-padding" >
-              <div class="">
+              <div class="table-responsive">
                 <table class="table table-striped smart-form table-height-20">
                   <thead class="">
                   <tr>
@@ -42,7 +43,7 @@
                   <!-- class="table-color"-->
                   <tr  (click)="changedetails()">
                     <td>1</td>
-                    <td>A1001</td>
+                    <td>YL001</td>
                     <td>牙轮钻机 </td>
                     <td>20<sub> L</sub></td>
                     <td>2019-01-15 12：15</td>
@@ -59,7 +60,177 @@
                   </tr>
                   <tr (click)="changedetails()" >
                     <td>2</td>
-                    <td>A1002</td>
+                    <td>YL002</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub> </td>
+                    <td>2019-01-15 12：30</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" style="display:none;">审核中</span>
+                        <span class="label-normal" >已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td>2019-01-15 12：40</td>
+                    <td>2019-01-15 12:40-13:20</td>
+                  </tr>
+                  <tr  (click)="changedetails()">
+                    <td>3</td>
+                    <td>YL003</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub></td>
+                    <td>2019-01-15 12：15</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" >审核中</span>
+                        <span class="label-normal" style="display:none;">已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr (click)="changedetails()" >
+                    <td>4</td>
+                    <td>YL004</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub> </td>
+                    <td>2019-01-15 12：30</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" style="display:none;">审核中</span>
+                        <span class="label-normal" >已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td>2019-01-15 12：40</td>
+                    <td>2019-01-15 12:40-13:20</td>
+                  </tr>
+                  <tr  (click)="changedetails()">
+                    <td>5</td>
+                    <td>YL005</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub></td>
+                    <td>2019-01-15 12：15</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" >审核中</span>
+                        <span class="label-normal" style="display:none;">已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr (click)="changedetails()" >
+                    <td>6</td>
+                    <td>YL006</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub> </td>
+                    <td>2019-01-15 12：30</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" style="display:none;">审核中</span>
+                        <span class="label-normal" >已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td>2019-01-15 12：40</td>
+                    <td>2019-01-15 12:40-13:20</td>
+                  </tr>
+                  <tr  (click)="changedetails()">
+                    <td>7</td>
+                    <td>YL007</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub></td>
+                    <td>2019-01-15 12：15</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" >审核中</span>
+                        <span class="label-normal" style="display:none;">已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr (click)="changedetails()" >
+                    <td>8</td>
+                    <td>YL008</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub> </td>
+                    <td>2019-01-15 12：30</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" style="display:none;">审核中</span>
+                        <span class="label-normal" >已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td>2019-01-15 12：40</td>
+                    <td>2019-01-15 12:40-13:20</td>
+                  </tr>
+                  <tr  (click)="changedetails()">
+                    <td>9</td>
+                    <td>YL009</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub></td>
+                    <td>2019-01-15 12：15</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" >审核中</span>
+                        <span class="label-normal" style="display:none;">已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr (click)="changedetails()" >
+                    <td>10</td>
+                    <td>YL010</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub> </td>
+                    <td>2019-01-15 12：30</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" style="display:none;">审核中</span>
+                        <span class="label-normal" >已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td>2019-01-15 12：40</td>
+                    <td>2019-01-15 12:40-13:20</td>
+                  </tr>
+                  <tr  (click)="changedetails()">
+                    <td>11</td>
+                    <td>YL011</td>
+                    <td>牙轮钻机 </td>
+                    <td>20<sub> L</sub></td>
+                    <td>2019-01-15 12：15</td>
+                    <td>
+                      <div>
+                        <span class="label-maintain" >审核中</span>
+                        <span class="label-normal" style="display:none;">已同意</span>
+                        <span  class="label-full" style="display:none;">已拒绝</span>
+                        <span  class="label-full" style="display:none;">已作废</span>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr (click)="changedetails()" >
+                    <td>12</td>
+                    <td>YL012</td>
                     <td>牙轮钻机 </td>
                     <td>20<sub> L</sub> </td>
                     <td>2019-01-15 12：30</td>
@@ -81,7 +252,7 @@
               <!-- 底部-（分页部分）-->
               <div class="dt-toolbar">
                 <div class="dib-left">
-                  <span>共3条</span>
+                  <span>共38条</span>
                 </div>
                 <div class="hidden-xs right">
                   <ul class="pagination pagination-sm">
@@ -123,7 +294,7 @@
 <div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
   <div class="entity-well entity-well--tasks">
     <div class="entity-well-header">
-      <span class="approval-head">A0001
+      <span class="approval-head">YL001
         <span ><span>加油调度</span>
         </span>
       </span>
@@ -165,7 +336,7 @@
           <table class="table table-striped table-forum smart-form details-table">
             <tbody>
             <tr><td class="details-width">序号:</td><td class="">1</td></tr>
-            <tr><td class="details-width">设备编码:</td><td class="">A0002</td></tr>
+            <tr><td class="details-width">设备编码:</td><td class="">YL002</td></tr>
             <tr><td class="details-width">设备种类：</td><td >牙轮钻机</td></tr>
             <tr><td class="details-width">当前油量：</td><td >20<sub> L</sub></td></tr>
             <tr><td class="details-width">申请时间:</td><td >2019-01-15 12：30</td></tr>

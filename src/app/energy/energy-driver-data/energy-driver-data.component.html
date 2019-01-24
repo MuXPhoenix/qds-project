@@ -3,11 +3,27 @@
 <div id="content">
   <sa-widgets-grid>
     <div class="row">
+
+      <div class="col-sm-12">
+        <ul class="nav nav-tabs mi-nav-tabs">
+          <li ><a routerLink="/ansteel-mining/drilling-index">首页</a></li>
+          <li class="active"><a routerLink="/ansteel-mining/drilling-data">数据统计</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-status">状态</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-alarm">报警</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-task">最新任务</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-dutyshift">交接班</a></li>
+          <li><a routerLink="/ansteel-mining/drilling-fuelling">加油调度</a></li>
+        </ul>
+      </div>
+
       <article class="col-sm-12 ">
         <sa-widget [editbutton]="false" [deletebutton]="false" [colorbutton]="false">
           <header>
             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
             <h2>司机行驶数据</h2>
+            <div class="widget-toolbar">
+              <button  class="btn btn-xs btn-default" routerLink="/ansteel-mining/drilling-data" >查看视图</button>
+            </div>
           </header>
           <div>
             <div class="widget-body no-padding" >

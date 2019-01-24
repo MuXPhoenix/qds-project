@@ -31,17 +31,17 @@
           <!--<li routerLinkActive="active">-->
             <!--<a routerLink="/mining-mes/mining-mes-index">{{'首页' | i18n}}</a>-->
           <!--</li>-->
-          <!--<li routerLinkActive="active">-->
-            <!--<a routerLink="/mining-mes/mining-mes-status">{{'当前生产状态' | i18n}}</a>-->
-          <!--</li>-->
           <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-production">{{'生产报表' | i18n}}</a>
+            <a routerLink="/mining-mes/mining-mes-status">{{'当前生产状态' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-explode">{{'爆破进度表' | i18n}}</a>
+            <a routerLink="/mining-mes/mining-mes-productionview">{{'生产报表' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/mining-mes/mining-mes-drill">{{'钻孔进度表' | i18n}}</a>
+            <a routerLink="/mining-mes/mining-mes-explodeview">{{'爆破进度表' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/mining-mes/mining-mes-drillview">{{'钻孔进度表' | i18n}}</a>
           </li>
         </ul>
       </li>
@@ -98,6 +98,17 @@
           </li>
           <li>
             <a href="#">{{'铁运生产指挥系统' | i18n}}</a>
+            <ul>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/trains-index">{{'首页' | i18n}}</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/ansteel-mining/trains-setting">{{'设置' | i18n}}</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">{{'破碎站生产指挥系统' | i18n}}</a>
             <ul>
               <li routerLinkActive="active">
                 <a routerLink="/ansteel-mining/trains-index">{{'首页' | i18n}}</a>
@@ -166,13 +177,13 @@
             <!--<a routerLink="/energy/energy-driver-data">{{'司机行驶数据' | i18n}}</a>-->
           <!--</li>-->
           <li routerLinkActive="active">
-            <a routerLink="/energy/energy-oil-consumption">{{'设备油耗统计' | i18n}}</a>
+            <a routerLink="/energy/energy-oil-consumptionview">{{'设备油耗统计' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/energy/energy-consume-electricity">{{'设备电耗统计' | i18n}}</a>
+            <a routerLink="/energy/energy-consume-electricityview">{{'设备电耗统计' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/energy/energy-electricity">{{'油站余量统计' | i18n}}</a>
+            <a routerLink="/energy/energy-electricity-view">{{'油站余量统计' | i18n}}</a>
           </li>
         </ul>
       </li>
@@ -356,6 +367,9 @@
             </li>
           </ul>
         </li>
+        <li routerLinkActive="active">
+          <a routerLink="/style/style-dashboard">{{'首页' | i18n}}</a>
+        </li>
       </ul>
     </li>
 
@@ -364,15 +378,6 @@
         <ul>
           <li routerLinkActive="active">
             <a routerLink="/nfc/nfc-pcsc">{{'发卡' | i18n}}</a>
-          </li>
-        </ul>
-      </li>
-
-      <li style="display: none;">
-        <a href="#"><i class="fa fa-lg fa-fw fa-delicious"></i>{{'页面' | i18n}}</a>
-        <ul>
-          <li routerLinkActive="active">
-            <a routerLink="/style/style-dashboard">{{'首页' | i18n}}</a>
           </li>
         </ul>
       </li>

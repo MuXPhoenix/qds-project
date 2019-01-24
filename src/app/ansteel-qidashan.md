@@ -11,11 +11,11 @@ three-dimensional-index  采矿三维模拟仿真单元-首页
 ```
 mining-mes-status 采矿综合管理单元-当前生产状态  ？
 mining-mes-production 采矿综合管理单元-生产报表
-mining-mes-productionview 采矿综合管理单元-生产进度
+mining-mes-productionview 采矿综合管理系统-生产进度
 mining-mes-explode 采矿综合管理单元-爆破进度表
-mining-mes-explodeview 采矿综合管理单元-爆破进度
+mining-mes-explodeview 采矿综合管理系统-爆破进度
 mining-mes-drill 采矿综合管理单元-钻孔进度表
-mining-mes-drillview 采矿综合管理单元-钻孔进度
+mining-mes-drillview 采矿综合管理系统-钻孔进度
 ```
 
 ## 采矿建模与配矿系统 ansteel-mining
@@ -110,6 +110,16 @@ trains-setting 铁运生产指挥系统-设置
 trains-data 铁运生产指挥系统-数据统计
 ```
 
+（破碎站生产指挥系统）！
+```
+broken-index 破碎站生产指挥系统-首页
+broken-status 破碎站生产指挥系统-状态
+broken-alarm 破碎站生产指挥系统-报警
+broken-task 破碎站生产指挥系统-最新任务
+broken-dutyshift 破碎站生产指挥系统-交接班
+broken-setting 破碎站生产指挥系统-设置
+broken-data 破碎站生产指挥系统-数据统计
+```
 ## quality（采矿质检系统）
 ```
 gis-index 采矿综合信息管理模块（GIS）-首页（采矿信息管理系统）？
