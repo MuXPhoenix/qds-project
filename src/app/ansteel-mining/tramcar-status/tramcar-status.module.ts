@@ -6,11 +6,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
 import {I3otpModule} from "../../shared/i3otp.module";
 import {TramcarStatusComponent} from "./tramcar-status.component";
+import {TramcarStatusGuard} from "../../core/guards/tramcar-status.guards";
 
 const routes: Routes = [{
     path: '',
     component: TramcarStatusComponent,
-    data: {pageTitle: 'tramcar-status'}
+    data: {pageTitle: 'tramcar-status'},
+    canDeactivate: [TramcarStatusGuard]  //路由守卫
 }];
 
 @NgModule({

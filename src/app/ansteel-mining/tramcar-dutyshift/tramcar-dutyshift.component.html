@@ -36,15 +36,12 @@
           </header>
           <div>
             <div class="widget-body no-padding" >
-
-
               <div  class="">
                 <table class="table table-striped smart-form table-height-20 ">
                   <thead class="">
                   <tr>
                     <th>设备编号</th>
                     <th>设备名称</th>
-                    <th>上一班人员 </th>
                     <th>当班人员</th>
                     <th>申请状态</th>
                     <th>时间 </th>
@@ -53,37 +50,18 @@
                   </thead>
                   <tbody>
                   <!-- class="table-color"-->
-                  <tr   (click)="changedetails()">
-                    <td>A1001</td>
-                    <td>电动轮</td>
-                    <td>张三</td>
-                    <td>李四</td>
+                  <tr *ngFor="let dl of dutyshift_list?.approvalList?.data;let ind = index;" (click)="showDetails(dl.approval_id,0,(ind+1))" [ngClass]="((ind+1)==index)?class_name:''">
+                    <td><span class="">{{ dl.assets_number }}</span></td>
+                    <td><span class="">{{ dl.assets_name }}</span></td>
+                    <td>{{dl.u_username}}</td>
                     <td>
-                      <div>
-                        <span class="label-maintain" >审核中</span>
-                        <span class="label-normal" style="display:none;">已同意</span>
-                        <span  class="label-full" style="display:none;">已拒绝</span>
-                        <span  class="label-full" style="display:none;">已作废</span>
-                      </div>
+                      <span class="label-normal"  *ngIf="dl.approval_status == 'yes'">审批完成<br/>同意</span>
+                      <span class="label-full"  *ngIf="dl.approval_status == 'no'">审批完成<br/>拒绝</span>
+                      <span class="label-full"  *ngIf="dl.approval_status == 'cancel'">审批完成<br/>已撤销</span>
+                      <span class="label-maintain"  *ngIf="dl.approval_status != 'no' && dl.approval_status != 'yes' && dl.approval_status != 'cancel'">审批中</span>
                     </td>
-                    <td>2019-01-15 12：30</td>
-                    <td>A区</td>
-                  </tr>
-                  <tr   (click)="changedetails()">
-                    <td>A1002</td>
-                    <td>电动轮</td>
-                    <td>张三</td>
-                    <td>李四</td>
-                    <td>
-                      <div>
-                        <span class="label-maintain" >审核中</span>
-                        <span class="label-normal" style="display:none;">已同意</span>
-                        <span  class="label-full" style="display:none;">已拒绝</span>
-                        <span  class="label-full" style="display:none;">已作废</span>
-                      </div>
-                    </td>
-                    <td>2019-01-15 12：30</td>
-                    <td>A区</td>
+                    <td>{{ dl.created_at }}</td>
+                    <td>{{ dl.address | filter_string:'"' }}</td>
                   </tr>
                   </tbody>
                 </table>
@@ -92,27 +70,13 @@
               <!-- 底部-（分页部分）-->
               <div class="dt-toolbar">
                 <div class="dib-left">
-                  <span>共3条</span>
+                  <span>共{{dutyshift_list?.approvalList?.total}}条</span>
                 </div>
                 <div class=" hidden-xs right">
-                  <ul class="pagination pagination-sm">
-                    <li class="disabled">
-                      <a href="">上一页</a>
-                    </li>
-                    <li class="active">
-                      <a href="">1</a>
-                    </li>
-                    <li >
-                      <a href="">2</a>
-                    </li>
-                    <li>
-                      <a href="">...</a>
-                    </li>
-                    <li>
-                      <a href="">99</a>
-                    </li>
-                    <li>
-                      <a href="">下一页</a>
+                  <ul class="pagination pagination-sm" *ngIf="dutyshift_list?.page != ''">
+                    <li *ngFor="let p of dutyshift_list?.page" class="{{p.class}}">
+                      <a (click)="pagination(p.value)" *ngIf="p.method=='method'">{{p.text}}</a>
+                      <a *ngIf="p.method==''">{{p.text}}</a>
                     </li>
                   </ul>
                 </div>
@@ -122,26 +86,19 @@
           </div>
         </sa-widget>
       </article>
-
-      
-
-
     </div>
-
-
-
 
   </sa-widgets-grid>
 </div>
 
-<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+<div class="slide-content" [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
   <div class="entity-well entity-well--tasks">
     <div class="entity-well-header">
-      <span class="approval-head">A0002
-        <span ><span>电动轮交接班</span>
+      <span class="approval-head">{{dutyshift_info.assets_number}}
+        <span ><span>交接班</span>
         </span>
       </span>
-      <ul class="entity-well-header-nav nav s pull-right">
+      <ul class="entity-well-header-nav nav s pull-right" (click)="showDetails(0,0,0)">
         <li class="divider-v"></li>
         <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
       </ul>
@@ -150,40 +107,36 @@
       <div class="approve-top approve-intro">
         <div class="approve-head" >
           <a class="approval-size" >
-            赵三
+            {{dutyshift_info.u_username}}
           </a>
           <p class="username" >交接班审批</p>
-          <p class="text-warning" style="display:none;" >
+          <p *ngIf="dutyshift_info.approval_status != 'no' && dutyshift_info.approval_status != 'yes' && dutyshift_info.approval_status != 'cancel'" class="text-warning" >
             等待审批中
           </p>
-          <p class="text-success"  >
+          <p class="text-success" *ngIf="dutyshift_info.approval_status == 'yes'">
             已同意
           </p>
-          <p class="text-danger" style="display:none;">
+          <p class="text-danger" *ngIf="dutyshift_info.approval_status == 'no'">
             已拒绝
           </p>
-          <p class="text-primary" style="display:none;">
+          <p class="text-primary" *ngIf="dutyshift_info.approval_status == 'cancel'">
             已撤销
-          </p>
-          <p class="text-danger" style="display:none;">
-            已作废
           </p>
         </div>
         <!-- 已同意-->
-        <div class="approve-result agree pullout" ></div>
+        <div class="approve-result agree pullout" *ngIf="dutyshift_info.approval_status == 'yes'"></div>
         <!--已拒绝-->
-        <div class="approve-result refuse pullout" style="display:none;"></div>
+        <div class="approve-result refuse pullout" *ngIf="dutyshift_info.approval_status == 'no'"></div>
         <!--已撤销-->
-        <div class="approve-result revoke pullout" style="display:none;"></div>
+        <div class="approve-result revoke pullout" *ngIf="dutyshift_info.approval_status == 'cancel'"></div>
         <div class="approve-formschema">
           <table class="table table-striped table-forum smart-form details-table">
             <tbody>
-            <tr><td class="details-width">设备编号:</td><td class="">A1002</td></tr>
-            <tr><td class="details-width">设备名称：</td><td >电动轮</td></tr>
-            <tr><td class="details-width">上一班人员:</td><td >张三</td></tr>
-            <tr><td class="details-width">当班人员:</td><td >李四</td></tr>
-            <tr><td class="details-width">时间:</td><td >2019-01-15 12：30</td></tr>
-            <tr><td class="details-width">加班地点:</td><td >A区</td></tr>
+            <tr><td class="details-width">设备编号:</td><td class="">{{dutyshift_info.assets_number}}</td></tr>
+            <tr><td class="details-width">设备名称：</td><td >{{dutyshift_info.assets_name}}</td></tr>
+            <tr><td class="details-width">当班人员:</td><td >{{dutyshift_info.u_username}}</td></tr>
+            <tr><td class="details-width">时间:</td><td>{{ dutyshift_info.created_at }}</td></tr>
+            <tr *ngIf="dutyshift_info.address"><td class="details-width">加班地点:</td><td >{{dutyshift_info.address | filter_string : '"'}}</td></tr>
             </tbody>
           </table>
         </div>
@@ -192,71 +145,49 @@
     <div class="body">
       <div class="approve-foot show ">
         <div class="tFlexbox tAlignCenter tJustifyCenter">
-          <div class="tFlex1 approval-action tTap agree" data-toggle="modal" data-target="#myModal-consent">同意</div>
-          <div class="tFlex1 approval-action tTap refuse" data-toggle="modal" data-target="#myModal-reject">拒绝</div>
-          <div class="tFlex1 approval-action tTap reminders"  data-toggle="modal" data-target="#cuiban" >催办</div>
-          <div class="tFlex1 approval-action tTap revoke" data-toggle="modal" data-target="#myModal-withdraw"  >撤销</div>
+          <div class="tFlex1 approval-action tTap agree" (click)="showModal('operation','ok')" *ngIf="uid == dutyshift_info.approval_status">同意</div>
+          <div class="tFlex1 approval-action tTap refuse" (click)="showModal('operation','no')" *ngIf="uid == dutyshift_info.approval_status">拒绝</div>
+          <div class="tFlex1 approval-action tTap reminders" (click)="showModal('urge','urge')" *ngIf="uid == dutyshift_info.u_id && dutyshift_info.approval_status != 'yes' && dutyshift_info.approval_status != 'no' && dutyshift_info.approval_status != 'cancel'">催办</div>
+          <div class="tFlex1 approval-action tTap revoke"  (click)="showModal('cancel','cancel')" *ngIf="uid == dutyshift_info.u_id && dutyshift_info.approval_status != 'yes' && dutyshift_info.approval_status != 'no' && dutyshift_info.approval_status != 'cancel'">撤销</div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <!--同意-->
-<div class="modal fade bs-example-modal-sm" id="myModal-consent"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <!-- 关闭按钮 -->
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          ×
-        </button>
-
-      </div>
-      <div class="modal-body">
-        <div class="text-align-center">
-          <h2 >同意</h2>
-        </div>
-      </div>
-      <div class="modal-footer tex-align-center">
-        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">确定</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!--拒绝-->
-<div class="modal fade bs-example-modal-sm" id="myModal-reject" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
+<div class="modal fade bs-example-modal-sm" bsModal #operationModel="bs-modal" style="z-index:9992;">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <!-- 关闭按钮 -->
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        <button type="button" class="close" (click)="hideModal()">
           ×
         </button>
-
       </div>
       <div class="modal-body">
         <div class="text-align-center">
-          <h2 >拒绝</h2>
+          <h2  *ngIf="operate_button_type == 'ok'">同意</h2>
+          <h2  *ngIf="operate_button_type == 'no'">拒绝</h2>
         </div>
       </div>
       <div class="modal-footer tex-align-center">
-        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">确定</button>
+        <button type="button" class="btn btn-primary" (click)="setModal()">确定</button>
       </div>
     </div>
   </div>
 </div>
+
 
 
 <!--催办-->
-<div class="modal fade bs-example-modal-sm" id="cuiban" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
+<div class="modal fade bs-example-modal-sm" bsModal #urgeModel="bs-modal" style="z-index:9992;">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <!-- 关闭按钮 -->
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        <button type="button" class="close" (click)="hideModal()">
           ×
         </button>
 
@@ -267,7 +198,7 @@
         </div>
       </div>
       <div class="modal-footer tex-align-center">
-        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">确定</button>
+        <button type="button" class="btn btn-primary" (click)="setModal()">确定</button>
       </div>
     </div>
   </div>
@@ -275,12 +206,12 @@
 
 
 <!--撤销-->
-<div class="modal fade bs-example-modal-sm" id="myModal-withdraw" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="z-index:9992;">
+<div class="modal fade bs-example-modal-sm" bsModal #cancelModel="bs-modal" style="z-index:9992;">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <!-- 关闭按钮 -->
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        <button type="button" class="close" (click)="hideModal()">
           ×
         </button>
 
@@ -291,7 +222,7 @@
         </div>
       </div>
       <div class="modal-footer tex-align-center">
-        <button type="button" class="btn btn-primary" data-ng-click="ok()" data-dismiss="modal">确定</button>
+        <button type="button" class="btn btn-primary" (click)="setModal()">确定</button>
       </div>
     </div>
   </div>

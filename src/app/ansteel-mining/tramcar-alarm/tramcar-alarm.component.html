@@ -1,9 +1,7 @@
 <!--电动轮-报警-->
 <div id="content">
   <sa-widgets-grid>
-
     <div class="row">
-
       <div class="col-sm-12">
         <ul class="nav nav-tabs mi-nav-tabs">
           <li class="dropdown">
@@ -25,7 +23,6 @@
           <li><a routerLink="/ansteel-mining/tramcar-dutyshift">交接班</a></li>
           <li><a routerLink="/ansteel-mining/tramcar-fuelling">加油调度</a></li>
         </ul>
-
       </div>
 
       <article class="col-sm-12 ">
@@ -34,7 +31,6 @@
             <span class="widget-icon"> <i class="fa fa-bell"></i> </span>
             <h2>报警</h2>
           </header>
-
           <div>
             <!--小部件内容-->
             <div class="widget-body no-padding">
@@ -42,36 +38,35 @@
                 <article  class="col-sm-12">
                   <div class="navbar navbar-default">
                     <form  class="navbar-form navbar-left ng-pristine ng-valid ng-touched " novalidate="" role="search" >
-                      <div class="form-group pdlr-4">
-                        <strong> 筛选：</strong>
-                      </div>
+                      <!--<div class="form-group pdlr-4">-->
+                        <!--<strong> 筛选：</strong>-->
+                      <!--</div>-->
                       <div class="form-group pdlr-4">
                         <strong> 时间选择：</strong>
                       </div>
                       <div class="form-group btn-group pdlr-4">
-                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
-
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" [(ngModel)]="start_date" [ngModelOptions]="{standalone: true}" [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'day'" type="text">
                       </div>
                       <div class="form-group pdlr-4">
                         <strong> 至</strong>
                       </div>
                       <div class="form-group btn-group pdlr-4 dropdown">
-                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="" placeholder="" type="text">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" [(ngModel)]="end_date" [ngModelOptions]="{standalone: true}" [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [mode]="'day'" type="text">
                       </div>
-                      <div class="form-group btn-group pdlr-4">
-                        <a class="btn default-btn btn-sm dropdown-toggle" data-toggle="dropdown">
-                          全部<i class="fa fa-fw fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li ><a >全部</a></li>
-                          <li ><a>编号</a></li>
-                          <li ><a >故障类型</a></li>
-                        </ul>
+                      <!--<div class="form-group btn-group pdlr-4">-->
+                        <!--<a class="btn default-btn btn-sm dropdown-toggle" data-toggle="dropdown">-->
+                          <!--全部<i class="fa fa-fw fa-chevron-down"></i></a>-->
+                        <!--<ul class="dropdown-menu" role="menu">-->
+                          <!--<li ><a >全部</a></li>-->
+                          <!--<li ><a>编号</a></li>-->
+                          <!--<li ><a >故障类型</a></li>-->
+                        <!--</ul>-->
+                      <!--</div>-->
+                      <div class="form-group pdlr-4">
+                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" [(ngModel)]="keyword" [ngModelOptions]="{standalone: true}" placeholder="请输入搜索内容" type="text">
                       </div>
                       <div class="form-group pdlr-4">
-                        <input  class="form-control ng-pristine ng-valid ng-touched" maxlength="15" name="keyword" placeholder="请输入搜索内容" type="text">
-                      </div>
-                      <div class="form-group pdlr-4">
-                        <button class="btn btn-default" type="button" (click)="getAssetsList(1,0)">
+                        <button class="btn btn-default" type="button" (click)="getQdsAlarmLog('1')">
                           <i  class="glyphicon glyphicon-search"></i>
                           搜索
                         </button>
@@ -86,7 +81,8 @@
                   <tr>
                     <th>序号</th>
                     <th>编码 </th>
-                    <th>设备种类</th>
+                    <th>设备名称</th>
+                    <th>设备状态</th>
                     <th>报警项目</th>
                     <th>报警内容</th>
                     <th>报警时间</th>
@@ -95,72 +91,44 @@
                   </thead>
                   <tbody>
                   <!-- class="table-color"-->
-                  <tr  (click)="changedetails()">
-                    <td>1</td>
-                    <td>A1001</td>
-                    <td>电动轮 </td>
-                    <td><i  class="fa fa-circle text-danger font-xs">机械故障</i> </td>
-                    <td>报警内容报警内容报警内容报警内容报警内容报警内容</td>
-                    <td>2019-01-15 12：30</td>
-                    <td>地点地点地点地点地点地点</td>
-                  </tr>
-                  <tr (click)="changedetails()" >
-                    <td>2</td>
-                    <td>A1002</td>
-                    <td>电动轮 </td>
-                    <td><i  class="fa fa-circle text-danger font-xs">机械故障</i> </td>
-                    <td>报警内容报警内容报警内容报警内容报警内容报警内容</td>
-                    <td>2019-01-15 12：30</td>
-                    <td>地点地点地点地点地点地点</td>
-
+                  <tr *ngFor="let ml of mining_log_list?.logList?.data;let ind = index;" (click)="showDetails(ml.ml_id,(ind+1))" [ngClass]="((ind+1)==index)?class_name:''" >
+                    <td><span class="">{{ind+1}}</span></td>
+                    <td><span class="">{{ ml.assets_number }}</span></td>
+                    <td><span class="">{{ ml.assets_name }}</span></td>
+                    <td [ngSwitch]="ml.ml_device_status">
+                      <span class="label-normal" *ngSwitchCase="1">工作状态</span>
+                      <span class="label-normal" *ngSwitchCase="2">加油状态</span>
+                      <span class="label-normal" *ngSwitchCase="3">维修状态</span>
+                      <span class="label-normal" *ngSwitchCase="4">停机状态</span>
+                      <span class="label-normal" *ngSwitchCase="5">故障状态</span>
+                    </td>
+                    <td><i  class="fa fa-circle text-danger font-xs">{{ ml.classify }}</i> </td>
+                    <td>{{ ml.ml_title }}</td>
+                    <td>{{ ml.created_at }}</td>
+                    <td>{{ ml.ml_postion }}</td>
                   </tr>
                   </tbody>
                 </table>
-
               </div>
               <!-- 底部-（分页部分）-->
               <div class="dt-toolbar">
                 <div class="dib-left">
-                  <span>共3条</span>
+                  <span>共{{mining_log_list?.logList?.total}}条</span>
                 </div>
                 <div class="hidden-xs right">
-                  <ul class="pagination pagination-sm">
-                    <li class="disabled">
-                      <a href="">上一页</a>
-                    </li>
-                    <li class="active">
-                      <a href="">1</a>
-                    </li>
-                    <li >
-                      <a href="">2</a>
-                    </li>
-                    <li>
-                      <a href="">...</a>
-                    </li>
-                    <li>
-                      <a href="">99</a>
-                    </li>
-                    <li>
-                      <a href="">下一页</a>
+                  <ul class="pagination pagination-sm" *ngIf="mining_log_list?.page != ''">
+                    <li *ngFor="let p of mining_log_list?.page" class="{{p.class}}">
+                      <a (click)="pagination(p.value)" *ngIf="p.method=='method'">{{p.text}}</a>
+                      <a *ngIf="p.method==''">{{p.text}}</a>
                     </li>
                   </ul>
                 </div>
               </div>
-
-
-
-
             </div>
           </div>
-
         </sa-widget>
       </article>
-
     </div>
-
-
-
-
   </sa-widgets-grid>
 </div>
 
@@ -168,11 +136,11 @@
 <div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
   <div class="entity-well entity-well--tasks">
     <div class="entity-well-header">
-      <span class="approval-head">A0002
-        <span ><span>电动轮报警信息</span>
+      <span class="approval-head">{{mining_log_info.assets_number}}
+        <span ><span>报警信息</span>
         </span>
       </span>
-      <ul class="entity-well-header-nav nav s pull-right">
+      <ul class="entity-well-header-nav nav s pull-right" (click)="showDetails(0,0)">
         <li class="divider-v"></li>
         <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
       </ul>
@@ -182,14 +150,19 @@
         <div class="approve-formschema">
           <table class="table table-striped table-forum smart-form details-table">
             <tbody>
-            <tr><td class="details-width">序号:</td><td class="">2</td></tr>
-            <tr><td class="details-width">编码：</td><td >A0002</td></tr>
-            <tr><td class="details-width">设备种类:</td><td >电动轮</td></tr>
-            <tr><td class="details-width">报警项目:</td><td ><i  class="fa fa-circle text-danger font-xs">机械故障</i></td></tr>
-            <tr><td class="details-width">报警内容:</td><td >报警内容报警内容报警内容报警内容报警内容报警内容</td></tr>
-            <tr><td class="details-width">报警时间:</td><td >2019-01-15 12：30</td></tr>
-            <tr><td class="details-width">报警地点:</td><td >地点地点地点地点地点地点</td></tr>
-
+            <tr><td class="details-width">编码：</td><td >{{mining_log_info.assets_number}}</td></tr>
+            <tr><td class="details-width">设备名称:</td><td >{{mining_log_info.assets_name}}</td></tr>
+            <tr><td class="details-width">设备状态:</td><td [ngSwitch]="mining_log_info.ml_device_status">
+              <span class="label-normal" *ngSwitchCase="1">工作状态</span>
+              <span class="label-normal" *ngSwitchCase="2">加油状态</span>
+              <span class="label-normal" *ngSwitchCase="3">维修状态</span>
+              <span class="label-normal" *ngSwitchCase="4">停机状态</span>
+              <span class="label-normal" *ngSwitchCase="5">故障状态</span>
+            </td></tr>
+            <tr><td class="details-width">报警项目:</td><td ><i  class="fa fa-circle text-danger font-xs">{{mining_log_info.classify}}</i></td></tr>
+            <tr><td class="details-width">报警内容:</td><td >{{mining_log_info.ml_detail}}</td></tr>
+            <tr><td class="details-width">报警时间:</td><td >{{mining_log_info.created_at}}</td></tr>
+            <tr><td class="details-width">报警地点:</td><td >{{mining_log_info.ml_postion}}</td></tr>
             </tbody>
           </table>
         </div>

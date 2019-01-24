@@ -39,6 +39,12 @@
               <div class="">
                 <table  class="table table-striped smart-form table-border-th table-height-20">
                   <thead>
+
+                  <!--$v->tc001 = '';//位置-->
+                  <!--$v->tc002 = '';//发动机冷却液-->
+                  <!--$v->tc003 = '';//负压-->
+                  <!--$v->tc004 = '';//气流-->
+                  <!--$v->tc005 = '';//工程机械-->
                   <tr >
                     <th rowspan="2">设备编号</th>
                     <th colspan="4">参数显示</th>
@@ -49,78 +55,29 @@
                     <th rowspan="2">运行轨迹查询</th>
                   </tr>
                   <tr>
-                    <th >电流</th>
-                    <th >电压</th>
-                    <th >转速</th>
-                    <th style="border-right: 1px solid #ddd">油量</th>
+                    <th >发动机冷却液</th>
+                    <th >负压</th>
+                    <th style="border-right: 1px solid #ddd">气流</th>
+                    <th >工程机械</th>
                   </tr>
                   </thead>
                   <tbody  >
-                  <tr (click)="changedetails()"  >
-                    <td >A001</td>
-                    <td >4.8 A</td>
-                    <td >26.5 V</td>
-                    <td >200000 rpm</td>
-                    <td >100  L</td>
-                    <td >
-                      <span>
-                      <span class="label-normal" >正常</span>
-                    </span>
+                  <tr (click)="showDetails(qa.assets_id,(i+1))" [ngClass]="((i+1)==index)?class_name:''"  *ngFor="let qa of tramcar_list?.assetsList?.data;let i = index;">
+                    <td >{{ qa.assets_number }}</td>
+                    <td >{{qa.tc002}}</td>
+                    <td >{{qa.tc003}}</td>
+                    <td >{{qa.tc004}}</td>
+                    <td >{{qa.tc005}}</td>
+                    <td [ngSwitch]="qa.assets_status">
+                      <span class="label-normal" *ngSwitchCase="1">工作状态</span>
+                      <span class="label-normal" *ngSwitchCase="2">加油状态</span>
+                      <span class="label-normal" *ngSwitchCase="3">维修状态</span>
+                      <span class="label-normal" *ngSwitchCase="4">停机状态</span>
+                      <span class="label-normal" *ngSwitchCase="5">故障状态</span>
                     </td>
                     <td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td>
                     <td >通话中</td>
-                    <td >当前位置</td>
-                    <td >运行轨迹查询</td>
-
-                  </tr>
-                  <tr  class="odd shown" (click)="changedetails()" >
-                    <td >A002</td>
-                    <td >4.8 A</td>
-                    <td >26.5 V</td>
-                    <td >200000 rpm</td>
-                    <td >100  L</td>
-                    <td >
-                    <span>
-                      <span class="label-blue" >维修</span>
-                    </span>
-                    </td>
-                    <td ><i  class="fa fa-circle text-danger font-xs">机械故障</i></td>
-                    <td >通话中</td>
-                    <td >当前位置</td>
-                    <td >运行轨迹查询</td>
-
-                  </tr>
-                  <tr   (click)="changedetails()" >
-                    <td >A003</td>
-                    <td >4.8 A</td>
-                    <td >26.5 V</td>
-                    <td >200000 rpm</td>
-                    <td >100  L</td>
-                    <td >
-                      <span>
-                      <span class="label-full" >异常</span>
-                    </span>
-                    </td>
-                    <td ><i  class="fa fa-circle text-danger font-xs">钻头故障</i></td>
-                    <td >通话中</td>
-                    <td >当前位置</td>
-                    <td >运行轨迹查询</td>
-
-                  </tr>
-                  <tr  >
-                    <td >A004</td>
-                    <td >4.8 A</td>
-                    <td >26.5 V</td>
-                    <td >200000 rpm</td>
-                    <td >100  L</td>
-                    <td >
-                      <span>
-                      <span class="label-full" >异常</span>
-                    </span>
-                    </td>
-                    <td ><i  class="fa fa-circle text-danger font-xs">履带故障</i></td>
-                    <td >通话中</td>
-                    <td >当前位置</td>
+                    <td >{{qa.tc001}}</td>
                     <td >运行轨迹查询</td>
 
                   </tr>
@@ -132,27 +89,13 @@
               <!-- 底部-（分页部分）-->
               <div class="dt-toolbar">
                 <div class="dib-left">
-                  <span>共3条</span>
+                  <span>共{{tramcar_list?.assetsList?.total}}条</span>
                 </div>
                 <div class="hidden-xs right">
-                  <ul class="pagination pagination-sm">
-                    <li class="disabled">
-                      <a href="">上一页</a>
-                    </li>
-                    <li class="active">
-                      <a href="">1</a>
-                    </li>
-                    <li >
-                      <a href="">2</a>
-                    </li>
-                    <li>
-                      <a href="">...</a>
-                    </li>
-                    <li>
-                      <a href="">99</a>
-                    </li>
-                    <li>
-                      <a href="">下一页</a>
+                  <ul class="pagination pagination-sm" *ngIf="tramcar_list?.page != ''">
+                    <li *ngFor="let p of tramcar_list?.page" class="{{p.class}}">
+                      <a (click)="pagination(p.value)" *ngIf="p.method=='method'">{{p.text}}</a>
+                      <a *ngIf="p.method==''">{{p.text}}</a>
                     </li>
                   </ul>
                 </div>
@@ -175,11 +118,11 @@
 <div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
   <div class="entity-well entity-well--tasks">
     <div class="entity-well-header">
-      <span class="approval-head">A0001
+      <span class="approval-head">{{tramcar_info.assets_number}}
         <span ><span>电动轮状态</span>
         </span>
       </span>
-      <ul class="entity-well-header-nav nav s pull-right">
+      <ul class="entity-well-header-nav nav s pull-right" (click)="showDetails(0,0)">
         <li class="divider-v"></li>
         <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
       </ul>
@@ -189,22 +132,39 @@
         <div class="approve-formschema">
           <table class="table table-striped table-forum smart-form details-table">
             <tbody>
-            <tr><td class="details-width">设备编号:</td><td class="">A0003</td></tr>
+            <tr><td class="details-width">设备编号:</td><td class="">{{tramcar_info.assets_number}}</td></tr>
             <tr>
               <td class="details-width">参数显示:</td>
               <td class="details-label">
-                <div class="label-blue" >电流:4.8 A</div>
-                <div class="label-blue" >电压:26.5 V</div>
-                <div class="label-blue" >转速:4.8 200000 rpm</div>
-                <div class="label-full" >油量:10  L</div>
+                <div class="label-blue" >发动机冷却液:{{tramcar_info.tc002}}</div>
+                <div class="label-blue" >负压:{{tramcar_info.tc003}}</div>
+                <div class="label-blue" >气流:{{tramcar_info.tc004}}</div>
+                <div class="label-full" >工程机械:{{tramcar_info.tc005}}</div>
+                <div class="label-full" >AirfuelRatio:{{tramcar_info.tc006}}</div>
+                <div class="label-full" >Throttle:{{tramcar_info.tc007}}</div>
+                <div class="label-full" >SparyOilPlustramCaridth:{{tramcar_info.tc008}}</div>
+                <div class="label-full" >Oxygen:{{tramcar_info.tc009}}</div>
+                <div class="label-full" >EngineSpeed:{{tramcar_info.tc010}}</div>
+                <div class="label-blue" >FireAngleAve:{{tramcar_info.tc011}}</div>
+                <div class="label-blue" >BatteryVoltage:{{tramcar_info.tc012}}</div>
+                <div class="label-blue" >SynchronizationSignal:{{tramcar_info.tc013}}</div>
+                <div class="label-full" >CarSpeed:{{tramcar_info.tc014}}</div>
+                <div class="label-full" >AcceleratorPedalPostion:{{tramcar_info.tc015}}</div>
+                <div class="label-blue" >PedalPosition:{{tramcar_info.tc016}}</div>
               </td>
             </tr>
-            <tr><td class="details-width">运行状态：</td><td ><span class="label-normal" >正常</span></td></tr>
+            <tr><td class="details-width">运行状态：</td>
+              <td [ngSwitch]="tramcar_info.assets_status">
+                <span class="label-normal" *ngSwitchCase="1">工作中</span>
+                <span class="label-normal" *ngSwitchCase="2">加油中</span>
+                <span class="label-normal" *ngSwitchCase="3">维修中</span>
+                <span class="label-normal" *ngSwitchCase="4">停机中</span>
+              </td>
+            </tr>
             <tr><td class="details-width">故障原因:</td><td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td></tr>
             <tr><td class="details-width">通话:</td><td >通话中</td></tr>
-            <tr><td class="details-width">当前位置:</td><td >当前位置</td></tr>
+            <tr><td class="details-width">当前位置:</td><td >{{tramcar_info.tc001}}</td></tr>
             <tr><td class="details-width">运行轨迹查询:</td><td >运行轨迹查询</td></tr>
-
             </tbody>
           </table>
         </div>

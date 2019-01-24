@@ -1,50 +1,4 @@
 import { Routes, RouterModule } from '@angular/router';
-import {BlendingIndexComponent} from "./blending-index/blending-index.component";
-import {BlendingDailyplanComponent} from "./blending-dailyplan/blending-dailyplan.component";
-import {GisIndexComponent} from "./gis-index/gis-index.component";
-import {DrillingAlarmComponent} from "./drilling-alarm/drilling-alarm.component";
-import {DrillingDutyshiftComponent} from "./drilling-dutyshift/drilling-dutyshift.component";
-import {DrillingFuellingComponent} from "./drilling-fuelling/drilling-fuelling.component";
-import {DrillingIndexComponent} from "./drilling-index/drilling-index.component";
-import {DrillingSettingComponent} from "./drilling-setting/drilling-setting.component";
-import {DrillingStatusComponent} from "./drilling-status/drilling-status.component";
-import {DrillingTaskComponent} from "./drilling-task/drilling-task.component";
-import {ScraperAlarmComponent} from "./scraper-alarm/scraper-alarm.component";
-import {ScraperDutyshiftComponent} from "./scraper-dutyshift/scraper-dutyshift.component";
-import {ScraperFuellingComponent} from "./scraper-fuelling/scraper-fuelling.component";
-import {ScraperIndexComponent} from "./scraper-index/scraper-index.component";
-import {ScraperSettingComponent} from "./scraper-setting/scraper-setting.component";
-import {ScraperStatusComponent} from "./scraper-status/scraper-status.component";
-import {ScraperTaskComponent} from "./scraper-task/scraper-task.component";
-import {TramcarAlarmComponent} from "./tramcar-alarm/tramcar-alarm.component";
-import {TramcarDutyshiftComponent} from "./tramcar-dutyshift/tramcar-dutyshift.component";
-import {TramcarFuellingComponent} from "./tramcar-fuelling/tramcar-fuelling.component";
-import {TramcarIndexComponent} from "./tramcar-index/tramcar-index.component";
-import {TramcarSettingComponent} from "./tramcar-setting/tramcar-setting.component";
-import {TramcarStatusComponent} from "./tramcar-status/tramcar-status.component";
-import {TramcarTaskComponent} from "./tramcar-task/tramcar-task.component";
-import {TanktruckAlarmComponent} from "./tanktruck-alarm/tanktruck-alarm.component";
-import {TanktruckDutyshiftComponent} from "./tanktruck-dutyshift/tanktruck-dutyshift.component";
-import {TanktruckFuellingComponent} from "./tanktruck-fuelling/tanktruck-fuelling.component";
-import {TanktruckIndexComponent} from "./tanktruck-index/tanktruck-index.component";
-import {TanktruckSettingComponent} from "./tanktruck-setting/tanktruck-setting.component";
-import {TanktruckStatusComponent} from "./tanktruck-status/tanktruck-status.component";
-import {TanktruckTaskComponent} from "./tanktruck-task/tanktruck-task.component";
-import {OtherautomobileAlarmComponent} from "./otherautomobile-alarm/otherautomobile-alarm.component";
-import {OtherautomobileDutyshiftComponent} from "./otherautomobile-dutyshift/otherautomobile-dutyshift.component";
-import {OtherautomobileFuellingComponent} from "./otherautomobile-fuelling/otherautomobile-fuelling.component";
-import {OtherautomobileIndexComponent} from "./otherautomobile-index/otherautomobile-index.component";
-import {OtherautomobileSettingComponent} from "./otherautomobile-setting/otherautomobile-setting.component";
-import {OtherautomobileTaskComponent} from "./otherautomobile-task/otherautomobile-task.component";
-import {ProjectautomobileAlarmComponent} from "./projectautomobile-alarm/projectautomobile-alarm.component";
-import {ProjectautomobileDutyshiftComponent} from "./projectautomobile-dutyshift/projectautomobile-dutyshift.component";
-import {ProjectautomobileFuellingComponent} from "./projectautomobile-fuelling/projectautomobile-fuelling.component";
-import {ProjectautomobileIndexComponent} from "./projectautomobile-index/projectautomobile-index.component";
-import {ProjectautomobileSettingComponent} from "./projectautomobile-setting/projectautomobile-setting.component";
-import {ProjectautomobileStatusComponent} from "./projectautomobile-status/projectautomobile-status.component";
-import {ProjectautomobileTaskComponent} from "./projectautomobile-task/projectautomobile-task.component";
-import {OtherautomobileStatusComponent} from "./otherautomobile-status/otherautomobile-status.component";
-import {TramcarIndexGuard} from "../core/guards/tramcar-index.guards";
 
 
 export const routes: Routes = [
@@ -151,8 +105,7 @@ export const routes: Routes = [
     {
         path: 'tramcar-index',
         loadChildren: 'app/ansteel-mining/tramcar-index/tramcar-index.module#TramcarIndexModule',
-        data: {pageTitle: 'TramcarIndex'},
-        canDeactivate:[TramcarIndexGuard]  //路由守卫
+        data: {pageTitle: 'TramcarIndex'}
     },
     {
         path: 'tramcar-setting',
@@ -270,16 +223,7 @@ export const routes: Routes = [
         data: {pageTitle: 'ProjectautomobileStatus'}
     },
     {
-    //     path: 'tramcar-index',
-    //     component: TramcarIndexComponent,
-    //     canDeactivate:[TramcarIndexGuard]  //路由守卫
-    // },
-    // {
-    //     path: 'tramcar-index',
-    //     loadChildren:'./tramcar-index/tramcar-index.module#TramcarIndexModule',
-    //     canDeactivate:[TramcarIndexGuard],  //路由守卫
-    //     data: {pageTitle: 'tramcar-index'}
-    // }
+        path: 'projectautomobile-task',
         loadChildren: 'app/ansteel-mining/projectautomobile-task/projectautomobile-task.module#ProjectautomobileTaskModule',
         data: {pageTitle: 'ProjectautomobileTask'}
     },

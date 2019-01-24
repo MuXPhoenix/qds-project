@@ -11,6 +11,7 @@ import {TramcarIndexComponent} from "../../ansteel-mining/tramcar-index/tramcar-
 export class TramcarIndexGuard implements CanDeactivate<TramcarIndexComponent>{
     canDeactivate ( chartComponent:TramcarIndexComponent ){
         // if(window.confirm( '离开此页面将停止对最新数据的显示，您确定要离开此页面吗？')) {
+        console.log('TramcarIndexGuard');
         chartComponent.ngOnDestroy();
         return true;
         // }else{

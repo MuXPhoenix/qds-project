@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
 import {I3otpModule} from "../../shared/i3otp.module";
-import {TramcarDutyshiftComponent} from "./tramcar-dutyshift.component";
+import {FilterStringPipe, TramcarDutyshiftComponent} from "./tramcar-dutyshift.component";
 
 const routes: Routes = [{
     path: '',
@@ -20,6 +20,8 @@ const routes: Routes = [{
         RouterModule.forChild(routes)
     ],
     exports: [RouterModule],
-    declarations: [TramcarDutyshiftComponent],
+    declarations: [TramcarDutyshiftComponent,
+        FilterStringPipe
+    ],
 })
 export class TramcarDutyshiftModule { }

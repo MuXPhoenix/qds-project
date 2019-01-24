@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
 import {I3otpModule} from "../../shared/i3otp.module";
-import {TramcarFuellingComponent} from "./tramcar-fuelling.component";
+import {FilterStringPipe, TramcarFuellingComponent} from "./tramcar-fuelling.component";
 
 const routes: Routes = [{
     path: '',
@@ -20,6 +20,7 @@ const routes: Routes = [{
         RouterModule.forChild(routes)
     ],
     exports: [RouterModule],
-    declarations: [TramcarFuellingComponent],
+    declarations: [TramcarFuellingComponent,
+        FilterStringPipe],
 })
 export class TramcarFuellingModule { }

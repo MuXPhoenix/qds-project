@@ -43,27 +43,25 @@
                     <thead class="">
                     <tr>
                       <th  >序号</th>
-                      <th >编号</th>
-                      <th >设备种类</th>
+                      <th >设备编号</th>
                       <th >最新任务</th>
+                      <th >任务状态</th>
                       <th >时间</th>
                     </tr>
                     </thead>
                     <tbody>
                     <!-- class="table-color"-->
-                    <tr   (click)="changedetails()">
-                      <td  >1</td>
-                      <td  >A001</td>
-                      <td  >电动轮</td>
-                      <td  >2018-01-19 13:50某某设备（A001）到某某地点做某某事情</td>
-                      <td  >2018-01-17 10:30</td>
-                    </tr>
-                    <tr   (click)="changedetails()">
-                      <td  >2</td>
-                      <td  >A001</td>
-                      <td  >电动轮</td>
-                      <td  >2018-01-19 13:50某某设备（A001）到某某地点做某某事情</td>
-                      <td  >2018-01-17 10:30</td>
+                    <tr *ngFor="let tl of mining_task_list?.data;let ind = index;" (click)="showDetails(tl.mt_id,(ind+1))" [ngClass]="((ind+1)==index)?class_name:''"><!-- class="table-color"-->
+                      <td><span class="">{{ind+1}}</span></td>
+                      <td><span class="">{{ tl.assets_number }}</span></td>
+                      <td><span class="">{{ tl.mt_description }}</span></td>
+                      <td [ngSwitch]="tl.mt_status">
+                        <span *ngSwitchCase="1">未完成</span>
+                        <span *ngSwitchCase="2">执行中</span>
+                        <span *ngSwitchCase="3">已完成</span>
+                        <span *ngSwitchCase="4">已撤销</span>
+                      </td>
+                      <td><span >{{ tl.mt_begin_time }} <-> {{ tl.mt_end_time }}</span></td>
                     </tr>
                     </tbody>
                   </table>
@@ -72,27 +70,13 @@
               <!-- 底部-（分页部分）-->
               <div class="dt-toolbar">
                 <div class="dib-left">
-                  <span>共3条</span>
+                  <span>共{{mining_task_list?.total}}条</span>
                 </div>
                 <div class=" hidden-xs right">
-                  <ul class="pagination pagination-sm">
-                    <li class="disabled">
-                      <a href="">上一页</a>
-                    </li>
-                    <li class="active">
-                      <a href="">1</a>
-                    </li>
-                    <li >
-                      <a href="">2</a>
-                    </li>
-                    <li>
-                      <a href="">...</a>
-                    </li>
-                    <li>
-                      <a href="">99</a>
-                    </li>
-                    <li>
-                      <a href="">下一页</a>
+                  <ul class="pagination pagination-sm" *ngIf="mining_task_list?.page != ''">
+                    <li *ngFor="let p of mining_task_list?.page" class="{{p.class}}">
+                      <a (click)="pagination(p.value)" *ngIf="p.method=='method'">{{p.text}}</a>
+                      <a *ngIf="p.method==''">{{p.text}}</a>
                     </li>
                   </ul>
                 </div>
@@ -102,12 +86,7 @@
           </div>
         </sa-widget>
       </article>
-
-
     </div>
-
-
-
 
   </sa-widgets-grid>
 </div>
@@ -115,11 +94,11 @@
 <div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
   <div class="entity-well entity-well--tasks">
     <div class="entity-well-header">
-      <span class="approval-head">A0001
-        <span ><span>电动轮交接最新任务</span>
+      <span class="approval-head">{{mining_task_info.assets_number}}
+        <span ><span>交接最新任务</span>
         </span>
       </span>
-      <ul class="entity-well-header-nav nav s pull-right">
+      <ul class="entity-well-header-nav nav s pull-right" (click)="showDetails(0,0)">
         <li class="divider-v"></li>
         <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
       </ul>
@@ -129,11 +108,16 @@
         <div class="approve-formschema">
           <table class="table table-striped table-forum smart-form details-table">
             <tbody>
-            <tr><td class="details-width">序号:</td><td class="">1</td></tr>
-            <tr><td class="details-width">编号：</td><td >A001 </td></tr>
-            <tr><td class="details-width">设备种类:</td><td >电动轮</td></tr>
-            <tr><td class="details-width">最新任务:</td><td >2018-01-19 13:50某某设备（A001）到某某地点做某某事情</td></tr>
-            <tr><td class="details-width">时间:</td><td >2018-01-17 10:30</td></tr>
+            <tr><td class="details-width">编号：</td><td >{{mining_task_info.assets_number}} </td></tr>
+            <tr><td class="details-width">最新任务:</td><td >{{mining_task_info.mt_description}}</td></tr>
+            <tr><td class="details-width">任务状态:</td>
+              <td [ngSwitch]="mining_task_info.mt_status">
+              <span *ngSwitchCase="1">未完成</span>
+              <span *ngSwitchCase="2">执行中</span>
+              <span *ngSwitchCase="3">已完成</span>
+              <span *ngSwitchCase="4">已撤销</span>
+            </td></tr>
+            <tr><td class="details-width">时间:</td><td >{{ mining_task_info.mt_begin_time }} <-> {{ mining_task_info.mt_end_time }}</td></tr>
             </tbody>
           </table>
         </div>

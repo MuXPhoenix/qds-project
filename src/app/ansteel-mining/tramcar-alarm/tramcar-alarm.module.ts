@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
 import {I3otpModule} from "../../shared/i3otp.module";
 import {TramcarAlarmComponent} from "./tramcar-alarm.component";
+import {DpDatePickerModule} from "ng2-date-picker";
 
 const routes: Routes = [{
     path: '',
@@ -17,6 +18,7 @@ const routes: Routes = [{
     imports: [
         CommonModule,
         I3otpModule,
+        DpDatePickerModule,
         RouterModule.forChild(routes)
     ],
     exports: [RouterModule],
