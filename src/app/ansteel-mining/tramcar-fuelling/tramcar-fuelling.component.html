@@ -59,9 +59,9 @@
                     <td><span *ngIf="fl.fuelling_volume">{{fl.fuelling_volume | filter_string:'"'}}</span></td>
                     <td>{{fl.created_at}}</td>
                     <td>
-                      <span class="label-normal"  *ngIf="fl.approval_status == 'yes'">审批完成<br/>同意</span>
-                      <span class="label-full"  *ngIf="fl.approval_status == 'no'">审批完成<br/>拒绝</span>
-                      <span class="label-full"  *ngIf="fl.approval_status == 'cancel'">审批完成<br/>已撤销</span>
+                      <span class="label-normal"  *ngIf="fl.approval_status == 'yes'">已同意</span>
+                      <span class="label-full"  *ngIf="fl.approval_status == 'no'">已拒绝</span>
+                      <span class="label-full"  *ngIf="fl.approval_status == 'cancel'">已撤销</span>
                       <span class="label-maintain"  *ngIf="fl.approval_status != 'no' && fl.approval_status != 'yes' && fl.approval_status != 'cancel'">审批中</span>
                     </td>
                     <td><span *ngIf="fl.fuelling_address">{{ fl.fuelling_address | filter_string:'"'}}</span></td>

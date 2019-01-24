@@ -55,9 +55,9 @@
                     <td><span class="">{{ dl.assets_name }}</span></td>
                     <td>{{dl.u_username}}</td>
                     <td>
-                      <span class="label-normal"  *ngIf="dl.approval_status == 'yes'">审批完成<br/>同意</span>
-                      <span class="label-full"  *ngIf="dl.approval_status == 'no'">审批完成<br/>拒绝</span>
-                      <span class="label-full"  *ngIf="dl.approval_status == 'cancel'">审批完成<br/>已撤销</span>
+                      <span class="label-normal"  *ngIf="dl.approval_status == 'yes'">已同意</span>
+                      <span class="label-full"  *ngIf="dl.approval_status == 'no'">已拒绝</span>
+                      <span class="label-full"  *ngIf="dl.approval_status == 'cancel'">已撤销</span>
                       <span class="label-maintain"  *ngIf="dl.approval_status != 'no' && dl.approval_status != 'yes' && dl.approval_status != 'cancel'">审批中</span>
                     </td>
                     <td>{{ dl.created_at }}</td>
