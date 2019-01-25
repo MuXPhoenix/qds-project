@@ -55,8 +55,8 @@ export class ProcessAwaitComponent implements OnInit {
    */
   getProcessAwaitList(number:string) {
       let url = '';
-      if(this.select_property == 'approval') {
-        url = 'getApprovalList?page_type=' + this.page_type + '&page=' + number + '&sid=' + this.cookieStore.getCookie('sid') + '&uid=' + this.cookieStore.getCookie('uid');
+      if(this.select_property == 'approval' || this.select_property == 'approval_changeShift' || this.select_property == 'approval_fuelling') {
+          url = 'getApprovalList?page_type=' + this.page_type + '&select_property='+this.select_property+'&page=' + number + '&sid=' + this.cookieStore.getCookie('sid') + '&uid=' + this.cookieStore.getCookie('uid');
       }else if(this.select_property == 'purchase_cg_after' || this.select_property == 'purchase_sale') {
         url = 'getPurchaseApprovalList?page_type=' + this.page_type + '&page=' + number + '&sid=' + this.cookieStore.getCookie('sid') + '&uid=' + this.cookieStore.getCookie('uid')+'&select_property='+this.select_property;
       }else if(this.select_property == 'otherorder_in' || this.select_property == 'otherorder_out') {

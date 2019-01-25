@@ -22,8 +22,6 @@
           <li ><a routerLink="/ansteel-mining/tramcar-status">状态</a></li>
           <li><a routerLink="/ansteel-mining/tramcar-alarm" >报警</a></li>
           <li class="active"><a routerLink="/ansteel-mining/tramcar-task">最新任务</a></li>
-          <li ><a routerLink="/ansteel-mining/tramcar-dutyshift">交接班</a></li>
-          <li><a routerLink="/ansteel-mining/tramcar-fuelling">加油调度</a></li>
         </ul>
 
       </div>
@@ -51,7 +49,7 @@
                     </thead>
                     <tbody>
                     <!-- class="table-color"-->
-                    <tr *ngFor="let tl of mining_task_list?.data;let ind = index;" (click)="showDetails(tl.mt_id,(ind+1))" [ngClass]="((ind+1)==index)?class_name:''"><!-- class="table-color"-->
+                    <tr *ngFor="let tl of mining_task_list?.data;let ind = index;" (click)="showDetails(tl.mt_id,tl.approval_id,(ind+1))" [ngClass]="((ind+1)==index)?class_name:''"><!-- class="table-color"-->
                       <td><span class="">{{ind+1}}</span></td>
                       <td><span class="">{{ tl.assets_number }}</span></td>
                       <td><span class="">{{ tl.mt_description }}</span></td>
@@ -60,8 +58,10 @@
                         <span *ngSwitchCase="2">执行中</span>
                         <span *ngSwitchCase="3">已完成</span>
                         <span *ngSwitchCase="4">已撤销</span>
+                        <span *ngSwitchCase="5">审核中</span>
+                        <span *ngSwitchCase="6">已拒绝</span>
                       </td>
-                      <td><span >{{ tl.mt_begin_time }} <-> {{ tl.mt_end_time }}</span></td>
+                      <td><span >{{ tl.created_at }}</span></td>
                     </tr>
                     </tbody>
                   </table>
@@ -91,37 +91,156 @@
   </sa-widgets-grid>
 </div>
 
-<div class="slide-content"  [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
+
+<div class="slide-content" [ngStyle]="{'display':xy_details?'block':'none'}" style="position: fixed; display: block; z-index: 9991;">
   <div class="entity-well entity-well--tasks">
     <div class="entity-well-header">
       <span class="approval-head">{{mining_task_info.assets_number}}
-        <span ><span>交接最新任务</span>
+        <span >
+          <span *ngIf="mining_task_info.approval_type == 6">交接班</span>
+          <span *ngIf="mining_task_info.approval_type == 7">加油调度审批</span>
         </span>
       </span>
-      <ul class="entity-well-header-nav nav s pull-right" (click)="showDetails(0,0)">
+      <ul class="entity-well-header-nav nav s pull-right" (click)="showDetails(0,0,0)">
         <li class="divider-v"></li>
         <li><a class="entity-well-header-close"><i class="fa fa-times"></i></a></li>
       </ul>
     </div>
     <div class="entity-well-scroll height-nonav height-nonav--notab ng-scope wt-scroll select-y-auto">
       <div class="approve-top approve-intro">
+        <div class="approve-head" >
+          <a class="approval-size" >
+            {{mining_task_info.u_username}}
+          </a>
+          <p class="username" *ngIf="mining_task_info.approval_type == '6'">交接班审批</p>
+          <p class="username" *ngIf="mining_task_info.approval_type == '7'">加油调度审批</p>
+          <p *ngIf="mining_task_info.approval_status != 'no' && mining_task_info.approval_status != 'yes' && mining_task_info.approval_status != 'cancel'" class="text-warning" >
+            等待审批中
+          </p>
+          <p class="text-success" *ngIf="mining_task_info.approval_status == 'yes'">
+            已同意
+          </p>
+          <p class="text-danger" *ngIf="mining_task_info.approval_status == 'no'">
+            已拒绝
+          </p>
+          <p class="text-primary" *ngIf="mining_task_info.approval_status == 'cancel'">
+            已撤销
+          </p>
+        </div>
+        <!-- 已同意-->
+        <div class="approve-result agree pullout" *ngIf="mining_task_info.approval_status == 'yes'"></div>
+        <!--已拒绝-->
+        <div class="approve-result refuse pullout" *ngIf="mining_task_info.approval_status == 'no'"></div>
+        <!--已撤销-->
+        <div class="approve-result revoke pullout" *ngIf="mining_task_info.approval_status == 'cancel'"></div>
         <div class="approve-formschema">
           <table class="table table-striped table-forum smart-form details-table">
-            <tbody>
-            <tr><td class="details-width">编号：</td><td >{{mining_task_info.assets_number}} </td></tr>
-            <tr><td class="details-width">最新任务:</td><td >{{mining_task_info.mt_description}}</td></tr>
-            <tr><td class="details-width">任务状态:</td>
-              <td [ngSwitch]="mining_task_info.mt_status">
+            <tr><td class="details-width">设备编号:</td><td class="">{{mining_task_info.assets_number}}</td></tr>
+            <tr><td class="details-width">设备名称：</td><td >{{mining_task_info.assets_name}}</td></tr>
+              <tr><td class="details-width">最新任务:</td><td class="">{{mining_task_info.mt_description}}</td></tr>
+            <tr><td class="details-width">任务状态:</td><td [ngSwitch]="mining_task_info.mt_status">
               <span *ngSwitchCase="1">未完成</span>
               <span *ngSwitchCase="2">执行中</span>
               <span *ngSwitchCase="3">已完成</span>
               <span *ngSwitchCase="4">已撤销</span>
-            </td></tr>
-            <tr><td class="details-width">时间:</td><td >{{ mining_task_info.mt_begin_time }} <-> {{ mining_task_info.mt_end_time }}</td></tr>
-            </tbody>
-          </table>
+              <span *ngSwitchCase="5">审核中</span>
+              <span *ngSwitchCase="6">已拒绝</span>
+              </td></tr>
+              <tr><td class="details-width">提交申请人员:</td><td >{{mining_task_info.u_username}}</td></tr>
+              <tr><td class="details-width">提交申请时间:</td><td>{{ mining_task_info.created_at }}</td></tr>
+              <tr *ngIf="mining_task_info.changeShift_address"><td class="details-width">交接班地点:</td><td >{{mining_task_info.changeShift_address | filter_string : '"'}}</td></tr>
+              <tr><td class="details-width">任务接受时间:</td><td>{{ mining_task_info.mt_begin_time }}</td></tr>
+              <tr><td class="details-width">任务完成时间:</td><td>{{ mining_task_info.mt_end_time }}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+        <div class="body">
+          <div class="approve-foot show ">
+            <div class="tFlexbox tAlignCenter tJustifyCenter">
+              <div class="tFlex1 approval-action tTap agree" (click)="showModal('operation','ok')" *ngIf="uid == mining_task_info.approval_status">同意</div>
+              <div class="tFlex1 approval-action tTap refuse" (click)="showModal('operation','no')" *ngIf="uid == mining_task_info.approval_status">拒绝</div>
+              <div class="tFlex1 approval-action tTap reminders" (click)="showModal('urge','urge')" *ngIf="uid == mining_task_info.u_id && mining_task_info.approval_status != 'yes' && mining_task_info.approval_status != 'no' && mining_task_info.approval_status != 'cancel'">催办</div>
+              <div class="tFlex1 approval-action tTap revoke"  (click)="showModal('cancel','cancel')" *ngIf="uid == mining_task_info.u_id && mining_task_info.approval_status != 'yes' && mining_task_info.approval_status != 'no' && mining_task_info.approval_status != 'cancel'">撤销</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--同意-->
+<!--拒绝-->
+<div class="modal fade bs-example-modal-sm" bsModal #operationModel="bs-modal" style="position: fixed; z-index: 9991;">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 关闭按钮 -->
+        <button type="button" class="close" (click)="hideModal()">
+          ×
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-align-center">
+          <h2  *ngIf="operate_button_type == 'ok'">同意</h2>
+          <h2  *ngIf="operate_button_type == 'no'">拒绝</h2>
+        </div>
+      </div>
+      <div class="modal-footer tex-align-center">
+        <button type="button" class="btn btn-primary" (click)="setModal()">确定</button>
       </div>
     </div>
   </div>
 </div>
+
+
+
+<!--催办-->
+<div class="modal fade bs-example-modal-sm" bsModal #urgeModel="bs-modal" style="z-index:9992;">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 关闭按钮 -->
+        <button type="button" class="close" (click)="hideModal()">
+          ×
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="text-align-center">
+          <h2 >你确定要发送改消息吗？</h2>
+        </div>
+      </div>
+      <div class="modal-footer tex-align-center">
+        <button type="button" class="btn btn-primary" (click)="setModal()">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--撤销-->
+<div class="modal fade bs-example-modal-sm" bsModal #cancelModel="bs-modal" style="z-index:9992;">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 关闭按钮 -->
+        <button type="button" class="close" (click)="hideModal()">
+          ×
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="text-align-center">
+          <h2 >你确定要撤销本次申请吗？</h2>
+        </div>
+      </div>
+      <div class="modal-footer tex-align-center">
+        <button type="button" class="btn btn-primary" (click)="setModal()">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

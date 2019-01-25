@@ -142,7 +142,7 @@ export class TramcarDutyshiftComponent implements OnInit {
             'other_table_name': 'approval',
             'log_type': 'approval_changeShift',
             'log_operation_type': this.operate_button_type,
-            'u_id': this.cookieStore.getCookie('uid'),
+            'u_id': this.uid,
             'sid': this.cookieStore.getCookie('sid')
         }).subscribe((data) => {
             if (data['status'] == 200) {

@@ -256,7 +256,7 @@ export class ApprovalProcessComponent implements OnInit,AfterViewInit {
             this.isShowDetail = value;
         }
         let url = '';
-        if(this.select_propertys == 'approval') {
+        if(this.select_propertys == 'approval' || this.select_propertys == 'approval_changeShift' || this.select_propertys == 'approval_fuelling') {
             url = url = 'getApprovalInfo?approval_id='+this.isShowDetail+'&sid=' + this.cookieStore.getCookie('sid');
         }else if(this.select_propertys == 'purchase_cg_after' || this.select_propertys == 'purchase_sale') {
             url = 'getPurchaseInfo?pr_id=' + this.isShowDetail + '&select_property='+this.select_propertys+'&sid=' + this.cookieStore.getCookie('sid');
@@ -362,7 +362,7 @@ export class ApprovalProcessComponent implements OnInit,AfterViewInit {
         if (this.operate_button_type == 'ok' || this.operate_button_type == 'no' || this.operate_button_type == 'comment') {
             content = this.content_operation;
         }
-        if(this.select_propertys == 'approval') {
+        if(this.select_propertys == 'approval' || this.select_propertys == 'approval_changeShift' || this.select_propertys == 'approval_fuelling') {
             let id = '';
             if (this.operate_button_type == 'transfer') {
                 this.submit_user_ids.forEach((val, idx, array) => {
@@ -377,7 +377,7 @@ export class ApprovalProcessComponent implements OnInit,AfterViewInit {
             this.globalService.httpRequest('post','addLog', {
                 'other_id': this.isShowDetail,
                 'other_table_name': 'approval',
-                'log_type': 'approval',
+                'log_type': this.select_propertys,//'approval',
                 'log_operation_type': this.operate_button_type,
                 'log_detail': content,
                 'log_uid': id,

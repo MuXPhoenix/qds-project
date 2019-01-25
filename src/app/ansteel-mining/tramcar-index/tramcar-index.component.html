@@ -24,8 +24,6 @@
           <li><a routerLink="/ansteel-mining/tramcar-status">状态</a></li>
           <li><a routerLink="/ansteel-mining/tramcar-alarm" >报警</a></li>
           <li><a routerLink="/ansteel-mining/tramcar-task">最新任务</a></li>
-          <li><a routerLink="/ansteel-mining/tramcar-dutyshift">交接班</a></li>
-          <li><a routerLink="/ansteel-mining/tramcar-fuelling">加油调度</a></li>
         </ul>
 
       </div>
@@ -364,8 +362,8 @@
                     <td><span class="">{{ind+1}}</span></td>
                     <td><span class="">{{ tl.mt_number }}</span></td>
                     <td><span class="">{{ tl.assets_number }}</span></td>
-                    <td><span class="">{{ tl.start | filter_string:'"' }}</span></td>
-                    <td><span class="">{{ tl.end | filter_string:'"' }}</span></td>
+                    <td><span class="" *ngIf="tl.start">{{ tl.start | filter_string:'"' }}</span></td>
+                    <td><span class="" *ngIf="tl.end">{{ tl.end | filter_string:'"' }}</span></td>
                     <td [ngSwitch]="tl.mt_status">
                       <span *ngSwitchCase="1">未完成</span>
                       <span *ngSwitchCase="2">执行中</span>

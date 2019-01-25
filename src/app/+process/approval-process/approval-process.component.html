@@ -51,7 +51,7 @@
     </sa-widgets-grid>
 </div>
 
-<div class="slide-content" *ngIf="select_propertys == 'approval'" [ngStyle]="{'position':'fixed','display': (isShowDetail == 0 ?'none':'block'),'z-index': '9991'}" >
+<div class="slide-content" *ngIf="select_propertys == 'approval'||select_propertys == 'approval_changeShift'||select_propertys == 'approval_fuelling'" [ngStyle]="{'position':'fixed','display': (isShowDetail == 0 ?'none':'block'),'z-index': '9991'}" >
     <div class="entity-well entity-well--tasks">
         <div class="entity-well-header" >
             <span  class="approval-head" >{{approvalInfo?.result?.u_username}}
@@ -61,6 +61,8 @@
                   <span *ngSwitchCase="3">的外出</span>
                   <span *ngSwitchCase="4">的报销</span>
                   <span *ngSwitchCase="5">的通用审批</span>
+              <span *ngSwitchCase="6">交接班</span>
+              <span *ngSwitchCase="7">加油调度</span>
                 </span>
             </span>
             <ul class="entity-well-header-nav nav s pull-right">
@@ -81,6 +83,8 @@
                           <span *ngSwitchCase="3">的外出</span>
                           <span *ngSwitchCase="4">的报销</span>
                           <span *ngSwitchCase="5">的通用审批</span>
+                          <span *ngSwitchCase="6">交接班</span>
+                          <span *ngSwitchCase="7">加油调度</span>
                         </span>
                     </a>
                     <p class="username" >{{approvalInfo?.result?.u_username}}</p>
@@ -96,9 +100,9 @@
                     <p class="text-primary" *ngIf="approvalInfo?.result?.approval_status == 'cancel'">
                         已撤销
                     </p>
-                    <p class="text-danger" >
-                        已作废
-                    </p>
+                    <!--<p class="text-danger" >-->
+                        <!--已作废-->
+                    <!--</p>-->
                 </div>
                <!-- 已同意-->
                 <div class="approve-result agree pullout" *ngIf="approvalInfo?.result?.approval_status == 'yes'" ></div>
@@ -274,6 +278,23 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-------交接班审批------------>
+                    <div class="approve-formschema"  *ngSwitchCase="6">
+                        <div class="line component-textfield">
+                            <label class="label" >申请内容:</label>
+                            <span >{{approvalInfo?.result?.task_info?.assets_name}}申请在{{approvalInfo?.result?.task_info?.changeShift_time}}进行交接班工作。</span>
+                        </div>
+                    </div>
+
+                    <!-------加油调度审批------------>
+                    <div class="approve-formschema"  *ngSwitchCase="7">
+                        <div class="line component-textfield">
+                            <label class="label" >申请内容:</label>
+                            <span >{{approvalInfo?.result?.task_info?.assets_name}}申请在{{approvalInfo?.result?.task_info?.start_time}}-{{approvalInfo?.result?.task_info?.end_time}}进行加油调度工作。</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <hr/>
@@ -338,8 +359,8 @@
                     <div class="tFlex1 approval-action tTap refuse" (click)="showModal('operation','no')" *ngIf="uid == approvalInfo?.result?.approval_status">拒绝</div>
                     <div class="tFlex1 approval-action tTap reminders" (click)="showModal('urge','urge')" *ngIf="uid == approvalInfo?.result?.u_id && approvalInfo?.result?.approval_status != 'yes' && approvalInfo?.result?.approval_status != 'no' && approvalInfo?.result?.approval_status != 'cancel'">催办</div>
                     <div class="tFlex1 approval-action tTap revoke" (click)="showModal('cancel','cancel')" *ngIf="uid == approvalInfo?.result?.u_id && approvalInfo?.result?.approval_status != 'yes' && approvalInfo?.result?.approval_status != 'no' && approvalInfo?.result?.approval_status != 'cancel'">撤销</div>
-                    <div class="tFlex1 approval-action tTap  comment " (click)="showModal('operation','comment')" *ngIf="approvalInfo?.result?.approval_status != 'yes' && approvalInfo?.result?.approval_status != 'no' && approvalInfo?.result?.approval_status != 'cancel' ">评论</div>
-                    <div class="tFlex1 approval-action tTap" (click)="showModal('transfer','transfer')" *ngIf="uid == approvalInfo?.result?.approval_status">转交</div>
+                    <div class="tFlex1 approval-action tTap  comment " (click)="showModal('operation','comment')" *ngIf="approvalInfo?.result?.approval_status != 'yes' && approvalInfo?.result?.approval_status != 'no' && approvalInfo?.result?.approval_status != 'cancel' && approvalInfo?.result?.approval_type != 6 && approvalInfo?.result?.approval_type != 7">评论</div>
+                    <div class="tFlex1 approval-action tTap" (click)="showModal('transfer','transfer')" *ngIf="uid == approvalInfo?.result?.approval_status && approvalInfo?.result?.approval_type != 6 && approvalInfo?.result?.approval_type != 7">转交</div>
                 </div>
             </div>
         </div>

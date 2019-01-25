@@ -22,8 +22,6 @@
           <li class="active"><a routerLink="/ansteel-mining/tramcar-status">状态</a></li>
           <li><a routerLink="/ansteel-mining/tramcar-alarm" >报警</a></li>
           <li><a routerLink="/ansteel-mining/tramcar-task">最新任务</a></li>
-          <li ><a routerLink="/ansteel-mining/tramcar-dutyshift">交接班</a></li>
-          <li><a routerLink="/ansteel-mining/tramcar-fuelling">加油调度</a></li>
         </ul>
 
       </div>
@@ -69,7 +67,7 @@
                       <span class="label-normal" *ngSwitchCase="4">停机状态</span>
                       <span class="label-normal" *ngSwitchCase="5">故障状态</span>
                     </td>
-                    <td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td>
+                    <td ><i  *ngIf="qa.alarm_title" class="fa fa-circle text-danger font-xs">{{qa.alarm_title}}</i></td>
                     <td >通话中</td>
                     <td >{{qa.tc001}}</td>
                     <td >运行轨迹查询</td>
@@ -153,7 +151,7 @@
                 <span class="label-normal" *ngSwitchCase="4">停机中</span>
               </td>
             </tr>
-            <tr><td class="details-width">故障原因:</td><td ><i  class="fa fa-circle text-danger font-xs">线路故障</i></td></tr>
+            <tr><td class="details-width">故障原因:</td><td ><i *ngIf="tramcar_info.alarm_title"  class="fa fa-circle text-danger font-xs">{{tramcar_info.alarm_title}}</i></td></tr>
             <tr><td class="details-width">通话:</td><td >通话中</td></tr>
             <tr><td class="details-width">当前位置:</td><td >{{tramcar_info.tc001}}</td></tr>
             <tr><td class="details-width">运行轨迹查询:</td><td >运行轨迹查询</td></tr>

@@ -18,6 +18,8 @@
                   <li (click)="setProperty('otherorder_out','其他出库审批')"><a >其他出库审批</a></li>
                   <li (click)="setProperty('assets_ff','资产发放审批')"><a >资产发放审批</a></li>
                   <li (click)="setProperty('assets_bf','资产报废审批')"><a >资产报废审批</a></li>
+                  <li (click)="setProperty('approval_changeShift','交接班审批')"><a >交接班审批</a></li>
+                  <li (click)="setProperty('approval_fuelling','加油调度审批')"><a >加油调度审批</a></li>
               </ul>
           </div>
           <div class="form-group pdlr-4">
@@ -46,18 +48,18 @@
         <th>状态</th>
       </tr>
       </thead>
-      <tbody *ngIf="select_property == 'approval'">
-
-
+      <tbody *ngIf="select_property == 'approval' || select_property == 'approval_changeShift' || select_property == 'approval_fuelling'">
       <tr class="editor" *ngFor="let pa of processHadList?.result?.approvalList?.data" (click)="showDetail(pa.approval_id)">
         <td>{{pa.u_username}}的
           <span [ngSwitch]="pa.approval_type">
-                  <span *ngSwitchCase="1">请假</span>
-                  <span *ngSwitchCase="2">出差</span>
-                  <span *ngSwitchCase="3">外出</span>
-                  <span *ngSwitchCase="4">报销</span>
-                  <span *ngSwitchCase="5">通用审批</span>
-                </span>
+              <span *ngSwitchCase="1">请假</span>
+              <span *ngSwitchCase="2">出差</span>
+              <span *ngSwitchCase="3">外出</span>
+              <span *ngSwitchCase="4">报销</span>
+              <span *ngSwitchCase="5">通用审批</span>
+              <span *ngSwitchCase="6">交接班</span>
+              <span *ngSwitchCase="7">加油调度</span>
+            </span>
         </td>
         <td [ngSwitch]="pa.approval_type">
                   <span *ngSwitchCase="1">
@@ -92,6 +94,12 @@
                   申请内容：{{pa.detail.title}} <br/>
                   申请详情：{{pa.detail.reason}}<br/>
                   </span>
+            <span *ngSwitchCase="6">
+          申请内容：{{pa.task_info.assets_name}}申请在{{pa.task_info.changeShift_time}}进行交接工作。
+          </span>
+            <span *ngSwitchCase="7">
+          申请内容：{{pa.task_info.assets_name}}申请在{{pa.task_info.start_time}}-{{pa.task_info.end_time}}进行加油调度工作。
+          </span>
         </td>
         <td>{{ pa.created_at }}</td>
         <td>{{pa.approval_end_date}}</td>
